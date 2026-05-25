@@ -26,6 +26,12 @@ const maps = defineCollection({
     title: z.string(),
     description: z.string(),
     cover: z.string(),
+    region: z.string().optional(),
+    priority: z.string().optional(),
+    route: z.array(z.string()).default([]),
+    checklist: z.array(z.string()).default([]),
+    events: z.array(z.string()).default([]),
+    warnings: z.array(z.string()).default([]),
     updatedAt: z.string()
   })
 });

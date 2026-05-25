@@ -1,6 +1,7 @@
 ---
 import { getCollection } from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import { characterEnglish } from "../../data/contentEnglish";
 
 export async function getStaticPaths() {
   const chars = await getCollection("characters");
@@ -9,6 +10,7 @@ export async function getStaticPaths() {
 
 const { entry } = Astro.props;
 const { Content } = await entry.render();
+const english = characterEnglish[entry.slug];
 const coverPositions = {
   jiuyuan: "object-[73%_center]",
   nanally: "object-[72%_center]",
@@ -16,10 +18,10 @@ const coverPositions = {
 };
 const coverPositionClass = coverPositions[entry.slug] || "object-center";
 const quickFacts = [
-  { label: "稀有度", value: entry.data.rarity },
-  { label: "属性", value: entry.data.element },
-  { label: "定位", value: entry.data.role },
-  { label: "武器", value: entry.data.weapon }
+  { label: "稀有度", labelEn: "Rarity", value: entry.data.rarity },
+  { label: "属性", labelEn: "Element", value: entry.data.element, valueEn: english?.element },
+  { label: "定位", labelEn: "Role", value: entry.data.role, valueEn: english?.role },
+  { label: "武器", labelEn: "Weapon", value: entry.data.weapon, valueEn: english?.weapon }
 ];
 const buildFocus = entry.data.description
   .replace(/^《异环》/, "")
@@ -48,14 +50,16 @@ const jsonLd = {
         <div>
           <p class="text-sm font-semibold text-teal-600 dark:text-neon">角色攻略 / {entry.data.element}属性</p>
           <h1 class="mt-2 text-4xl font-black text-zinc-950 dark:text-white">{entry.data.title}</h1>
-          <p class="mt-3 max-w-3xl text-sm leading-7 text-zinc-600 dark:text-zinc-300">{entry.data.description}</p>
+          <p class="lang-zh mt-3 max-w-3xl text-sm leading-7 text-zinc-600 dark:text-zinc-300">{entry.data.description}</p>
+          {english && <p class="lang-en mt-3 max-w-3xl text-sm leading-7 text-zinc-600 dark:text-zinc-300">{english.description}</p>}
         </div>
 
         <div class="mt-6 grid gap-3 sm:grid-cols-4">
           {quickFacts.map((fact) => (
             <div class="rounded-lg border border-zinc-200 bg-zinc-50 p-3 dark:border-line dark:bg-black/20">
-              <p class="text-xs text-zinc-500">{fact.label}</p>
-              <p class="mt-1 text-sm font-bold text-zinc-950 dark:text-white">{fact.value}</p>
+              <p class="text-xs text-zinc-500"><span class="lang-zh">{fact.label}</span><span class="lang-en">{fact.labelEn}</span></p>
+              <p class="lang-zh mt-1 text-sm font-bold text-zinc-950 dark:text-white">{fact.value}</p>
+              <p class="lang-en mt-1 text-sm font-bold text-zinc-950 dark:text-white">{fact.valueEn || fact.value}</p>
             </div>
           ))}
         </div>
@@ -80,18 +84,24 @@ const jsonLd = {
     </header>
 
     <section class="mt-6 rounded-lg border border-zinc-200 bg-white p-5 shadow-sm dark:border-line dark:bg-panel/80 dark:shadow-none">
-      <p class="text-sm font-semibold text-teal-600 dark:text-neon">养成速览</p>
+      <p class="text-sm font-semibold text-teal-600 dark:text-neon"><span class="lang-zh">养成速览</span><span class="lang-en">Build Snapshot</span></p>
       <div class="mt-4 grid gap-3 md:grid-cols-3">
         {buildFocus.map((focus) => (
-          <div class="rounded-lg border border-teal-200 bg-teal-50 p-3 text-sm leading-6 text-zinc-700 dark:border-neon/30 dark:bg-neon/10 dark:text-zinc-200">
+          <div class="lang-zh rounded-lg border border-teal-200 bg-teal-50 p-3 text-sm leading-6 text-zinc-700 dark:border-neon/30 dark:bg-neon/10 dark:text-zinc-200">
             {focus}
           </div>
         ))}
+        {english && (
+          <div class="lang-en rounded-lg border border-teal-200 bg-teal-50 p-3 text-sm leading-6 text-zinc-700 dark:border-neon/30 dark:bg-neon/10 dark:text-zinc-200">
+            {english.role}
+          </div>
+        )}
       </div>
     </section>
 
-    <div class="character-guide mt-8">
+    <div class="character-guide lang-zh mt-8">
       <Content />
     </div>
+    {english && <div class="character-guide lang-en mt-8" set:html={english.html} />}
   </article>
 </BaseLayout>

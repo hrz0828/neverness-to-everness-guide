@@ -41,7 +41,8 @@ npm run deploy
    - Build command: `npm run build`
    - Build output directory: `dist`
 5. 环境变量可选：
-   - `PUBLIC_SITE_URL`
+   - `PUBLIC_SITE_URL=https://nte.sts2hub.com`
+   - `PUBLIC_CONTACT_EMAIL=contact@nte.sts2hub.com`
    - `PUBLIC_ADSENSE_CLIENT`
 6. 部署完成后绑定自定义域名。
 

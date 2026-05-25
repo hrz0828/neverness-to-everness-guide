@@ -21,9 +21,9 @@ const characters = (await getCollection("characters")).sort((a, b) => {
   jsonLd={{ "@context": "https://schema.org", "@type": "CollectionPage", name: "异环角色攻略列表" }}
 >
   <header>
-    <p class="text-sm font-semibold text-neon">Character Guides</p>
-    <h1 class="mt-2 text-3xl font-black text-zinc-950 dark:text-white">角色攻略列表</h1>
-    <p class="mt-3 max-w-3xl text-sm leading-7 text-zinc-600 dark:text-zinc-400">
+    <p class="text-sm font-semibold text-neon" data-i18n="characters.kicker">Character Guides</p>
+    <h1 class="mt-2 text-3xl font-black text-zinc-950 dark:text-white" data-i18n="characters.title">角色攻略列表</h1>
+    <p class="mt-3 max-w-3xl text-sm leading-7 text-zinc-600 dark:text-zinc-400" data-i18n="characters.desc">
       按角色定位、属性、武器与养成方向整理。点击卡片可查看技能机制、弧盘/空慕、觉醒节点、配队与实战循环。
     </p>
   </header>

@@ -6,36 +6,57 @@ const guides = await getCollection("guides");
 
 const systems = [
   {
+    key: "city",
+    tagKey: "explore",
     name: "城市异象探索",
     tag: "探索必看",
-    image: "https://images.unsplash.com/photo-1519501025264-65ba15a82390?auto=format&fit=crop&w=1200&q=85",
-    alt: "异环城市异象探索街区场景占位图",
+    image: "/images/news/area-illusion-town.jpg",
+    alt: "异环城市异象探索街区游戏截图",
     tips: [
       "优先解锁城区传送点，再回头清理屋顶、地下通道和高架夹层的隐藏收集。",
       "夜间更容易触发高等级反常事件，建议提前准备治疗位和控场角色。",
       "遇到空间扭曲、信号噪点或路灯异常闪烁时，先环绕区域寻找调查交互点。"
+    ],
+    tipsEn: [
+      "Unlock district teleports first, then return for hidden collectibles on rooftops, underground paths and elevated layers.",
+      "High-level abnormal events are easier to trigger at night, so prepare healing and control before patrolling.",
+      "When space distortion, signal noise or abnormal streetlights appear, circle the area and look for investigation points."
     ]
   },
   {
+    key: "car",
+    tagKey: "hot",
     name: "改装车系统",
     tag: "热门机制",
-    image: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1200&q=85",
-    alt: "异环改装车系统车辆场景占位图",
+    image: "/images/news/area-new-herland.jpg",
+    alt: "异环改装车系统城市道路游戏截图",
     tips: [
       "开荒期优先升级操控、加速和耐久，能显著提升跑图效率和追逐任务容错。",
       "城区探索建议携带高机动配置，材料 farming 路线则更适合续航和稳定性配件。",
       "部分异象事件会限制步行路径，改装车可作为快速脱离异常区域的关键工具。"
+    ],
+    tipsEn: [
+      "During progression, upgrade handling, acceleration and durability first to improve travel efficiency and chase-task tolerance.",
+      "Use high-mobility setups for city exploration, and endurance or stability parts for material routes.",
+      "Some anomaly events restrict walking routes, so tuned vehicles can be the safest way to exit abnormal zones quickly."
     ]
   },
   {
+    key: "events",
+    tagKey: "advanced",
     name: "异常事件追踪",
     tag: "进阶路线",
-    image: "https://images.unsplash.com/photo-1480714378408-67cf0d13bc1f?auto=format&fit=crop&w=1200&q=85",
-    alt: "异环都市街道异常事件追踪占位图",
+    image: "/images/news/city-gameplay.jpg",
+    alt: "异环都市街道异常事件追踪游戏截图",
     tips: [
       "先记录事件刷新时间和天气条件，避免反复跑空点位。",
       "高威胁事件通常伴随精英敌人和环境伤害，队伍中至少保留一个生存位。",
       "完成事件后立刻清理周边收集物，很多隐藏奖励会在异象解除后短暂显现。"
+    ],
+    tipsEn: [
+      "Record event refresh time and weather conditions first so you do not repeatedly visit empty locations.",
+      "High-threat events often include elites and environmental damage, so keep at least one survival slot in the team.",
+      "After an event is cleared, immediately check nearby collectibles because hidden rewards may appear after the anomaly fades."
     ]
   }
 ];
@@ -46,13 +67,13 @@ const systems = [
   description="异环战斗机制、开荒路线、资源规划、日常优先级与新手避坑指南。"
   jsonLd={{ "@context": "https://schema.org", "@type": "CollectionPage", name: "异环机制与新手指南" }}
 >
-  <h1 class="text-3xl font-black">通用机制 / 新手指南</h1>
+  <h1 class="text-3xl font-black" data-i18n="guides.title">通用机制 / 新手指南</h1>
 
   <section class="mt-6 space-y-8">
     <div>
-      <p class="text-sm font-semibold text-neon">城市异象探索与改装车系统</p>
-      <h2 class="mt-2 text-2xl font-black text-zinc-950 dark:text-white">在反常都市中建立你的行动路线</h2>
-      <p class="mt-3 max-w-3xl text-sm leading-6 text-zinc-600 dark:text-zinc-400">
+      <p class="text-sm font-semibold text-neon" data-i18n="guides.kicker">城市异象探索与改装车系统</p>
+      <h2 class="mt-2 text-2xl font-black text-zinc-950 dark:text-white" data-i18n="guides.heading">在反常都市中建立你的行动路线</h2>
+      <p class="mt-3 max-w-3xl text-sm leading-6 text-zinc-600 dark:text-zinc-400" data-i18n="guides.desc">
         该模块用于整理开放城区探索、异象追踪和车辆改装的核心技巧，适合新手开荒和后期材料路线规划。
       </p>
     </div>
@@ -65,7 +86,7 @@ const systems = [
           <article class="grid items-center gap-6 md:grid-cols-2">
             <div class={`relative overflow-hidden rounded-xl border border-neon/70 bg-black/30 p-2 shadow-glow ${reverse ? "md:order-2" : ""}`}>
               <span class="absolute left-5 top-5 z-10 rounded-md border border-neon/50 bg-black/55 px-3 py-1 text-xs font-semibold text-neon backdrop-blur">
-                {system.tag}
+                <span data-i18n={`guides.tag.${system.tagKey}`}>{system.tag}</span>
               </span>
               <img
                 src={system.image}
@@ -76,11 +97,12 @@ const systems = [
             </div>
 
             <div class={reverse ? "md:order-1" : ""}>
-              <h3 class="text-2xl font-bold text-zinc-950 dark:text-white">{system.name}</h3>
+              <h3 class="text-2xl font-bold text-zinc-950 dark:text-white" data-i18n={`guides.system.${system.key}`}>{system.name}</h3>
               <ul class="mt-4 space-y-3 text-sm leading-6 text-zinc-700 dark:text-zinc-300">
-                {system.tips.map((tip) => (
+                {system.tips.map((tip, tipIndex) => (
                   <li class="rounded-lg border border-zinc-200 bg-white/70 p-3 dark:border-line dark:bg-white/[0.04]">
-                    {tip}
+                    <span class="lang-zh">{tip}</span>
+                    <span class="lang-en">{system.tipsEn[tipIndex]}</span>
                   </li>
                 ))}
               </ul>

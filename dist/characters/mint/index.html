@@ -1,0 +1,424 @@
+<!DOCTYPE html><html lang="zh-CN" class="dark" data-lang="zh"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Astro v4.16.19"><title>薄荷 角色攻略 | 异环</title><meta name="description" content="《异环》A级灵属性站场输出薄荷培养攻略，覆盖闪避反击、技能重置、弧盘空幕、配队与开荒循环。"><link rel="canonical" href="https://nte.sts2hub.com/characters/mint/"><meta property="og:type" content="website"><meta property="og:locale" content="zh_CN"><meta property="og:title" content="薄荷 角色攻略 | 异环"><meta property="og:description" content="《异环》A级灵属性站场输出薄荷培养攻略，覆盖闪避反击、技能重置、弧盘空幕、配队与开荒循环。"><meta property="og:url" content="https://nte.sts2hub.com/characters/mint/"><meta property="og:image" content="https://nte.sts2hub.com/images/characters/mint.png"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="薄荷 角色攻略 | 异环"><meta name="twitter:description" content="《异环》A级灵属性站场输出薄荷培养攻略，覆盖闪避反击、技能重置、弧盘空幕、配队与开荒循环。"><meta name="twitter:image" content="https://nte.sts2hub.com/images/characters/mint.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"薄荷 角色攻略","description":"《异环》A级灵属性站场输出薄荷培养攻略，覆盖闪避反击、技能重置、弧盘空幕、配队与开荒循环。","image":"https://nte.sts2hub.com/images/characters/mint.png","dateModified":"2026-05-25"}</script><link rel="stylesheet" href="/_astro/about.DExVk1qE.css"><script type="module" src="/_astro/hoisted.DzOspO63.js"></script></head> <body> <header class="fixed inset-x-0 top-0 z-50 border-b border-line bg-black/70 backdrop-blur-xl"> <div class="mx-auto flex h-16 max-w-7xl items-center justify-between px-4"> <a href="/" class="text-sm font-black tracking-[0.18em] text-white" data-i18n="site.brand">NTE 异环攻略</a> <nav class="hidden items-center gap-5 text-sm text-zinc-300 md:flex"> <a href="/characters/" data-i18n="nav.characters">角色</a> <a href="/explore/" data-i18n="nav.explore">探索</a> <a href="/guides/" data-i18n="nav.guides">机制</a> <a href="/tools/gacha-calculator/" data-i18n="nav.tools">工具</a> <a href="/about/" data-i18n="nav.about">关于</a> <a href="/contact/" data-i18n="nav.contact">联系</a> <a href="/privacy/" data-i18n="nav.privacy">隐私</a> <a href="/disclaimer/" data-i18n="nav.disclaimer">声明</a> <a href="/search/" data-i18n="nav.search">搜索</a> </nav> <div class="flex items-center gap-2"> <button id="languageToggle" type="button" class="inline-flex h-9 min-w-12 items-center justify-center rounded-md border border-line bg-white/5 px-3 text-xs font-bold text-zinc-100 hover:border-neon" aria-label="切换中英文" title="切换中英文" data-i18n-aria-label="language.toggleAria" data-i18n-title="language.toggleTitle"> <span id="languageToggleLabel">EN</span> </button> <button id="themeToggle" type="button" class="grid size-9 place-items-center rounded-md border border-line bg-white/5 text-sm text-zinc-100 hover:border-neon" aria-label="切换深色或浅色主题" title="切换主题" data-i18n-aria-label="theme.toggle" data-i18n-title="theme.toggle">
+◐
+</button>  <button id="menuButton" type="button" class="grid size-9 place-items-center rounded-md border border-line bg-white/5 text-sm lg:hidden" aria-label="打开导航菜单" data-i18n-aria-label="nav.openMenu" aria-controls="sidebar">
+☰
+</button> </div> </div> </header>  <aside id="sidebar" class="fixed left-0 top-16 z-40 h-[calc(100vh-4rem)] w-64 -translate-x-full border-r border-zinc-200 bg-white/95 p-4 text-zinc-800 shadow-xl backdrop-blur-xl transition-transform duration-200 dark:border-line dark:bg-panel/95 dark:text-zinc-100 lg:translate-x-0 lg:shadow-none" data-astro-cid-ssfzsv2f> <nav class="space-y-1 text-sm" data-astro-cid-ssfzsv2f> <a class="block rounded-md px-3 py-2 text-zinc-700 hover:bg-zinc-100 hover:text-teal-700 dark:text-zinc-200 dark:hover:bg-white/5 dark:hover:text-neon" href="/" data-i18n="sidebar.home" data-astro-cid-ssfzsv2f>首页</a> <a class="block rounded-md px-3 py-2 text-zinc-700 hover:bg-zinc-100 hover:text-teal-700 dark:text-zinc-200 dark:hover:bg-white/5 dark:hover:text-neon" href="/characters/" data-i18n="sidebar.characters" data-astro-cid-ssfzsv2f>角色攻略</a> <a class="block rounded-md px-3 py-2 text-zinc-700 hover:bg-zinc-100 hover:text-teal-700 dark:text-zinc-200 dark:hover:bg-white/5 dark:hover:text-neon" href="/explore/" data-i18n="sidebar.explore" data-astro-cid-ssfzsv2f>地图探索</a> <a class="block rounded-md px-3 py-2 text-zinc-700 hover:bg-zinc-100 hover:text-teal-700 dark:text-zinc-200 dark:hover:bg-white/5 dark:hover:text-neon" href="/guides/" data-i18n="sidebar.guides" data-astro-cid-ssfzsv2f>机制/新手</a> <a class="block rounded-md px-3 py-2 text-zinc-700 hover:bg-zinc-100 hover:text-teal-700 dark:text-zinc-200 dark:hover:bg-white/5 dark:hover:text-neon" href="/tools/gacha-calculator/" data-i18n="sidebar.tools" data-astro-cid-ssfzsv2f>抽卡/养成工具</a> <a class="block rounded-md px-3 py-2 text-zinc-700 hover:bg-zinc-100 hover:text-teal-700 dark:text-zinc-200 dark:hover:bg-white/5 dark:hover:text-neon" href="/about/" data-i18n="sidebar.about" data-astro-cid-ssfzsv2f>关于/更新日志</a> <a class="block rounded-md px-3 py-2 text-zinc-700 hover:bg-zinc-100 hover:text-teal-700 dark:text-zinc-200 dark:hover:bg-white/5 dark:hover:text-neon" href="/contact/" data-i18n="sidebar.contact" data-astro-cid-ssfzsv2f>联系我们</a> <a class="block rounded-md px-3 py-2 text-zinc-700 hover:bg-zinc-100 hover:text-teal-700 dark:text-zinc-200 dark:hover:bg-white/5 dark:hover:text-neon" href="/editorial-policy/" data-i18n="sidebar.editorial" data-astro-cid-ssfzsv2f>编辑准则</a> <a class="block rounded-md px-3 py-2 text-zinc-700 hover:bg-zinc-100 hover:text-teal-700 dark:text-zinc-200 dark:hover:bg-white/5 dark:hover:text-neon" href="/privacy/" data-i18n="sidebar.privacy" data-astro-cid-ssfzsv2f>隐私政策</a> <a class="block rounded-md px-3 py-2 text-zinc-700 hover:bg-zinc-100 hover:text-teal-700 dark:text-zinc-200 dark:hover:bg-white/5 dark:hover:text-neon" href="/disclaimer/" data-i18n="sidebar.disclaimer" data-astro-cid-ssfzsv2f>免责声明</a> </nav> <div class="mt-6 rounded-lg border border-zinc-200 bg-zinc-50 p-3 text-xs leading-5 text-zinc-500 dark:border-line dark:bg-white/[0.03] dark:text-zinc-400" data-astro-cid-ssfzsv2f> <span data-i18n="sidebar.note" data-astro-cid-ssfzsv2f>本站整理角色、地图、异象委托和工具内容，持续按版本更新。</span> </div> </aside>  <main class="mx-auto max-w-7xl px-4 pb-16 pt-24 lg:pl-72">  <article> <header class="grid overflow-hidden rounded-lg border border-zinc-200 bg-white shadow-sm dark:border-line dark:bg-panel/80 dark:shadow-glow lg:grid-cols-[minmax(0,1fr)_24rem]"> <div class="flex flex-col justify-between p-5 sm:p-6"> <div> <p class="text-sm font-semibold text-teal-600 dark:text-neon">角色攻略 / 灵属性</p> <h1 class="mt-2 text-4xl font-black text-zinc-950 dark:text-white">薄荷</h1> <p class="lang-zh mt-3 max-w-3xl text-sm leading-7 text-zinc-600 dark:text-zinc-300">《异环》A级灵属性站场输出薄荷培养攻略，覆盖闪避反击、技能重置、弧盘空幕、配队与开荒循环。</p> <p class="lang-en mt-3 max-w-3xl text-sm leading-7 text-zinc-600 dark:text-zinc-300">Mint is a budget-friendly Spirit support and sub-DPS who provides frequent hits, early progression comfort and team utility.</p> </div> <div class="mt-6 grid gap-3 sm:grid-cols-4"> <div class="rounded-lg border border-zinc-200 bg-zinc-50 p-3 dark:border-line dark:bg-black/20"> <p class="text-xs text-zinc-500"><span class="lang-zh">稀有度</span><span class="lang-en">Rarity</span></p> <p class="lang-zh mt-1 text-sm font-bold text-zinc-950 dark:text-white">A</p> <p class="lang-en mt-1 text-sm font-bold text-zinc-950 dark:text-white">A</p> </div><div class="rounded-lg border border-zinc-200 bg-zinc-50 p-3 dark:border-line dark:bg-black/20"> <p class="text-xs text-zinc-500"><span class="lang-zh">属性</span><span class="lang-en">Element</span></p> <p class="lang-zh mt-1 text-sm font-bold text-zinc-950 dark:text-white">灵</p> <p class="lang-en mt-1 text-sm font-bold text-zinc-950 dark:text-white">Spirit</p> </div><div class="rounded-lg border border-zinc-200 bg-zinc-50 p-3 dark:border-line dark:bg-black/20"> <p class="text-xs text-zinc-500"><span class="lang-zh">定位</span><span class="lang-en">Role</span></p> <p class="lang-zh mt-1 text-sm font-bold text-zinc-950 dark:text-white">开荒主C / 高频输出</p> <p class="lang-en mt-1 text-sm font-bold text-zinc-950 dark:text-white">Support / Sub DPS</p> </div><div class="rounded-lg border border-zinc-200 bg-zinc-50 p-3 dark:border-line dark:bg-black/20"> <p class="text-xs text-zinc-500"><span class="lang-zh">武器</span><span class="lang-en">Weapon</span></p> <p class="lang-zh mt-1 text-sm font-bold text-zinc-950 dark:text-white">双刃</p> <p class="lang-en mt-1 text-sm font-bold text-zinc-950 dark:text-white">Arc Plate</p> </div> </div> </div> <div class="relative min-h-80 overflow-hidden bg-zinc-100 dark:bg-[#07090f]"> <img src="/images/characters/mint.png" alt="异环角色-薄荷立绘" class="absolute inset-0 size-full object-cover object-center" loading="eager"> <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/85 via-black/25 to-transparent p-5"> <div class="flex flex-wrap gap-2"> <span class="rounded-md bg-neon px-3 py-1 text-xs font-black text-black">A</span> <span class="rounded-md border border-white/30 bg-black/45 px-3 py-1 text-xs font-semibold text-white"> 开荒主C / 高频输出 </span> </div> </div> </div> </header> <section class="mt-6 rounded-lg border border-zinc-200 bg-white p-5 shadow-sm dark:border-line dark:bg-panel/80 dark:shadow-none"> <p class="text-sm font-semibold text-teal-600 dark:text-neon"><span class="lang-zh">养成速览</span><span class="lang-en">Build Snapshot</span></p> <div class="mt-4 grid gap-3 md:grid-cols-3"> <div class="lang-zh rounded-lg border border-teal-200 bg-teal-50 p-3 text-sm leading-6 text-zinc-700 dark:border-neon/30 dark:bg-neon/10 dark:text-zinc-200"> A级灵属性站场输出薄荷培养攻略 </div><div class="lang-zh rounded-lg border border-teal-200 bg-teal-50 p-3 text-sm leading-6 text-zinc-700 dark:border-neon/30 dark:bg-neon/10 dark:text-zinc-200"> 覆盖闪避反击、技能重置、弧盘空幕、配队与开荒循环。 </div> <div class="lang-en rounded-lg border border-teal-200 bg-teal-50 p-3 text-sm leading-6 text-zinc-700 dark:border-neon/30 dark:bg-neon/10 dark:text-zinc-200"> Support / Sub DPS </div> </div> </section> <div class="character-guide lang-zh mt-8"> <h2 id="角色定位">角色定位</h2>
+<p>薄荷是开荒期非常实用的A级灵属性站场输出。她获取门槛低、操作直观、技能冷却短，适合新手在没有S级主C或第二队缺输出时培养。</p>
+<p>薄荷的核心优势是成本低和循环顺。她不像娜娜莉那样拥有极高上限，也不像白藏那样需要复杂血线管理，但她能稳定打普攻、技能和闪避反击，是主线、材料本和大世界清怪的可靠选择。</p>
+<h2 id="核心机制">核心机制</h2>
+<p>薄荷的主要玩法围绕 <strong>短冷却E技能 + 暴击闪避反击 + 高频灵属性伤害</strong> 展开。</p>
+<p>当薄荷通过精准闪避触发反击后，可以进一步压缩技能循环。觉醒节点成型后，闪避反击还能帮助E技能更快重置，让她在站场时保持很高的技能释放频率。</p>
+<p>她适合搭配能提供聚怪、环合或增伤的队友，让自己的高频攻击稳定命中更多敌人。</p>
+<h2 id="技能解析">技能解析</h2>
+<h3 id="普通攻击">普通攻击</h3>
+<p>普攻是薄荷站场输出的重要组成部分。她的伤害分布比较均衡，普攻、E技能和Q技能都会参与总输出，因此不能只拉一个技能。</p>
+<h3 id="变轨技能e">变轨技能（E）</h3>
+<p>E技能冷却短，是薄荷开荒体验好的关键。实战中可以频繁用E穿插普攻，既补伤害也调整站位。遇到可反击敌人时，优先利用闪避反击刷新或压缩循环。</p>
+<h3 id="极轨终结q">极轨终结（Q）</h3>
+<p>Q技能用于爆发和清场。面对精英怪或BOSS时，建议等队友聚怪、挂增伤或敌人破韧后再释放，避免把大招打在空窗口。</p>
+<h2 id="技能升级优先级">技能升级优先级</h2>
+<p>推荐加点顺序：</p>
+<p><strong>变轨技能（E） &gt; 普通攻击（A） &gt; 极轨终结（Q） &gt; 援护技</strong></p>
+<p>如果薄荷是你的主力开荒输出，E和普攻都要优先投入。Q技能后续补足即可，援护技最后升级。</p>
+<h2 id="弧盘推荐">弧盘推荐</h2>
+<h3 id="首选迅捷之绵">首选：迅捷之绵</h3>
+<p>迅捷之绵适合薄荷的长时间站场和暴击体系，能提高她的持续输出稳定性。对于开荒玩家来说，只要副词条不错，就可以长期使用。</p>
+<h3 id="备选弧盘">备选弧盘</h3>
+<ul>
+<li><strong>晴空</strong>：提供灵属性伤害方向收益，适合缺少高稀有弧盘时过渡。</li>
+<li><strong>心之王冠</strong>：适合更重视大招循环的长线战斗。</li>
+<li><strong>A级攻击/暴击弧盘</strong>：前期优先看主副词条质量，不必强追毕业。</li>
+</ul>
+<h2 id="空幕搭配">空幕搭配</h2>
+<h3 id="首选森林萤火之心4件套">首选：森林萤火之心4件套</h3>
+<p>森林萤火之心提供灵属性伤害和暴击伤害叠层，非常适合薄荷这种高频灵属性输出。队伍里如果还有娜娜莉或九原，叠层速度会更快，实战收益更稳定。</p>
+<h3 id="过渡搭配">过渡搭配</h3>
+<p>前期可以使用灵属性增伤2件套 + 暴击/攻击2件套。薄荷是开荒角色，不建议为了追求完美套装拖慢主线进度。主属性正确比套装完整更重要。</p>
+<h2 id="词条选择">词条选择</h2>
+<ul>
+<li><strong>主属性</strong>：暴击率、灵属性异能伤害增强、暴击伤害。</li>
+<li><strong>副属性</strong>：暴击率 = 暴击伤害 &gt; 攻击力百分比 &gt; 伤害增加。</li>
+<li><strong>前期建议</strong>：先保证暴击率和攻击面板，后期再追双暴副词条。</li>
+</ul>
+<h2 id="觉醒推荐">觉醒推荐</h2>
+<p>薄荷的关键觉醒优先考虑改善闪避反击和技能循环。</p>
+<h3 id="1觉开荒质变">1觉：开荒质变</h3>
+<p>1觉如果能帮助闪避反击重置或压缩E技能循环，实战提升会非常明显。薄荷作为A级角色，觉醒获取压力通常低于S级角色，建议优先补到核心节点。</p>
+<h3 id="后续节点">后续节点</h3>
+<p>后续优先选择提高站场输出、暴击收益和Q技能爆发的节点。薄荷不需要过度追求满觉才能上场，核心循环成型后就能承担开荒输出。</p>
+<h2 id="配队推荐">配队推荐</h2>
+<h3 id="新手灵属性队">新手灵属性队</h3>
+<p><strong>薄荷 + 九原 + 主角零 + 阿德勒</strong></p>
+<p>九原提供聚怪和灵属性输出，主角零负责环合与基础控制，阿德勒提供护盾。薄荷负责站场清怪，是非常稳定的新手过渡队。</p>
+<h3 id="娜娜莉过渡队">娜娜莉过渡队</h3>
+<p><strong>娜娜莉 + 薄荷 + 主角零 + 生存位</strong></p>
+<p>薄荷在这套队里负责补灵属性叠层和副输出。没有九原时，她可以帮助娜娜莉更快吃到灵属性空幕收益。</p>
+<h3 id="平民第二队">平民第二队</h3>
+<p><strong>薄荷 + 小吱 + 哈尼娅 + 主角零</strong></p>
+<p>薄荷和小吱分别承担不同窗口的输出，哈尼娅保障生存，主角零提供环合。适合角色池不深、需要凑第二队的玩家。</p>
+<h2 id="实战输出循环">实战输出循环</h2>
+<ol>
+<li>辅助先手聚怪或挂盾。</li>
+<li>薄荷进场释放E技能起手。</li>
+<li>穿插普攻维持站场输出。</li>
+<li>敌人攻击时利用精准闪避触发反击。</li>
+<li>E技能刷新或冷却结束后继续释放。</li>
+<li>敌人破韧或聚怪完成后释放Q技能清场。</li>
+</ol>
+<p>薄荷的操作重点是不要站桩硬吃伤害。她需要通过闪避反击提升循环效率，新手可以先从“E + 普攻 + 闪避反击”三件事练起。</p>
+<h2 id="培养建议">培养建议</h2>
+<p>培养优先级建议为：</p>
+<p><strong>角色等级与突破 &gt; E技能 &gt; 普攻 &gt; 迅捷之绵等级 &gt; 森林萤火之心主词条 &gt; Q技能 &gt; 双暴副词条</strong></p>
+<p>薄荷不是最强终局主C，但她是非常可靠的开荒输出。前期投入不会浪费，因为后续仍可作为灵属性副输出、第二队过渡位或娜娜莉队的叠层插件使用。</p> </div> <div class="character-guide lang-en mt-8">
+      <h2>Role</h2>
+      <p>Mint is an accessible A-rank character for early progression and second-team planning. She does not need premium investment to contribute: frequent hits, simple rotations and flexible Spirit synergy make her useful while your account is still building core S-rank units.</p>
+      <h2>Core Mechanics</h2>
+      <p>Mint works by keeping the team cycle moving. Use her skills to add quick damage, trigger synergy and fill downtime between main-carry windows. She is not meant to take all field time from a stronger carry.</p>
+      <h2>Skills</h2>
+      <p>Prioritize the shift skill and finisher, then basic attacks. Her value comes from quick contribution and support damage, so do not over-invest in low-impact parts before your main DPS is complete.</p>
+      <h2>Arc Plate and Modules</h2>
+      <p><strong>Swift Wool</strong> is the cleanest first choice. Use plates with crit, attack or team utility if you do not own it. <strong>Forest Firefly Heart</strong> is the preferred set for Spirit synergy; transitional mixed sets are fine if the main stats are better.</p>
+      <h2>Stats</h2>
+      <p>Use crit rate, crit damage, Spirit damage and attack for a sub-DPS build. If she is mostly a utility slot, prioritize comfortable rotation and usable main stats before min-maxing.</p>
+      <h2>Awakening</h2>
+      <p>Awakening 1 is the best early progression breakpoint because it improves practical comfort. Later nodes are optional and should not steal resources from your main carry during the first month.</p>
+      <h2>Teams</h2>
+      <p>Mint fits beginner Spirit teams, Nanally transition teams and budget second teams. She can bridge the gap until you own stronger grouping or support pieces, and she remains useful when a team needs a cheap quick-swap slot.</p>
+      <h2>Rotation</h2>
+      <ol>
+        <li>Apply support effects or grouping from teammates.</li>
+        <li>Swap to Mint for quick skill damage and Spirit synergy.</li>
+        <li>Use finisher when it aligns with the team's damage window.</li>
+        <li>Return field time to the main carry.</li>
+      </ol>
+      <h2>Build Advice</h2>
+      <p>Mint is excellent for accounts that need a low-cost functional character. Build her to a useful line, then stop and invest deeply only if she remains part of your long-term Spirit team.</p>
+    </div> </article>  <footer class="mt-14 border-t border-line pt-6 text-sm text-zinc-500"> <div class="flex flex-col gap-3 md:flex-row md:items-center md:justify-between"> <p>© 2026 <span data-i18n="site.name">异环攻略站</span>. <span data-i18n="footer.note">玩家自建攻略站，非游戏官方网站。</span></p> <nav class="flex flex-wrap gap-x-4 gap-y-2"> <a href="/about/" data-i18n="footer.about">关于本站</a> <a href="/contact/" data-i18n="footer.contact">联系我们</a> <a href="/editorial-policy/" data-i18n="footer.editorial">编辑准则</a> <a href="/privacy/" data-i18n="footer.privacy">隐私政策</a> <a href="/disclaimer/" data-i18n="footer.disclaimer">免责声明</a> </nav> </div> </footer> </main> <script>
+  (() => {
+    const translations = {
+      zh: {
+        "language.toggleAria": "切换中英文",
+        "language.toggleTitle": "切换中英文",
+        "site.brand": "NTE 异环攻略",
+        "site.name": "异环攻略站",
+        "nav.characters": "角色",
+        "nav.explore": "探索",
+        "nav.guides": "机制",
+        "nav.tools": "工具",
+        "nav.about": "关于",
+        "nav.contact": "联系",
+        "nav.privacy": "隐私",
+        "nav.disclaimer": "声明",
+        "nav.search": "搜索",
+        "nav.openMenu": "打开导航菜单",
+        "sidebar.home": "首页",
+        "sidebar.characters": "角色攻略",
+        "sidebar.explore": "地图探索",
+        "sidebar.guides": "机制/新手",
+        "sidebar.tools": "抽卡/养成工具",
+        "sidebar.about": "关于/更新日志",
+        "sidebar.contact": "联系我们",
+        "sidebar.editorial": "编辑准则",
+        "sidebar.privacy": "隐私政策",
+        "sidebar.disclaimer": "免责声明",
+        "sidebar.note": "本站整理角色、地图、异象委托和工具内容，持续按版本更新。",
+        "theme.toggle": "切换主题",
+        "footer.note": "玩家自建攻略站，非游戏官方网站。",
+        "footer.about": "关于本站",
+        "footer.contact": "联系我们",
+        "footer.editorial": "编辑准则",
+        "footer.privacy": "隐私政策",
+        "footer.disclaimer": "免责声明",
+        "home.hero.kicker": "Neverness to Everness / NTE",
+        "home.hero.title": "当城市偏离常理，异能就是唯一坐标。",
+        "home.hero.desc": "欢迎来到《异环》中文攻略站。这里记录赫麦诺都市中的角色养成、异常事件、探索路线与战斗机制，帮助调查员在霓虹、裂隙与反常异象之间找到最优解。",
+        "home.search.placeholder": "搜索角色、材料、异象事件",
+        "home.search.button": "搜索",
+        "home.characters.title": "推荐角色",
+        "home.characters.more": "查看全部角色",
+        "home.news.title": "最新攻略/版本动态",
+        "home.news.more": "更多",
+        "home.character.xun.role": "光属性 / 爆发副C",
+        "home.character.xun.desc": "浔围绕“非闭合时计”运转，通过记录队友变轨技或援护技，并在10秒时停窗口复现技能、切换太刀形态打出高额爆发。",
+        "home.character.nanally.role": "灵属性 / 普攻主C",
+        "home.character.nanally.desc": "娜娜莉是开服版本高强度灵属性主C，依靠高频普攻、协同追击和副手协同打出稳定输出，同时拥有无重力跑图与经营加成。",
+        "home.character.jiuyuan.role": "灵属性 / 聚怪副C",
+        "home.character.jiuyuan.desc": "九原围绕致命玫约标记与清算爆发运转，兼具大范围聚怪、速切输出和灵属性队伍联动，是开荒与高难都值得投入的常驻S级角色。",
+        "characters.kicker": "Character Guides",
+        "characters.title": "角色攻略列表",
+        "characters.desc": "按角色定位、属性、武器与养成方向整理。点击卡片可查看技能机制、弧盘/空慕、觉醒节点、配队与实战循环。",
+        "explore.kicker": "Hethereau Exploration",
+        "explore.title": "地图 / 探索攻略",
+        "explore.desc": "面向开服一个月后的补探索阶段：优先建立传送网络，再按城区处理电话亭、谕石、隐藏宝箱、拍照打卡、异象委托和高低层补漏。",
+        "explore.order": "推荐清图顺序",
+        "explore.plan1.title": "1. 点亮塔和电话亭",
+        "explore.plan1.text": "先解锁维特海默塔、ReroRero 电话亭和主干道传送点，后续补支线、材料和隐藏收集会节省大量时间。",
+        "explore.plan2.title": "2. 按区域分层清理",
+        "explore.plan2.text": "海特洛是多层城市结构。每个区域都按地面、地下/桥下、屋顶/高架的顺序扫，避免只看平面标记。",
+        "explore.plan3.title": "3. 异象委托后置补漏",
+        "explore.plan3.text": "高威胁异象和复杂解谜可以等队伍成型再打。异象解除后再回头检查隐藏宝箱和新交互点。",
+        "explore.route": "推荐路线",
+        "explore.checklist": "收集清单",
+        "explore.events": "异象提示",
+        "explore.warnings": "补漏避坑",
+        "guides.title": "通用机制 / 新手指南",
+        "guides.kicker": "城市异象探索与改装车系统",
+        "guides.heading": "在反常都市中建立你的行动路线",
+        "guides.desc": "该模块用于整理开放城区探索、异象追踪和车辆改装的核心技巧，适合新手开荒和后期材料路线规划。",
+        "guides.system.city": "城市异象探索",
+        "guides.system.car": "改装车系统",
+        "guides.system.events": "异常事件追踪",
+        "guides.tag.explore": "探索必看",
+        "guides.tag.hot": "热门机制",
+        "guides.tag.advanced": "进阶路线",
+        "tools.kicker": "Pull & Growth Planner",
+        "tools.title": "抽卡 / 养成计算工具",
+        "tools.desc": "按 2026 年 5 月开服环境整理：限定角色池无 50/50、90 抽硬保底，弧盘池按 80 抽目标保底估算。所有参数都可按游戏内公告改。",
+        "tools.tab.pull": "抽卡预算",
+        "tools.tab.growth": "养成规划",
+        "tools.tab.settings": "规则参数",
+        "tools.label.charPity": "当前限定角色垫抽",
+        "tools.label.charCopies": "目标角色数量",
+        "tools.label.arcPity": "当前弧盘垫抽",
+        "tools.label.arcCopies": "目标弧盘数量",
+        "tools.label.annulith": "已有环石",
+        "tools.label.solidDice": "已有限定骰",
+        "tools.label.triKeys": "已有三钥",
+        "tools.label.daysLeft": "距离卡池结束",
+        "tools.label.dailyIncome": "每日环石",
+        "tools.label.weeklyIncome": "每周环石",
+        "tools.label.eventPulls": "活动/探索补票",
+        "tools.action.calcPulls": "计算抽卡预算",
+        "tools.action.save": "保存输入",
+        "tools.action.reset": "重置",
+        "tools.result.budget": "预算结果",
+        "tools.result.stop": "停手线",
+        "tools.label.mainDps": "主C数量",
+        "tools.label.support": "副C/辅助数量",
+        "tools.label.dailyStamina": "每日体力",
+        "tools.label.extraStamina": "额外体力",
+        "tools.label.runCost": "单次材料本体力",
+        "tools.label.growthDays": "计划天数",
+        "tools.label.levelShare": "角色突破/经验占比",
+        "tools.label.skillShare": "技能书占比",
+        "tools.label.arcShare": "弧盘材料占比",
+        "tools.label.moduleShare": "空幕词条占比",
+        "tools.action.calcGrowth": "计算养成周期",
+        "tools.result.stamina": "体力分配",
+        "tools.result.week": "一周优先级",
+        "tools.label.pullCost": "单抽环石",
+        "tools.label.charHard": "角色硬保底",
+        "tools.label.charSoft": "角色软保底",
+        "tools.label.charRate": "角色基础S率%",
+        "tools.label.arcHard": "弧盘硬保底",
+        "tools.label.arcRate": "弧盘S率%",
+        "tools.label.featuredArcRate": "目标弧盘占S率%",
+        "tools.label.weekDays": "每周按几天折算",
+        "tools.settings.note": "当前模型用于资源预算，不替代游戏内概率公示。角色池按“抽到S即为当期目标角色”处理；弧盘池同时显示 80 抽目标保底和按S率估算的提前出货概率。",
+        "about.kicker": "About",
+        "about.title": "关于异环攻略站",
+        "about.desc": "异环攻略站是面向 NTE 玩家整理角色培养、配队思路、地图探索、异象委托、版本动态与实用工具的资料站。",
+        "about.content": "本站提供什么内容",
+        "about.source": "内容来源与维护方式",
+        "about.independence": "独立性说明",
+        "about.contact": "联系我们",
+        "about.changelog": "更新日志",
+        "contact.kicker": "Contact",
+        "contact.title": "联系我们",
+        "contact.desc": "如果你发现攻略错误、图片版权问题，或希望反馈隐私政策、广告展示和站点功能，可以通过以下方式联系本站。",
+        "contact.email": "联系邮箱",
+        "contact.scope": "适合反馈的内容",
+        "contact.sla": "处理时效",
+        "search.title": "站内搜索",
+        "search.placeholder": "输入关键词，如：娜娜莉、灵系、异象事件",
+        "privacy.kicker": "Privacy Policy",
+        "privacy.title": "隐私政策"
+      },
+      en: {
+        "language.toggleAria": "Switch language",
+        "language.toggleTitle": "Switch Chinese / English",
+        "site.brand": "NTE Guide",
+        "site.name": "NTE Guide",
+        "nav.characters": "Characters",
+        "nav.explore": "Explore",
+        "nav.guides": "Systems",
+        "nav.tools": "Tools",
+        "nav.about": "About",
+        "nav.contact": "Contact",
+        "nav.privacy": "Privacy",
+        "nav.disclaimer": "Disclaimer",
+        "nav.search": "Search",
+        "nav.openMenu": "Open navigation menu",
+        "sidebar.home": "Home",
+        "sidebar.characters": "Character Guides",
+        "sidebar.explore": "Map Exploration",
+        "sidebar.guides": "Systems / Beginner",
+        "sidebar.tools": "Gacha / Growth Tools",
+        "sidebar.about": "About / Changelog",
+        "sidebar.contact": "Contact",
+        "sidebar.editorial": "Editorial Policy",
+        "sidebar.privacy": "Privacy Policy",
+        "sidebar.disclaimer": "Disclaimer",
+        "sidebar.note": "Guides for characters, maps, anomaly commissions and tools, updated with each version.",
+        "theme.toggle": "Toggle theme",
+        "footer.note": "Fan-made guide site. Not an official game website.",
+        "footer.about": "About",
+        "footer.contact": "Contact",
+        "footer.editorial": "Editorial Policy",
+        "footer.privacy": "Privacy Policy",
+        "footer.disclaimer": "Disclaimer",
+        "home.hero.kicker": "Neverness to Everness / NTE",
+        "home.hero.title": "When the city breaks its rules, Esper power becomes the only coordinate.",
+        "home.hero.desc": "Welcome to the NTE guide hub. Track character builds, anomaly events, exploration routes and combat systems across Hethereau, and find cleaner decisions between neon streets, rifts and impossible phenomena.",
+        "home.search.placeholder": "Search characters, materials, anomaly events",
+        "home.search.button": "Search",
+        "home.characters.title": "Featured Characters",
+        "home.characters.more": "View All Characters",
+        "home.news.title": "Latest Guides / Version Updates",
+        "home.news.more": "More",
+        "home.character.xun.role": "Light / Burst Sub DPS",
+        "home.character.xun.desc": "Xun revolves around the Non-Closed Clock, recording allies' shift or support skills, replaying them during a 10-second time-stop window, and swapping katana forms for burst damage.",
+        "home.character.nanally.role": "Spirit / Basic Attack DPS",
+        "home.character.nanally.desc": "Nanally is a high-value Spirit main DPS in the launch version, built around rapid basic attacks, coordinated follow-ups and off-hand support, with extra mobility and operation bonuses.",
+        "home.character.jiuyuan.role": "Spirit / Crowd-Control Sub DPS",
+        "home.character.jiuyuan.desc": "Jiuyuan plays around Rose Pact marks and execution bursts, combining wide-area grouping, quick-swap damage and Spirit team synergy for both progression and harder content.",
+        "characters.kicker": "Character Guides",
+        "characters.title": "Character Guide List",
+        "characters.desc": "Sorted by role, element, weapon and build direction. Open a card for skill mechanics, Arc Plate / gear, awakening nodes, teams and combat rotations.",
+        "explore.kicker": "Hethereau Exploration",
+        "explore.title": "Map / Exploration Guides",
+        "explore.desc": "For the post-launch cleanup phase: build your teleport network first, then clear phone booths, oracle stones, hidden chests, photo spots, anomaly commissions and vertical-layer leftovers by district.",
+        "explore.order": "Recommended Clear Order",
+        "explore.plan1.title": "1. Activate towers and phone booths",
+        "explore.plan1.text": "Unlock Wertheimer Towers, ReroRero phone booths and main-road teleport points first to save time when revisiting side quests, materials and hidden collectibles.",
+        "explore.plan2.title": "2. Clear each district by layer",
+        "explore.plan2.text": "Hethereau is vertically layered. Sweep ground level, underground / under-bridge areas, then rooftops / elevated roads so flat map markers do not mislead you.",
+        "explore.plan3.title": "3. Leave anomalies for cleanup",
+        "explore.plan3.text": "High-threat anomalies and complex puzzles can wait until your team is ready. After resolving an anomaly, revisit the area for hidden chests and newly available interactions.",
+        "explore.route": "Recommended Route",
+        "explore.checklist": "Collection Checklist",
+        "explore.events": "Anomaly Notes",
+        "explore.warnings": "Cleanup Pitfalls",
+        "guides.title": "General Systems / Beginner Guides",
+        "guides.kicker": "Urban anomaly exploration and vehicle tuning",
+        "guides.heading": "Build your route through an abnormal city",
+        "guides.desc": "This section covers open-city exploration, anomaly tracking and vehicle tuning basics for early progression and later material routes.",
+        "guides.system.city": "Urban Anomaly Exploration",
+        "guides.system.car": "Vehicle Tuning",
+        "guides.system.events": "Anomaly Event Tracking",
+        "guides.tag.explore": "Exploration Essentials",
+        "guides.tag.hot": "Popular System",
+        "guides.tag.advanced": "Advanced Route",
+        "tools.kicker": "Pull & Growth Planner",
+        "tools.title": "Gacha / Growth Calculator",
+        "tools.desc": "Built for the May 2026 launch environment: limited character banners have no 50/50 and a 90-pull hard pity; Arc Plate targets are estimated around an 80-pull guarantee. Adjust every parameter to match in-game notices.",
+        "tools.tab.pull": "Pull Budget",
+        "tools.tab.growth": "Growth Plan",
+        "tools.tab.settings": "Rules",
+        "tools.label.charPity": "Current limited character pity",
+        "tools.label.charCopies": "Target character copies",
+        "tools.label.arcPity": "Current Arc Plate pity",
+        "tools.label.arcCopies": "Target Arc Plate copies",
+        "tools.label.annulith": "Owned Annulith",
+        "tools.label.solidDice": "Owned limited dice",
+        "tools.label.triKeys": "Owned tri-keys",
+        "tools.label.daysLeft": "Days until banner ends",
+        "tools.label.dailyIncome": "Daily Annulith",
+        "tools.label.weeklyIncome": "Weekly Annulith",
+        "tools.label.eventPulls": "Event / exploration pulls",
+        "tools.action.calcPulls": "Calculate Pull Budget",
+        "tools.action.save": "Save Inputs",
+        "tools.action.reset": "Reset",
+        "tools.result.budget": "Budget Result",
+        "tools.result.stop": "Stop Line",
+        "tools.label.mainDps": "Main DPS count",
+        "tools.label.support": "Sub DPS / support count",
+        "tools.label.dailyStamina": "Daily stamina",
+        "tools.label.extraStamina": "Extra stamina",
+        "tools.label.runCost": "Stamina per material run",
+        "tools.label.growthDays": "Plan days",
+        "tools.label.levelShare": "Level / ascension share",
+        "tools.label.skillShare": "Skill book share",
+        "tools.label.arcShare": "Arc Plate material share",
+        "tools.label.moduleShare": "Module stat share",
+        "tools.action.calcGrowth": "Calculate Growth Time",
+        "tools.result.stamina": "Stamina Allocation",
+        "tools.result.week": "Weekly Priority",
+        "tools.label.pullCost": "Annulith per pull",
+        "tools.label.charHard": "Character hard pity",
+        "tools.label.charSoft": "Character soft pity",
+        "tools.label.charRate": "Base S rate %",
+        "tools.label.arcHard": "Arc hard pity",
+        "tools.label.arcRate": "Arc S rate %",
+        "tools.label.featuredArcRate": "Target Arc share of S %",
+        "tools.label.weekDays": "Days counted per week",
+        "tools.settings.note": "This model is for resource budgeting and does not replace in-game probability notices. Character banners assume every S result is the featured target; Arc Plate estimates show both the 80-pull target guarantee and rough early-hit odds.",
+        "about.kicker": "About",
+        "about.title": "About NTE Guide",
+        "about.desc": "NTE Guide organizes character building, team ideas, map exploration, anomaly commissions, version updates and practical tools for Neverness to Everness players.",
+        "about.content": "What This Site Covers",
+        "about.source": "Sources and Maintenance",
+        "about.independence": "Independence Notice",
+        "about.contact": "Contact",
+        "about.changelog": "Changelog",
+        "contact.kicker": "Contact",
+        "contact.title": "Contact Us",
+        "contact.desc": "If you find guide errors, image copyright issues, or want to send feedback about privacy, ads or site features, use the contact method below.",
+        "contact.email": "Email",
+        "contact.scope": "Good Feedback Topics",
+        "contact.sla": "Response Time",
+        "search.title": "Site Search",
+        "search.placeholder": "Enter keywords, e.g. Nanally, Spirit, anomaly event",
+        "privacy.kicker": "Privacy Policy",
+        "privacy.title": "Privacy Policy"
+      }
+    };
+
+    const normalizeLang = (value) => (value === "en" ? "en" : "zh");
+    const getSavedLang = () => normalizeLang(localStorage.getItem("nte-lang") || "zh");
+
+    function applyTranslations(lang) {
+      const table = translations[lang] || translations.zh;
+      document.documentElement.lang = lang === "en" ? "en" : "zh-CN";
+      document.documentElement.dataset.lang = lang;
+
+      document.querySelectorAll("[data-i18n]").forEach((node) => {
+        const value = table[node.dataset.i18n];
+        if (value) node.textContent = value;
+      });
+
+      [
+        ["data-i18n-placeholder", "placeholder"],
+        ["data-i18n-title", "title"],
+        ["data-i18n-aria-label", "aria-label"],
+        ["data-i18n-alt", "alt"]
+      ].forEach(([dataName, attrName]) => {
+        document.querySelectorAll(`[${dataName}]`).forEach((node) => {
+          const key = node.getAttribute(dataName);
+          const value = key ? table[key] : "";
+          if (value) node.setAttribute(attrName, value);
+        });
+      });
+
+      const label = document.getElementById("languageToggleLabel");
+      if (label) label.textContent = lang === "en" ? "中" : "EN";
+      window.dispatchEvent(new CustomEvent("nte-language-change", { detail: { lang } }));
+    }
+
+    function setLang(lang) {
+      const nextLang = normalizeLang(lang);
+      localStorage.setItem("nte-lang", nextLang);
+      applyTranslations(nextLang);
+    }
+
+    window.__setNteLang = setLang;
+    document.addEventListener("DOMContentLoaded", () => {
+      const initialLang = getSavedLang();
+      applyTranslations(initialLang);
+      document.getElementById("languageToggle")?.addEventListener("click", () => {
+        const currentLang = normalizeLang(document.documentElement.dataset.lang);
+        setLang(currentLang === "en" ? "zh" : "en");
+      });
+    });
+  })();
+</script> </body></html>

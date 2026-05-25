@@ -4,40 +4,491 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 
 <BaseLayout
   title="抽卡/养成计算工具 | 异环"
-  description="异环抽卡期望、保底距离与养成材料消耗的简易交互计算工具。"
+  description="异环抽卡保底、角色弧盘预算、环石缺口、体力分配与养成周期计算工具。"
   jsonLd={{ "@context": "https://schema.org", "@type": "WebApplication", name: "异环抽卡养成计算工具" }}
 >
-  <h1 class="text-3xl font-black">抽卡 / 养成计算工具</h1>
-  <p class="mt-2 max-w-2xl text-zinc-400">当前为简化模型，概率和保底规则可在正式公测数据确定后调整。</p>
-
-  <section class="surface mt-6 max-w-2xl rounded-lg p-5">
-    <div class="grid gap-4 sm:grid-cols-2">
-      <label class="block">
-        <span class="mb-1 block text-sm text-zinc-400">已有抽数</span>
-        <input id="pulls" type="number" min="0" value="80" class="w-full rounded-md border border-line bg-black/30 px-3 py-2 outline-none focus:border-neon" />
-      </label>
-      <label class="block">
-        <span class="mb-1 block text-sm text-zinc-400">单抽消耗</span>
-        <input id="cost" type="number" min="1" value="160" class="w-full rounded-md border border-line bg-black/30 px-3 py-2 outline-none focus:border-neon" />
-      </label>
+  <div class="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+    <div>
+      <p class="text-sm font-semibold text-neon" data-i18n="tools.kicker">Pull & Growth Planner</p>
+      <h1 class="mt-2 text-3xl font-black text-zinc-950 dark:text-white" data-i18n="tools.title">抽卡 / 养成计算工具</h1>
+      <p class="mt-3 max-w-3xl text-sm leading-6 text-zinc-600 dark:text-zinc-400" data-i18n="tools.desc">
+        按 2026 年 5 月开服环境整理：限定角色池无 50/50、90 抽硬保底，弧盘池按 80 抽目标保底估算。所有参数都可按游戏内公告改。
+      </p>
     </div>
-    <button id="calc" class="mt-4 rounded-md bg-neon px-4 py-2 text-sm font-bold text-black">计算</button>
-    <div id="out" class="mt-4 rounded-md border border-line bg-black/20 p-3 text-sm leading-6 text-zinc-300"></div>
+    <div class="inline-flex rounded-lg border border-zinc-200 bg-white p-1 text-sm dark:border-line dark:bg-panel/80">
+      <button class="tool-tab rounded-md bg-neon px-3 py-2 font-bold text-black" data-tab="pull" data-i18n="tools.tab.pull">抽卡预算</button>
+      <button class="tool-tab rounded-md px-3 py-2 font-bold text-zinc-600 dark:text-zinc-300" data-tab="growth" data-i18n="tools.tab.growth">养成规划</button>
+      <button class="tool-tab rounded-md px-3 py-2 font-bold text-zinc-600 dark:text-zinc-300" data-tab="settings" data-i18n="tools.tab.settings">规则参数</button>
+    </div>
+  </div>
+
+  <section class="tool-panel mt-6" data-panel="pull">
+    <div class="grid gap-5 lg:grid-cols-[1.1fr_0.9fr]">
+      <div class="surface rounded-lg p-5">
+        <div class="grid gap-4 sm:grid-cols-2">
+          <label class="block">
+            <span class="mb-1 block text-sm text-zinc-500 dark:text-zinc-400" data-i18n="tools.label.charPity">当前限定角色垫抽</span>
+            <input id="charPity" type="number" min="0" max="89" value="35" class="tool-input" />
+          </label>
+          <label class="block">
+            <span class="mb-1 block text-sm text-zinc-500 dark:text-zinc-400" data-i18n="tools.label.charCopies">目标角色数量</span>
+            <input id="charCopies" type="number" min="0" value="1" class="tool-input" />
+          </label>
+          <label class="block">
+            <span class="mb-1 block text-sm text-zinc-500 dark:text-zinc-400" data-i18n="tools.label.arcPity">当前弧盘垫抽</span>
+            <input id="arcPity" type="number" min="0" max="79" value="20" class="tool-input" />
+          </label>
+          <label class="block">
+            <span class="mb-1 block text-sm text-zinc-500 dark:text-zinc-400" data-i18n="tools.label.arcCopies">目标弧盘数量</span>
+            <input id="arcCopies" type="number" min="0" value="1" class="tool-input" />
+          </label>
+          <label class="block">
+            <span class="mb-1 block text-sm text-zinc-500 dark:text-zinc-400" data-i18n="tools.label.annulith">已有环石</span>
+            <input id="annulith" type="number" min="0" value="9600" class="tool-input" />
+          </label>
+          <label class="block">
+            <span class="mb-1 block text-sm text-zinc-500 dark:text-zinc-400" data-i18n="tools.label.solidDice">已有限定骰</span>
+            <input id="solidDice" type="number" min="0" value="20" class="tool-input" />
+          </label>
+          <label class="block">
+            <span class="mb-1 block text-sm text-zinc-500 dark:text-zinc-400" data-i18n="tools.label.triKeys">已有三钥</span>
+            <input id="triKeys" type="number" min="0" value="10" class="tool-input" />
+          </label>
+          <label class="block">
+            <span class="mb-1 block text-sm text-zinc-500 dark:text-zinc-400" data-i18n="tools.label.daysLeft">距离卡池结束</span>
+            <input id="daysLeft" type="number" min="0" value="14" class="tool-input" />
+          </label>
+        </div>
+
+        <div class="mt-5 grid gap-4 sm:grid-cols-3">
+          <label class="block">
+            <span class="mb-1 block text-sm text-zinc-500 dark:text-zinc-400" data-i18n="tools.label.dailyIncome">每日环石</span>
+            <input id="dailyIncome" type="number" min="0" value="80" class="tool-input" />
+          </label>
+          <label class="block">
+            <span class="mb-1 block text-sm text-zinc-500 dark:text-zinc-400" data-i18n="tools.label.weeklyIncome">每周环石</span>
+            <input id="weeklyIncome" type="number" min="0" value="500" class="tool-input" />
+          </label>
+          <label class="block">
+            <span class="mb-1 block text-sm text-zinc-500 dark:text-zinc-400" data-i18n="tools.label.eventPulls">活动/探索补票</span>
+            <input id="eventPulls" type="number" min="0" value="15" class="tool-input" />
+          </label>
+        </div>
+
+        <div class="mt-5 flex flex-wrap gap-3">
+          <button id="calcPulls" class="rounded-md bg-neon px-4 py-2 text-sm font-bold text-black" data-i18n="tools.action.calcPulls">计算抽卡预算</button>
+          <button id="savePulls" class="rounded-md border border-line px-4 py-2 text-sm font-bold text-zinc-700 hover:border-teal-500 dark:text-zinc-200" data-i18n="tools.action.save">保存输入</button>
+          <button id="resetPulls" class="rounded-md border border-line px-4 py-2 text-sm font-bold text-zinc-700 hover:border-teal-500 dark:text-zinc-200" data-i18n="tools.action.reset">重置</button>
+        </div>
+      </div>
+
+      <aside class="grid gap-4">
+        <div class="rounded-lg border border-zinc-200 bg-white p-5 shadow-sm dark:border-line dark:bg-panel/80">
+          <p class="text-sm font-semibold text-teal-700 dark:text-neon" data-i18n="tools.result.budget">预算结果</p>
+          <div id="pullSummary" class="mt-4 grid gap-3"></div>
+        </div>
+        <div class="rounded-lg border border-zinc-200 bg-white p-5 shadow-sm dark:border-line dark:bg-panel/80">
+          <p class="text-sm font-semibold text-teal-700 dark:text-neon" data-i18n="tools.result.stop">停手线</p>
+          <ul id="pullAdvice" class="mt-4 space-y-2 text-sm leading-6 text-zinc-600 dark:text-zinc-300"></ul>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <section class="tool-panel mt-6 hidden" data-panel="growth">
+    <div class="grid gap-5 lg:grid-cols-[1fr_1fr]">
+      <div class="surface rounded-lg p-5">
+        <div class="grid gap-4 sm:grid-cols-2">
+          <label class="block">
+            <span class="mb-1 block text-sm text-zinc-500 dark:text-zinc-400" data-i18n="tools.label.mainDps">主C数量</span>
+            <input id="mainDpsCount" type="number" min="0" value="1" class="tool-input" />
+          </label>
+          <label class="block">
+            <span class="mb-1 block text-sm text-zinc-500 dark:text-zinc-400" data-i18n="tools.label.support">副C/辅助数量</span>
+            <input id="supportCount" type="number" min="0" value="2" class="tool-input" />
+          </label>
+          <label class="block">
+            <span class="mb-1 block text-sm text-zinc-500 dark:text-zinc-400" data-i18n="tools.label.dailyStamina">每日体力</span>
+            <input id="dailyStamina" type="number" min="0" value="240" class="tool-input" />
+          </label>
+          <label class="block">
+            <span class="mb-1 block text-sm text-zinc-500 dark:text-zinc-400" data-i18n="tools.label.extraStamina">额外体力</span>
+            <input id="extraStamina" type="number" min="0" value="300" class="tool-input" />
+          </label>
+          <label class="block">
+            <span class="mb-1 block text-sm text-zinc-500 dark:text-zinc-400" data-i18n="tools.label.runCost">单次材料本体力</span>
+            <input id="runCost" type="number" min="1" value="30" class="tool-input" />
+          </label>
+          <label class="block">
+            <span class="mb-1 block text-sm text-zinc-500 dark:text-zinc-400" data-i18n="tools.label.growthDays">计划天数</span>
+            <input id="growthDays" type="number" min="1" value="7" class="tool-input" />
+          </label>
+        </div>
+
+        <div class="mt-5 grid gap-4 sm:grid-cols-2">
+          <label class="block">
+            <span class="mb-1 block text-sm text-zinc-500 dark:text-zinc-400" data-i18n="tools.label.levelShare">角色突破/经验占比</span>
+            <input id="levelShare" type="range" min="0" max="100" value="35" class="w-full accent-teal-400" />
+            <span id="levelShareText" class="mt-1 block text-xs text-zinc-500"></span>
+          </label>
+          <label class="block">
+            <span class="mb-1 block text-sm text-zinc-500 dark:text-zinc-400" data-i18n="tools.label.skillShare">技能书占比</span>
+            <input id="skillShare" type="range" min="0" max="100" value="30" class="w-full accent-teal-400" />
+            <span id="skillShareText" class="mt-1 block text-xs text-zinc-500"></span>
+          </label>
+          <label class="block">
+            <span class="mb-1 block text-sm text-zinc-500 dark:text-zinc-400" data-i18n="tools.label.arcShare">弧盘材料占比</span>
+            <input id="arcShare" type="range" min="0" max="100" value="20" class="w-full accent-teal-400" />
+            <span id="arcShareText" class="mt-1 block text-xs text-zinc-500"></span>
+          </label>
+          <label class="block">
+            <span class="mb-1 block text-sm text-zinc-500 dark:text-zinc-400" data-i18n="tools.label.moduleShare">空幕词条占比</span>
+            <input id="moduleShare" type="range" min="0" max="100" value="15" class="w-full accent-teal-400" />
+            <span id="moduleShareText" class="mt-1 block text-xs text-zinc-500"></span>
+          </label>
+        </div>
+
+        <button id="calcGrowth" class="mt-5 rounded-md bg-neon px-4 py-2 text-sm font-bold text-black" data-i18n="tools.action.calcGrowth">计算养成周期</button>
+      </div>
+
+      <div class="grid gap-4">
+        <div class="rounded-lg border border-zinc-200 bg-white p-5 shadow-sm dark:border-line dark:bg-panel/80">
+          <p class="text-sm font-semibold text-teal-700 dark:text-neon" data-i18n="tools.result.stamina">体力分配</p>
+          <div id="growthSummary" class="mt-4 grid gap-3"></div>
+        </div>
+        <div class="rounded-lg border border-zinc-200 bg-white p-5 shadow-sm dark:border-line dark:bg-panel/80">
+          <p class="text-sm font-semibold text-teal-700 dark:text-neon" data-i18n="tools.result.week">一周优先级</p>
+          <ol id="growthAdvice" class="mt-4 space-y-2 text-sm leading-6 text-zinc-600 dark:text-zinc-300"></ol>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="tool-panel mt-6 hidden" data-panel="settings">
+    <div class="surface max-w-4xl rounded-lg p-5">
+      <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <label class="block">
+          <span class="mb-1 block text-sm text-zinc-500 dark:text-zinc-400" data-i18n="tools.label.pullCost">单抽环石</span>
+          <input id="pullCost" type="number" min="1" value="160" class="tool-input" />
+        </label>
+        <label class="block">
+          <span class="mb-1 block text-sm text-zinc-500 dark:text-zinc-400" data-i18n="tools.label.charHard">角色硬保底</span>
+          <input id="charHardPity" type="number" min="1" value="90" class="tool-input" />
+        </label>
+        <label class="block">
+          <span class="mb-1 block text-sm text-zinc-500 dark:text-zinc-400" data-i18n="tools.label.charSoft">角色软保底</span>
+          <input id="charSoftPity" type="number" min="1" value="70" class="tool-input" />
+        </label>
+        <label class="block">
+          <span class="mb-1 block text-sm text-zinc-500 dark:text-zinc-400" data-i18n="tools.label.charRate">角色基础S率%</span>
+          <input id="charRate" type="number" min="0" step="0.01" value="0.99" class="tool-input" />
+        </label>
+        <label class="block">
+          <span class="mb-1 block text-sm text-zinc-500 dark:text-zinc-400" data-i18n="tools.label.arcHard">弧盘硬保底</span>
+          <input id="arcHardPity" type="number" min="1" value="80" class="tool-input" />
+        </label>
+        <label class="block">
+          <span class="mb-1 block text-sm text-zinc-500 dark:text-zinc-400" data-i18n="tools.label.arcRate">弧盘S率%</span>
+          <input id="arcRate" type="number" min="0" step="0.01" value="3" class="tool-input" />
+        </label>
+        <label class="block">
+          <span class="mb-1 block text-sm text-zinc-500 dark:text-zinc-400" data-i18n="tools.label.featuredArcRate">目标弧盘占S率%</span>
+          <input id="featuredArcRate" type="number" min="0" max="100" step="1" value="25" class="tool-input" />
+        </label>
+        <label class="block">
+          <span class="mb-1 block text-sm text-zinc-500 dark:text-zinc-400" data-i18n="tools.label.weekDays">每周按几天折算</span>
+          <input id="weekDays" type="number" min="1" value="7" class="tool-input" />
+        </label>
+      </div>
+      <div class="mt-5 rounded-lg border border-zinc-200 bg-zinc-50 p-4 text-sm leading-6 text-zinc-600 dark:border-line dark:bg-black/20 dark:text-zinc-300" data-i18n="tools.settings.note">
+        当前模型用于资源预算，不替代游戏内概率公示。角色池按“抽到S即为当期目标角色”处理；弧盘池同时显示 80 抽目标保底和按S率估算的提前出货概率。
+      </div>
+    </div>
   </section>
 
   <script>
-    document.getElementById("calc")?.addEventListener("click", () => {
-      const pulls = Number(document.getElementById("pulls")?.value || 0);
-      const cost = Number(document.getElementById("cost")?.value || 160);
-      const baseRate = 0.008;
-      const hardPity = 90;
-      const expected = (pulls * baseRate).toFixed(2);
-      const pityLeft = Math.max(0, hardPity - (pulls % hardPity));
-      const currency = pulls * cost;
-      const out = document.getElementById("out");
-      if (out) {
-        out.textContent = `简化期望 SSR：${expected}；距离下一次 90 抽保底约 ${pityLeft} 抽；已投入资源约 ${currency}。`;
+    const STORAGE_KEY = "nte-tool-state-v2";
+    const ids = [
+      "charPity", "charCopies", "arcPity", "arcCopies", "annulith", "solidDice", "triKeys", "daysLeft",
+      "dailyIncome", "weeklyIncome", "eventPulls", "mainDpsCount", "supportCount", "dailyStamina",
+      "extraStamina", "runCost", "growthDays", "levelShare", "skillShare", "arcShare", "moduleShare",
+      "pullCost", "charHardPity", "charSoftPity", "charRate", "arcHardPity", "arcRate", "featuredArcRate", "weekDays"
+    ];
+
+    const get = (id) => document.getElementById(id);
+    const num = (id) => Number(get(id)?.value || 0);
+    const clamp = (value, min, max) => Math.min(Math.max(value, min), max);
+    const lang = () => document.documentElement.dataset.lang === "en" ? "en" : "zh";
+    const fmt = (value) => Math.ceil(value).toLocaleString(lang() === "en" ? "en-US" : "zh-CN");
+    const toolCopy = {
+      zh: {
+        targetWorst: "目标最坏预算",
+        targetWorstNote: (charNeed, arcNeed) => `角色 ${fmt(charNeed)} 抽 + 弧盘 ${fmt(arcNeed)} 抽`,
+        availableBeforeEnd: "池子结束前可用",
+        availableNote: (limitedPulls, arcPulls) => `限定角色约 ${fmt(limitedPulls)} 抽；弧盘约 ${fmt(arcPulls)} 抽`,
+        deficit: "资源缺口",
+        covered: "已覆盖",
+        deficitNote: (pulls, pullCost) => pulls ? `约 ${fmt(pulls * pullCost)} 环石` : "按最坏保底也够当前目标",
+        charSoft: "角色软保底",
+        entered: "已进入",
+        charSoftNote: (softPity) => `距离 ${fmt(softPity)} 抽棋盘改造/软保底区间`,
+        chance: "提前出货参考",
+        chanceNote: "分别为角色、目标弧盘在硬保底前出现的粗略概率",
+        pulls: "抽",
+        charShort: (pulls) => `角色本体还差 ${fmt(pulls)} 抽，建议先停弧盘池。`,
+        charCovered: "角色目标已覆盖，后续再评估是否追弧盘或觉醒。",
+        arcWarning: "弧盘池只建议在角色本体已到手、且保底预算仍充足时进入。",
+        weekWarning: "卡池剩余不足一周时，不建议把探索和活动奖励全部按满额计入。",
+        enoughWarning: "预算充足时也建议先写好停手线：本体、弧盘、觉醒不要临场加码。",
+        staminaPlan: "计划体力",
+        materialRuns: (runs) => `约 ${fmt(runs)} 次材料本`,
+        level: "角色突破/经验",
+        levelNote: "主C未突破前优先级最高",
+        skill: "技能书",
+        skillNote: "只升主C核心技能、副C关键Q/E和生存技能",
+        arcModule: "弧盘/空幕",
+        arcModuleNote: "词条本放在硬成长之后",
+        recommendedCycle: "推荐周期",
+        recommendedNote: (roles) => `当前计划覆盖 ${fmt(roles)} 名角色的基础成型`,
+        runs: "次",
+        days: "天",
+        growthAdvice: [
+          "主C等级、突破、核心技能先到位，再投入随机词条。",
+          "副C只拉影响循环的 Q/E，辅助先保证生存和功能节点。",
+          "弧盘等级比空幕副词条更稳定，缺伤害时先补弧盘。",
+          "进入开服一个月阶段后，第二队可以开始规划，但不要平均培养 8 名角色。",
+          "方斯不足时，提前预留 1-2 天货币本，避免材料齐了却无法升级。"
+        ]
+      },
+      en: {
+        targetWorst: "Worst-case target budget",
+        targetWorstNote: (charNeed, arcNeed) => `Character ${fmt(charNeed)} pulls + Arc ${fmt(arcNeed)} pulls`,
+        availableBeforeEnd: "Available before banner ends",
+        availableNote: (limitedPulls, arcPulls) => `Limited banner about ${fmt(limitedPulls)} pulls; Arc about ${fmt(arcPulls)} pulls`,
+        deficit: "Resource deficit",
+        covered: "Covered",
+        deficitNote: (pulls, pullCost) => pulls ? `About ${fmt(pulls * pullCost)} Annulith` : "Current target is covered even at hard pity",
+        charSoft: "Character soft pity",
+        entered: "Entered",
+        charSoftNote: (softPity) => `Distance to ${fmt(softPity)}-pull soft-pity range`,
+        chance: "Early-hit reference",
+        chanceNote: "Rough odds for character and target Arc before hard pity",
+        pulls: "pulls",
+        charShort: (pulls) => `Character target is short by ${fmt(pulls)} pulls. Pause Arc pulls first.`,
+        charCovered: "Character target is covered. Re-evaluate Arc Plate or awakenings afterwards.",
+        arcWarning: "Only enter the Arc pool after the character target is secured and the pity budget is still healthy.",
+        weekWarning: "With less than a week left, avoid counting every exploration and event reward at full value.",
+        enoughWarning: "Even with enough budget, set a stop line before pulling: base copy, Arc Plate and awakenings.",
+        staminaPlan: "Planned stamina",
+        materialRuns: (runs) => `About ${fmt(runs)} material runs`,
+        level: "Level / ascension",
+        levelNote: "Highest priority before your main DPS is ascended",
+        skill: "Skill books",
+        skillNote: "Raise main DPS core skills, sub DPS key Q/E skills and survival skills only",
+        arcModule: "Arc / modules",
+        arcModuleNote: "Farm random stats after stable growth upgrades",
+        recommendedCycle: "Recommended cycle",
+        recommendedNote: (roles) => `Current plan covers basic setup for ${fmt(roles)} characters`,
+        runs: "runs",
+        days: "days",
+        growthAdvice: [
+          "Finish main DPS level, ascension and core skills before investing in random stats.",
+          "For sub DPS, raise only rotation-critical Q/E skills; supports should secure survival and utility first.",
+          "Arc Plate levels are more stable than module sub-stats, so patch damage there first.",
+          "One month after launch, start planning a second team, but avoid evenly raising eight characters.",
+          "If Fons are low, reserve 1-2 days for currency farming before materials bottleneck your upgrades."
+        ]
       }
+    };
+    const copy = () => toolCopy[lang()];
+
+    function card(label, value, note = "") {
+      return `<div class="rounded-lg border border-zinc-200 bg-zinc-50 p-3 dark:border-line dark:bg-black/20">
+        <p class="text-xs text-zinc-500">${label}</p>
+        <p class="mt-1 text-xl font-black text-zinc-950 dark:text-white">${value}</p>
+        ${note ? `<p class="mt-1 text-xs leading-5 text-zinc-500 dark:text-zinc-400">${note}</p>` : ""}
+      </div>`;
+    }
+
+    function getState() {
+      return Object.fromEntries(ids.map((id) => [id, get(id)?.value || ""]));
+    }
+
+    function applyState(state) {
+      ids.forEach((id) => {
+        if (state[id] !== undefined && get(id)) get(id).value = state[id];
+      });
+    }
+
+    function saveState() {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(getState()));
+    }
+
+    function loadState() {
+      try {
+        const raw = localStorage.getItem(STORAGE_KEY);
+        if (raw) applyState(JSON.parse(raw));
+      } catch {
+        localStorage.removeItem(STORAGE_KEY);
+      }
+    }
+
+    function pullsForCopies(currentPity, copies, hardPity) {
+      if (copies <= 0) return 0;
+      const first = Math.max(0, hardPity - clamp(currentPity, 0, hardPity - 1));
+      return first + Math.max(0, copies - 1) * hardPity;
+    }
+
+    function chanceBeforeHard(pulls, baseRatePercent, hardPity, currentPity = 0) {
+      const rate = clamp(baseRatePercent / 100, 0, 1);
+      const available = Math.max(0, Math.min(pulls, hardPity - currentPity - 1));
+      return 1 - Math.pow(1 - rate, available);
+    }
+
+    function calcPulls() {
+      const pullCost = Math.max(1, num("pullCost"));
+      const charHard = Math.max(1, num("charHardPity"));
+      const arcHard = Math.max(1, num("arcHardPity"));
+      const charNeed = pullsForCopies(num("charPity"), num("charCopies"), charHard);
+      const arcNeed = pullsForCopies(num("arcPity"), num("arcCopies"), arcHard);
+      const days = Math.max(0, num("daysLeft"));
+      const weekly = num("weeklyIncome") * (days / Math.max(1, num("weekDays")));
+      const projectedCurrency = num("annulith") + num("dailyIncome") * days + weekly;
+      const currencyPulls = Math.floor(projectedCurrency / pullCost);
+      const projectedPulls = currencyPulls + num("solidDice") + num("triKeys") + num("eventPulls");
+      const limitedPulls = currencyPulls + num("solidDice") + num("eventPulls");
+      const arcPulls = currencyPulls + num("triKeys") + num("eventPulls");
+      const totalNeed = charNeed + arcNeed;
+      const characterNeedAfterTickets = Math.max(0, charNeed - num("solidDice"));
+      const arcNeedAfterTickets = Math.max(0, arcNeed - num("triKeys"));
+      const genericNeed = Math.max(0, characterNeedAfterTickets + arcNeedAfterTickets - num("eventPulls"));
+      const deficitPulls = Math.max(0, genericNeed - currencyPulls);
+      const softLeft = Math.max(0, num("charSoftPity") - num("charPity"));
+      const charChance = chanceBeforeHard(charNeed, num("charRate"), charHard, num("charPity"));
+      const arcChance = chanceBeforeHard(arcNeed, num("arcRate") * (num("featuredArcRate") / 100), arcHard, num("arcPity"));
+
+      const summary = get("pullSummary");
+      if (summary) {
+        summary.innerHTML = [
+          card(copy().targetWorst, `${fmt(totalNeed)} ${copy().pulls}`, copy().targetWorstNote(charNeed, arcNeed)),
+          card(copy().availableBeforeEnd, `${fmt(projectedPulls)} ${copy().pulls}`, copy().availableNote(limitedPulls, arcPulls)),
+          card(copy().deficit, deficitPulls ? `${fmt(deficitPulls)} ${copy().pulls}` : copy().covered, copy().deficitNote(deficitPulls, pullCost)),
+          card(copy().charSoft, softLeft ? `${fmt(softLeft)} ${copy().pulls}` : copy().entered, copy().charSoftNote(num("charSoftPity"))),
+          card(copy().chance, `${Math.round(charChance * 100)}% / ${Math.round(arcChance * 100)}%`, copy().chanceNote)
+        ].join("");
+      }
+
+      const advice = [];
+      if (num("charCopies") > 0 && limitedPulls < charNeed) {
+        advice.push(copy().charShort(charNeed - limitedPulls));
+      } else if (num("charCopies") > 0) {
+        advice.push(copy().charCovered);
+      }
+      if (num("arcCopies") > 0 && limitedPulls < charNeed + arcNeed) {
+        advice.push(copy().arcWarning);
+      }
+      if (days <= 7) advice.push(copy().weekWarning);
+      if (deficitPulls === 0) advice.push(copy().enoughWarning);
+
+      const adviceEl = get("pullAdvice");
+      if (adviceEl) adviceEl.innerHTML = advice.map((item) => `<li class="rounded-lg border border-zinc-200 bg-zinc-50 p-3 dark:border-line dark:bg-black/20">${item}</li>`).join("");
+    }
+
+    function normalizeShares() {
+      const shareIds = ["levelShare", "skillShare", "arcShare", "moduleShare"];
+      const total = shareIds.reduce((sum, id) => sum + num(id), 0) || 1;
+      shareIds.forEach((id) => {
+        const pct = Math.round((num(id) / total) * 100);
+        const text = get(`${id}Text`);
+        if (text) text.textContent = `${pct}%`;
+      });
+      return Object.fromEntries(shareIds.map((id) => [id, num(id) / total]));
+    }
+
+    function calcGrowth() {
+      const shares = normalizeShares();
+      const stamina = num("dailyStamina") * num("growthDays") + num("extraStamina");
+      const runCost = Math.max(1, num("runCost"));
+      const mainDps = num("mainDpsCount");
+      const support = num("supportCount");
+      const plannedRoles = mainDps + support;
+      const recommendedDays = Math.max(1, Math.ceil((mainDps * 900 + support * 520) / Math.max(1, num("dailyStamina") + num("extraStamina") / Math.max(1, num("growthDays")))));
+
+      const summary = get("growthSummary");
+      if (summary) {
+        summary.innerHTML = [
+          card(copy().staminaPlan, `${fmt(stamina)}`, copy().materialRuns(stamina / runCost)),
+          card(copy().level, `${fmt((stamina * shares.levelShare) / runCost)} ${copy().runs}`, copy().levelNote),
+          card(copy().skill, `${fmt((stamina * shares.skillShare) / runCost)} ${copy().runs}`, copy().skillNote),
+          card(copy().arcModule, `${fmt((stamina * (shares.arcShare + shares.moduleShare)) / runCost)} ${copy().runs}`, copy().arcModuleNote),
+          card(copy().recommendedCycle, `${fmt(recommendedDays)} ${copy().days}`, copy().recommendedNote(plannedRoles))
+        ].join("");
+      }
+
+      const advice = copy().growthAdvice;
+      const adviceEl = get("growthAdvice");
+      if (adviceEl) adviceEl.innerHTML = advice.map((item) => `<li class="rounded-lg border border-zinc-200 bg-zinc-50 p-3 dark:border-line dark:bg-black/20">${item}</li>`).join("");
+    }
+
+    document.querySelectorAll(".tool-tab").forEach((button) => {
+      button.addEventListener("click", () => {
+        const tab = button.dataset.tab;
+        document.querySelectorAll(".tool-tab").forEach((tabButton) => {
+          const active = tabButton === button;
+          tabButton.classList.toggle("bg-neon", active);
+          tabButton.classList.toggle("text-black", active);
+          tabButton.classList.toggle("text-zinc-600", !active);
+          tabButton.classList.toggle("dark:text-zinc-300", !active);
+        });
+        document.querySelectorAll(".tool-panel").forEach((panel) => {
+          panel.classList.toggle("hidden", panel.dataset.panel !== tab);
+        });
+      });
     });
+
+    ids.forEach((id) => get(id)?.addEventListener("input", () => {
+      normalizeShares();
+      calcPulls();
+      calcGrowth();
+    }));
+
+    get("calcPulls")?.addEventListener("click", calcPulls);
+    get("calcGrowth")?.addEventListener("click", calcGrowth);
+    get("savePulls")?.addEventListener("click", saveState);
+    get("resetPulls")?.addEventListener("click", () => {
+      localStorage.removeItem(STORAGE_KEY);
+      window.location.reload();
+    });
+    window.addEventListener("nte-language-change", () => {
+      normalizeShares();
+      calcPulls();
+      calcGrowth();
+    });
+
+    loadState();
+    normalizeShares();
+    calcPulls();
+    calcGrowth();
   </script>
+
+  <style>
+    .tool-input {
+      width: 100%;
+      border-radius: 0.375rem;
+      border: 1px solid rgb(37 43 58);
+      background: rgb(0 0 0 / 0.3);
+      padding: 0.5rem 0.75rem;
+      outline: none;
+    }
+
+    html.light .tool-input {
+      border-color: rgb(228 228 231);
+      background: rgb(255 255 255 / 0.88);
+      color: rgb(9 9 11);
+    }
+
+    .tool-input:focus {
+      border-color: rgb(66 244 215);
+    }
+  </style>
 </BaseLayout>

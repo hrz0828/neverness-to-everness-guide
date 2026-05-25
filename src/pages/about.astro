@@ -12,13 +12,13 @@ const logs = await getCollection("updates");
   jsonLd={{ "@context": "https://schema.org", "@type": "AboutPage", name: "关于异环攻略站" }}
 >
   <article class="prose max-w-none">
-    <p class="text-sm font-semibold text-neon">About</p>
-    <h1>关于异环攻略站</h1>
-    <p>
+    <p class="text-sm font-semibold text-neon" data-i18n="about.kicker">About</p>
+    <h1 data-i18n="about.title">关于异环攻略站</h1>
+    <p data-i18n="about.desc">
       {siteConfig.fullName} 是一个面向《异环》（Neverness to Everness / NTE）玩家的中文攻略与资料整理网站。本站关注角色培养、配队思路、地图探索、异象委托、搜打撤玩法、版本动态与实用工具，目标是把分散的游戏信息整理成容易检索、能够直接用于开荒和养成规划的内容。
     </p>
 
-    <h2>本站提供什么内容</h2>
+    <h2 data-i18n="about.content">本站提供什么内容</h2>
     <ul>
       <li>角色攻略：定位、技能机制、装备词条、觉醒节点、配队和实战循环。</li>
       <li>地图探索：传送点、收集路线、隐藏机制、异象委托与区域跑图建议。</li>
@@ -27,24 +27,24 @@ const logs = await getCollection("updates");
       <li>版本动态：围绕新活动、新任务、新角色和玩法变化整理重点信息。</li>
     </ul>
 
-    <h2>内容来源与维护方式</h2>
+    <h2 data-i18n="about.source">内容来源与维护方式</h2>
     <p>
       本站内容主要来自公开游戏信息、站点编辑整理、测试体验、玩家反馈以及官方公告的二次归纳。攻略会尽量标注更新时间，并在版本更新、角色调整或玩法机制变化后进行修订。由于游戏内容可能继续调整，页面建议仅作为参考，关键数值请以游戏内实际显示和官方公告为准。
     </p>
 
-    <h2>独立性说明</h2>
+    <h2 data-i18n="about.independence">独立性说明</h2>
     <p>
       本站为玩家自建资料站，并非《异环》官方网站，也不代表开发商、发行商或相关权利方的官方立场。本站使用的游戏名称、角色、图片和相关素材版权归其合法权利人所有，使用目的为攻略说明、评论和资料索引。
     </p>
 
-    <h2>联系我们</h2>
+    <h2 data-i18n="about.contact">联系我们</h2>
     <p>
       如需反馈攻略错误、提出内容建议、请求删除版权相关内容或咨询隐私问题，请访问 <a href="/contact/">联系我们</a> 页面，或发送邮件至 <a href={`mailto:${siteConfig.contactEmail}`}>{siteConfig.contactEmail}</a>。
     </p>
   </article>
 
   <section class="mt-10">
-    <h2 class="text-2xl font-black text-zinc-950 dark:text-white">更新日志</h2>
+    <h2 class="text-2xl font-black text-zinc-950 dark:text-white" data-i18n="about.changelog">更新日志</h2>
     <div class="mt-4 space-y-4">
     {
       logs.map((l) => (

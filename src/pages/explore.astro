@@ -1,8 +1,30 @@
 ---
 import { getCollection } from "astro:content";
 import BaseLayout from "../layouts/BaseLayout.astro";
+import { mapEnglish } from "../data/contentEnglish";
 
-const maps = await getCollection("maps");
+const maps = (await getCollection("maps")).sort((a, b) => {
+  const order = ["skytower-route", "new-herland", "district-a", "ekorai-town", "bridge-crossings"];
+  return order.indexOf(a.slug) - order.indexOf(b.slug);
+});
+
+const explorePlan = [
+  {
+    key: "plan1",
+    title: "1. 点亮塔和电话亭",
+    text: "先解锁维特海默塔、ReroRero 电话亭和主干道传送点，后续补支线、材料和隐藏收集会节省大量时间。"
+  },
+  {
+    key: "plan2",
+    title: "2. 按区域分层清理",
+    text: "海特洛是多层城市结构。每个区域都按地面、地下/桥下、屋顶/高架的顺序扫，避免只看平面标记。"
+  },
+  {
+    key: "plan3",
+    title: "3. 异象委托后置补漏",
+    text: "高威胁异象和复杂解谜可以等队伍成型再打。异象解除后再回头检查隐藏宝箱和新交互点。"
+  }
+];
 ---
 
 <BaseLayout
@@ -10,18 +32,117 @@ const maps = await getCollection("maps");
   description="异环都市区域隐藏收集、异象事件触发条件、材料路线与探索清单。"
   jsonLd={{ "@context": "https://schema.org", "@type": "CollectionPage", name: "异环地图探索攻略" }}
 >
-  <h1 class="text-3xl font-black">地图/探索攻略</h1>
-  <p class="mt-2 max-w-2xl text-zinc-400">按城区拆分隐藏收集、异象事件、材料点位和推荐路线。</p>
+  <header class="grid gap-6 lg:grid-cols-[1.2fr_0.8fr]">
+    <div>
+      <p class="text-sm font-semibold text-neon" data-i18n="explore.kicker">Hethereau Exploration</p>
+      <h1 class="mt-2 text-3xl font-black text-zinc-950 dark:text-white" data-i18n="explore.title">地图 / 探索攻略</h1>
+      <p class="mt-3 max-w-3xl text-sm leading-7 text-zinc-600 dark:text-zinc-400" data-i18n="explore.desc">
+        面向开服一个月后的补探索阶段：优先建立传送网络，再按城区处理电话亭、谕石、隐藏宝箱、拍照打卡、异象委托和高低层补漏。
+      </p>
+    </div>
+    <div class="rounded-lg border border-zinc-200 bg-white p-4 shadow-sm dark:border-line dark:bg-panel/80">
+      <p class="text-sm font-semibold text-teal-700 dark:text-neon" data-i18n="explore.order">推荐清图顺序</p>
+      <div class="mt-3 space-y-3">
+        {explorePlan.map((item) => (
+          <div class="rounded-lg border border-zinc-200 bg-zinc-50 p-3 dark:border-line dark:bg-black/20">
+            <h2 class="text-sm font-bold text-zinc-950 dark:text-white" data-i18n={`explore.${item.key}.title`}>{item.title}</h2>
+            <p class="mt-1 text-sm leading-6 text-zinc-600 dark:text-zinc-400" data-i18n={`explore.${item.key}.text`}>{item.text}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </header>
 
-  <div class="mt-6 grid gap-4 md:grid-cols-2">
+  <section class="mt-8 grid gap-6">
     {
       maps.map((m) => (
-        <article class="card">
-          <img src={m.data.cover} alt={m.data.title} loading="lazy" class="aspect-[16/9] w-full rounded-md object-cover" />
-          <h2 class="mt-3 font-bold">{m.data.title}</h2>
-          <p class="mt-2 text-sm leading-6 text-zinc-400">{m.data.description}</p>
+        <article class="overflow-hidden rounded-lg border border-zinc-200 bg-white shadow-sm dark:border-line dark:bg-panel/80 dark:shadow-glow">
+          {(() => {
+            const english = mapEnglish[m.slug];
+
+            return (
+          <div class="grid gap-0 lg:grid-cols-[0.95fr_1.05fr]">
+            <div class="relative min-h-72 overflow-hidden bg-zinc-100 dark:bg-[#07090f]">
+              <img
+                src={m.data.cover}
+                alt={`${m.data.title}游戏实景截图`}
+                loading="lazy"
+                class="absolute inset-0 size-full object-cover"
+              />
+              <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/85 via-black/25 to-transparent p-4">
+                <span class="rounded-md bg-neon px-3 py-1 text-xs font-black text-black">
+                  <span class="lang-zh">{m.data.region || "探索路线"}</span>
+                  <span class="lang-en">{english?.region || "Exploration Route"}</span>
+                </span>
+              </div>
+            </div>
+
+            <div class="p-5">
+              <p class="text-sm font-semibold text-teal-700 dark:text-neon">
+                <span class="lang-zh">{m.data.priority}</span>
+                <span class="lang-en">{english?.priority}</span>
+              </p>
+              <h2 class="mt-2 text-2xl font-black text-zinc-950 dark:text-white">
+                <span class="lang-zh">{m.data.title}</span>
+                <span class="lang-en">{english?.title}</span>
+              </h2>
+              <p class="mt-3 text-sm leading-7 text-zinc-600 dark:text-zinc-400">
+                <span class="lang-zh">{m.data.description}</span>
+                <span class="lang-en">{english?.description}</span>
+              </p>
+
+              <div class="mt-5 grid gap-4 xl:grid-cols-2">
+                <div>
+                  <h3 class="text-sm font-bold text-zinc-950 dark:text-white" data-i18n="explore.route">推荐路线</h3>
+                  <ol class="mt-3 space-y-2">
+                    {m.data.route.map((step, index) => (
+                      <li class="flex gap-3 rounded-lg border border-zinc-200 bg-zinc-50 p-3 text-sm leading-6 text-zinc-700 dark:border-line dark:bg-black/20 dark:text-zinc-300">
+                        <span class="grid size-6 shrink-0 place-items-center rounded-md bg-teal-500 text-xs font-black text-white dark:bg-neon dark:text-black">
+                          {index + 1}
+                        </span>
+                        <span>
+                          <span class="lang-zh">{step}</span>
+                          <span class="lang-en">{english?.route[index]}</span>
+                        </span>
+                      </li>
+                    ))}
+                  </ol>
+                </div>
+
+                <div>
+                  <h3 class="text-sm font-bold text-zinc-950 dark:text-white" data-i18n="explore.checklist">收集清单</h3>
+                  <ul class="mt-3 space-y-2">
+                    {m.data.checklist.map((item, index) => (
+                      <li class="rounded-lg border border-zinc-200 bg-zinc-50 p-3 text-sm leading-6 text-zinc-700 dark:border-line dark:bg-black/20 dark:text-zinc-300">
+                        <span class="lang-zh">{item}</span>
+                        <span class="lang-en">{english?.checklist[index]}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+
+              <div class="mt-5 grid gap-4 md:grid-cols-2">
+                <div class="rounded-lg border border-teal-200 bg-teal-50 p-4 dark:border-neon/30 dark:bg-neon/10">
+                  <h3 class="text-sm font-bold text-zinc-950 dark:text-white" data-i18n="explore.events">异象提示</h3>
+                  <ul class="mt-3 space-y-2 text-sm leading-6 text-zinc-700 dark:text-zinc-300">
+                    {m.data.events.map((event, index) => <li><span class="lang-zh">{event}</span><span class="lang-en">{english?.events[index]}</span></li>)}
+                  </ul>
+                </div>
+                <div class="rounded-lg border border-amber/40 bg-amber/10 p-4">
+                  <h3 class="text-sm font-bold text-zinc-950 dark:text-white" data-i18n="explore.warnings">补漏避坑</h3>
+                  <ul class="mt-3 space-y-2 text-sm leading-6 text-zinc-700 dark:text-zinc-300">
+                    {m.data.warnings.map((warning, index) => <li><span class="lang-zh">{warning}</span><span class="lang-en">{english?.warnings[index]}</span></li>)}
+                  </ul>
+                </div>
+              </div>
+              {english?.body && <div class="character-guide lang-en mt-6" set:html={english.body} />}
+            </div>
+          </div>
+            );
+          })()}
         </article>
       ))
     }
-  </div>
+  </section>
 </BaseLayout>

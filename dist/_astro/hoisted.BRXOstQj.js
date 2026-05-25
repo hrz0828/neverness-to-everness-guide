@@ -1,1 +1,0 @@
-import"./hoisted.DzOspO63.js";document.getElementById("calc")?.addEventListener("click",()=>{const t=Number(document.getElementById("pulls")?.value||0),n=Number(document.getElementById("cost")?.value||160),o=.008,e=90,s=(t*o).toFixed(2),d=Math.max(0,e-t%e),u=t*n,c=document.getElementById("out");c&&(c.textContent=`简化期望 SSR：${s}；距离下一次 90 抽保底约 ${d} 抽；已投入资源约 ${u}。`)});

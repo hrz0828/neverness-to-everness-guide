@@ -152,9 +152,9 @@ declare module 'astro:content' {
 
 	type ContentEntryMap = {
 		"characters": {
-"anthea.mdx": {
-	id: "anthea.mdx";
-  slug: "anthea";
+"baicang.mdx": {
+	id: "baicang.mdx";
+  slug: "baicang";
   body: string;
   collection: "characters";
   data: InferEntrySchema<"characters">
@@ -166,9 +166,23 @@ declare module 'astro:content' {
   collection: "characters";
   data: InferEntrySchema<"characters">
 } & { render(): Render[".mdx"] };
+"hasuoer.mdx": {
+	id: "hasuoer.mdx";
+  slug: "hasuoer";
+  body: string;
+  collection: "characters";
+  data: InferEntrySchema<"characters">
+} & { render(): Render[".mdx"] };
 "jiuyuan.mdx": {
 	id: "jiuyuan.mdx";
   slug: "jiuyuan";
+  body: string;
+  collection: "characters";
+  data: InferEntrySchema<"characters">
+} & { render(): Render[".mdx"] };
+"mint.mdx": {
+	id: "mint.mdx";
+  slug: "mint";
   body: string;
   collection: "characters";
   data: InferEntrySchema<"characters">
@@ -180,9 +194,9 @@ declare module 'astro:content' {
   collection: "characters";
   data: InferEntrySchema<"characters">
 } & { render(): Render[".mdx"] };
-"raven.mdx": {
-	id: "raven.mdx";
-  slug: "raven";
+"xiaozhi.mdx": {
+	id: "xiaozhi.mdx";
+  slug: "xiaozhi";
   body: string;
   collection: "characters";
   data: InferEntrySchema<"characters">
@@ -205,9 +219,37 @@ declare module 'astro:content' {
 } & { render(): Render[".mdx"] };
 };
 "maps": {
+"bridge-crossings.mdx": {
+	id: "bridge-crossings.mdx";
+  slug: "bridge-crossings";
+  body: string;
+  collection: "maps";
+  data: InferEntrySchema<"maps">
+} & { render(): Render[".mdx"] };
 "district-a.mdx": {
 	id: "district-a.mdx";
   slug: "district-a";
+  body: string;
+  collection: "maps";
+  data: InferEntrySchema<"maps">
+} & { render(): Render[".mdx"] };
+"ekorai-town.mdx": {
+	id: "ekorai-town.mdx";
+  slug: "ekorai-town";
+  body: string;
+  collection: "maps";
+  data: InferEntrySchema<"maps">
+} & { render(): Render[".mdx"] };
+"new-herland.mdx": {
+	id: "new-herland.mdx";
+  slug: "new-herland";
+  body: string;
+  collection: "maps";
+  data: InferEntrySchema<"maps">
+} & { render(): Render[".mdx"] };
+"skytower-route.mdx": {
+	id: "skytower-route.mdx";
+  slug: "skytower-route";
   body: string;
   collection: "maps";
   data: InferEntrySchema<"maps">

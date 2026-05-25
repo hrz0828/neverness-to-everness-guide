@@ -1,28 +1,31 @@
 ---
 import ThemeToggle from "./ThemeToggle.astro";
+import LanguageToggle from "./LanguageToggle.astro";
 ---
 
 <header class="fixed inset-x-0 top-0 z-50 border-b border-line bg-black/70 backdrop-blur-xl">
   <div class="mx-auto flex h-16 max-w-7xl items-center justify-between px-4">
-    <a href="/" class="text-sm font-black tracking-[0.18em] text-white">NTE 异环攻略</a>
+    <a href="/" class="text-sm font-black tracking-[0.18em] text-white" data-i18n="site.brand">NTE 异环攻略</a>
     <nav class="hidden items-center gap-5 text-sm text-zinc-300 md:flex">
-      <a href="/characters/">角色</a>
-      <a href="/explore/">探索</a>
-      <a href="/guides/">机制</a>
-      <a href="/tools/gacha-calculator/">工具</a>
-      <a href="/about/">关于</a>
-      <a href="/contact/">联系</a>
-      <a href="/privacy/">隐私</a>
-      <a href="/disclaimer/">声明</a>
-      <a href="/search/">搜索</a>
+      <a href="/characters/" data-i18n="nav.characters">角色</a>
+      <a href="/explore/" data-i18n="nav.explore">探索</a>
+      <a href="/guides/" data-i18n="nav.guides">机制</a>
+      <a href="/tools/gacha-calculator/" data-i18n="nav.tools">工具</a>
+      <a href="/about/" data-i18n="nav.about">关于</a>
+      <a href="/contact/" data-i18n="nav.contact">联系</a>
+      <a href="/privacy/" data-i18n="nav.privacy">隐私</a>
+      <a href="/disclaimer/" data-i18n="nav.disclaimer">声明</a>
+      <a href="/search/" data-i18n="nav.search">搜索</a>
     </nav>
     <div class="flex items-center gap-2">
+      <LanguageToggle />
       <ThemeToggle />
       <button
         id="menuButton"
         type="button"
         class="grid size-9 place-items-center rounded-md border border-line bg-white/5 text-sm lg:hidden"
         aria-label="打开导航菜单"
+        data-i18n-aria-label="nav.openMenu"
         aria-controls="sidebar"
       >
         ☰

@@ -38,6 +38,18 @@ html.light .surface {
   @apply border-zinc-200 bg-white/90 shadow-none;
 }
 
+.lang-en {
+  display: none;
+}
+
+html[data-lang="en"] .lang-zh {
+  display: none;
+}
+
+html[data-lang="en"] .lang-en {
+  display: revert;
+}
+
 .card {
   @apply surface rounded-lg p-4;
 }
