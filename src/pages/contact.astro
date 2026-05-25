@@ -1,0 +1,49 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { siteConfig } from "../site.config";
+
+const updatedAt = siteConfig.updatedAt;
+---
+
+<BaseLayout
+  title="联系我们 | 异环攻略站"
+  description="异环攻略站联系方式，用于攻略纠错、版权处理、隐私咨询、合作沟通与网站反馈。"
+  jsonLd={{
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    name: "联系我们",
+    dateModified: updatedAt
+  }}
+>
+  <article class="prose max-w-none">
+    <p class="text-sm font-semibold text-neon">Contact</p>
+    <h1>联系我们</h1>
+    <p>最后更新日期：{updatedAt}</p>
+
+    <p>
+      如果你发现攻略内容存在错误、遗漏、版本过期、图片版权问题，或希望就隐私政策、广告展示、站点功能提出反馈，可以通过以下方式联系本站。
+    </p>
+
+    <h2>联系邮箱</h2>
+    <p>
+      邮箱：<a href={`mailto:${siteConfig.contactEmail}`}>{siteConfig.contactEmail}</a>
+    </p>
+    <p>
+      为了便于处理，请在邮件中注明相关页面链接、问题描述、截图或可验证的权利证明。涉及版权或商标权益的问题，我们会在核实后尽快修改、补充来源说明或删除相关内容。
+    </p>
+
+    <h2>适合反馈的内容</h2>
+    <ul>
+      <li>角色技能、装备词条、地图点位、任务步骤等攻略信息错误。</li>
+      <li>页面无法打开、链接失效、图片加载异常或搜索结果不准确。</li>
+      <li>版权、商标、素材使用、署名或来源标注相关问题。</li>
+      <li>隐私政策、Cookie、广告展示或数据处理相关咨询。</li>
+      <li>希望本站补充的新角色、新活动、新工具或专题内容。</li>
+    </ul>
+
+    <h2>处理时效</h2>
+    <p>
+      普通内容反馈通常会在 3-7 个工作日内处理；涉及版权、隐私或明显错误的信息会优先检查。若问题需要等待游戏版本更新或官方资料确认，页面会在确认后再进行修订。
+    </p>
+  </article>
+</BaseLayout>

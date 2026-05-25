@@ -1,0 +1,73 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+const coverPositions = {
+  jiuyuan: "object-[73%_center]",
+  nanally: "object-[72%_center]",
+  xun: "object-[82%_center]"
+};
+
+const characters = (await getCollection("characters")).sort((a, b) => {
+  const rarityOrder = { S: 0, SSR: 1, SR: 2, R: 3 };
+  const rarityDiff = (rarityOrder[a.data.rarity] ?? 9) - (rarityOrder[b.data.rarity] ?? 9);
+  return rarityDiff || a.data.title.localeCompare(b.data.title, "zh-CN");
+});
+---
+
+<BaseLayout
+  title="角色攻略列表 | 异环"
+  description="查看异环全部角色基础信息、养成优先级、弧盘装备、配队方案、技能解析与材料 farming 路线。"
+  jsonLd={{ "@context": "https://schema.org", "@type": "CollectionPage", name: "异环角色攻略列表" }}
+>
+  <header>
+    <p class="text-sm font-semibold text-neon">Character Guides</p>
+    <h1 class="mt-2 text-3xl font-black text-zinc-950 dark:text-white">角色攻略列表</h1>
+    <p class="mt-3 max-w-3xl text-sm leading-7 text-zinc-600 dark:text-zinc-400">
+      按角色定位、属性、武器与养成方向整理。点击卡片可查看技能机制、弧盘/空慕、觉醒节点、配队与实战循环。
+    </p>
+  </header>
+
+  <div class="mt-8 grid grid-cols-1 gap-5 sm:grid-cols-2 xl:grid-cols-3">
+    {
+      characters.map((character) => (
+        <a
+          class="group overflow-hidden rounded-lg border border-zinc-200 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:border-teal-400 dark:border-line dark:bg-panel/80 dark:shadow-glow"
+          href={`/characters/${character.slug}/`}
+        >
+          <div class="relative h-80 overflow-hidden bg-zinc-100 dark:bg-[#07090f]">
+            <img
+              src={character.data.cover}
+              alt={`异环角色-${character.data.title}立绘`}
+              class:list={[
+                "h-full w-full object-cover transition duration-300 group-hover:scale-105",
+                coverPositions[character.slug] || "object-center"
+              ]}
+              loading="lazy"
+            />
+            <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent p-4">
+              <div class="flex flex-wrap gap-2">
+                <span class="rounded-md bg-neon px-2 py-1 text-xs font-black text-black">{character.data.rarity}</span>
+                <span class="rounded-md border border-white/30 bg-black/40 px-2 py-1 text-xs font-semibold text-white">
+                  {character.data.element}
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="p-4">
+            <div class="flex items-start justify-between gap-3">
+              <h2 class="text-xl font-bold text-zinc-950 transition group-hover:text-teal-600 dark:text-white dark:group-hover:text-blue-400">
+                {character.data.title}
+              </h2>
+              <span class="shrink-0 rounded-md border border-zinc-200 px-2 py-1 text-xs font-semibold text-zinc-500 dark:border-line dark:text-zinc-400">
+                {character.data.weapon}
+              </span>
+            </div>
+            <p class="mt-2 text-sm font-semibold text-teal-700 dark:text-neon">{character.data.role}</p>
+            <p class="mt-3 line-clamp-3 text-sm leading-6 text-zinc-600 dark:text-zinc-400">{character.data.description}</p>
+          </div>
+        </a>
+      ))
+    }
+  </div>
+</BaseLayout>

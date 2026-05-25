@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://nte-guide.com/sitemap.xml

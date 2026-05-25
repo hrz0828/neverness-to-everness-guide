@@ -1,0 +1,43 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="抽卡/养成计算工具 | 异环"
+  description="异环抽卡期望、保底距离与养成材料消耗的简易交互计算工具。"
+  jsonLd={{ "@context": "https://schema.org", "@type": "WebApplication", name: "异环抽卡养成计算工具" }}
+>
+  <h1 class="text-3xl font-black">抽卡 / 养成计算工具</h1>
+  <p class="mt-2 max-w-2xl text-zinc-400">当前为简化模型，概率和保底规则可在正式公测数据确定后调整。</p>
+
+  <section class="surface mt-6 max-w-2xl rounded-lg p-5">
+    <div class="grid gap-4 sm:grid-cols-2">
+      <label class="block">
+        <span class="mb-1 block text-sm text-zinc-400">已有抽数</span>
+        <input id="pulls" type="number" min="0" value="80" class="w-full rounded-md border border-line bg-black/30 px-3 py-2 outline-none focus:border-neon" />
+      </label>
+      <label class="block">
+        <span class="mb-1 block text-sm text-zinc-400">单抽消耗</span>
+        <input id="cost" type="number" min="1" value="160" class="w-full rounded-md border border-line bg-black/30 px-3 py-2 outline-none focus:border-neon" />
+      </label>
+    </div>
+    <button id="calc" class="mt-4 rounded-md bg-neon px-4 py-2 text-sm font-bold text-black">计算</button>
+    <div id="out" class="mt-4 rounded-md border border-line bg-black/20 p-3 text-sm leading-6 text-zinc-300"></div>
+  </section>
+
+  <script>
+    document.getElementById("calc")?.addEventListener("click", () => {
+      const pulls = Number(document.getElementById("pulls")?.value || 0);
+      const cost = Number(document.getElementById("cost")?.value || 160);
+      const baseRate = 0.008;
+      const hardPity = 90;
+      const expected = (pulls * baseRate).toFixed(2);
+      const pityLeft = Math.max(0, hardPity - (pulls % hardPity));
+      const currency = pulls * cost;
+      const out = document.getElementById("out");
+      if (out) {
+        out.textContent = `简化期望 SSR：${expected}；距离下一次 90 抽保底约 ${pityLeft} 抽；已投入资源约 ${currency}。`;
+      }
+    });
+  </script>
+</BaseLayout>

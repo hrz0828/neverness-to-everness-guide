@@ -1,0 +1,30 @@
+<button
+  id="themeToggle"
+  type="button"
+  class="grid size-9 place-items-center rounded-md border border-line bg-white/5 text-sm text-zinc-100 hover:border-neon"
+  aria-label="切换深色或浅色主题"
+  title="切换主题"
+>
+  ◐
+</button>
+
+<script>
+  const root = document.documentElement;
+  const savedTheme = localStorage.getItem("theme");
+  const prefersLight = window.matchMedia("(prefers-color-scheme: light)").matches;
+
+  if (savedTheme === "light" || (!savedTheme && prefersLight)) {
+    root.classList.add("light");
+    root.classList.remove("dark");
+  } else {
+    root.classList.add("dark");
+    root.classList.remove("light");
+  }
+
+  document.getElementById("themeToggle")?.addEventListener("click", () => {
+    const nextLight = root.classList.contains("dark");
+    root.classList.toggle("dark", !nextLight);
+    root.classList.toggle("light", nextLight);
+    localStorage.setItem("theme", nextLight ? "light" : "dark");
+  });
+</script>

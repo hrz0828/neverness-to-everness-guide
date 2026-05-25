@@ -1,0 +1,38 @@
+---
+const { title, description, ogImage = "/og-cover.webp", jsonLd } = Astro.props;
+const canonical = new URL(Astro.url.pathname, Astro.site).toString();
+const og = new URL(ogImage, Astro.site).toString();
+const adsenseClient = import.meta.env.PUBLIC_ADSENSE_CLIENT;
+---
+
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="generator" content={Astro.generator} />
+<title>{title}</title>
+<meta name="description" content={description} />
+<link rel="canonical" href={canonical} />
+
+<meta property="og:type" content="website" />
+<meta property="og:locale" content="zh_CN" />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:url" content={canonical} />
+<meta property="og:image" content={og} />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={og} />
+
+{adsenseClient && <meta name="google-adsense-account" content={adsenseClient} />}
+{
+  adsenseClient && (
+    <script
+      async
+      crossorigin="anonymous"
+      src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${adsenseClient}`}
+    />
+  )
+}
+
+{jsonLd && <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />}

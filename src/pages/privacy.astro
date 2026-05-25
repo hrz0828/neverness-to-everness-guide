@@ -1,0 +1,99 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { siteConfig } from "../site.config";
+
+const updatedAt = siteConfig.updatedAt;
+---
+
+<BaseLayout
+  title="隐私政策 | 异环攻略站"
+  description="异环攻略站隐私政策，说明 Google AdSense、第三方 Cookie、DoubleClick Cookie、本地缓存与用户隐私保护方式。"
+  jsonLd={{
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    name: "隐私政策",
+    dateModified: updatedAt
+  }}
+>
+  <article class="prose max-w-none">
+    <p class="text-sm font-semibold text-neon">Privacy Policy</p>
+    <h1>隐私政策</h1>
+    <p>最后更新日期：{updatedAt}</p>
+
+    <p>
+      欢迎访问《异环攻略站 | Neverness to Everness 中文指南》（以下简称“本站”）。本站是一个面向《异环》玩家的中文攻略、角色资料、机制说明与工具型网站。我们重视访问者的隐私，并在此说明本站可能涉及的信息使用方式。
+    </p>
+
+    <h2>1. 我们收集的信息</h2>
+    <p>
+      本站通常不会主动要求用户注册账号，也不会主动收集姓名、身份证件、电话号码、精确地址、支付信息、健康信息等敏感个人信息。
+    </p>
+    <p>
+      当你访问本站时，服务器、浏览器或第三方服务可能会自动处理一些常见技术信息，例如浏览器类型、设备类型、访问页面、访问时间、IP 地址的近似区域、Cookie 标识符或类似技术标识。这些信息通常用于网站运行、安全、统计分析和广告展示。
+    </p>
+
+    <h2>2. 本地工具与本地缓存</h2>
+    <p>
+      本站可能提供抽卡计算器、养成计算器、筛选器等交互工具。除非页面另有明确说明，这些工具输入的数据通常仅在你的浏览器本地处理，可能通过 localStorage、sessionStorage 或类似本地缓存保存你的设置，方便下次继续使用。
+    </p>
+    <p>
+      这些本地缓存数据不会被本站主动上传到服务器。你可以通过浏览器设置清除缓存、Cookie 或站点数据。
+    </p>
+
+    <h2>3. Google AdSense 与第三方广告</h2>
+    <p>
+      本站可能使用 Google AdSense 等第三方广告联盟展示广告。第三方广告服务商，包括 Google，可能会使用 Cookie、广告标识符、网络信标或类似技术，根据用户过去访问本站或其他网站的情况投放广告、衡量广告效果、限制重复展示广告，并改进广告服务。
+    </p>
+    <p>
+      Google 的广告 Cookie 使 Google 及其合作伙伴可以根据用户访问本站和/或互联网上其他网站的情况向用户展示广告。本站接入广告代码后，广告服务可能会在用户浏览器中设置或读取 Cookie。
+    </p>
+
+    <h2>4. 第三方 Cookie 与 DoubleClick Cookie</h2>
+    <p>
+      第三方 Cookie 是指由非本站域名设置的 Cookie。Google AdSense 用于广告目的的第三方 Cookie 可能与 doubleclick.net 或 google.com 等 Google 相关域名关联。DoubleClick Cookie 可用于个性化广告投放、广告频次控制和广告效果统计。
+    </p>
+    <p>
+      如果本站未来接入除 Google 以外的其他第三方广告网络，这些广告网络也可能使用 Cookie 或类似技术进行广告投放和统计。我们会在可行范围内更新本政策，披露相关服务商信息。
+    </p>
+
+    <h2>5. 如何停用或管理个性化广告与 Cookie</h2>
+    <ul>
+      <li>
+        你可以访问 Google 广告设置页面管理或停用个性化广告：
+        <a href="https://adssettings.google.com/" rel="nofollow noopener noreferrer" target="_blank">https://adssettings.google.com/</a>
+      </li>
+      <li>
+        你也可以访问 AboutAds 页面，选择停用部分第三方广告服务商基于 Cookie 的个性化广告：
+        <a href="https://www.aboutads.info/choices/" rel="nofollow noopener noreferrer" target="_blank">https://www.aboutads.info/choices/</a>
+      </li>
+      <li>
+        你可以在浏览器设置中禁用、删除或限制 Cookie。请注意，禁用 Cookie 后，本站部分功能、偏好设置、本地工具或广告展示可能受到影响。
+      </li>
+    </ul>
+
+    <h2>6. 第三方链接</h2>
+    <p>
+      本站可能包含指向游戏官网、社区、视频平台、资料来源或第三方服务的链接。第三方网站有各自的隐私政策与数据处理规则，本站不对第三方网站的内容或隐私实践负责。
+    </p>
+
+    <h2>7. 儿童隐私</h2>
+    <p>
+      本站内容面向普通游戏玩家与攻略查询用户，不以儿童为主要服务对象。我们不会故意收集儿童的敏感个人信息。如果你认为本站误收集了相关信息，请通过本页联系方式通知我们处理。
+    </p>
+
+    <h2>8. 政策更新</h2>
+    <p>
+      我们可能因网站功能、广告服务、法律法规或第三方服务政策变化而更新本隐私政策。更新后会在本页面修改“最后更新日期”。建议你定期查看本页面。
+    </p>
+
+    <h2>9. 联系方式</h2>
+    <p>
+      如你对本隐私政策、Cookie 使用、广告展示或数据处理方式有疑问，可以通过 <a href="/contact/">联系我们</a> 页面与本站联系，或发送邮件至 <a href={`mailto:${siteConfig.contactEmail}`}>{siteConfig.contactEmail}</a>。
+    </p>
+
+    <h2>参考说明</h2>
+    <p>
+      本政策参考了 Google AdSense 关于广告 Cookie、第三方 Cookie、DoubleClick Cookie 与个性化广告停用方式的官方说明。本站仍应根据实际部署地区和法律要求补充 Cookie 同意横幅或其他合规措施。
+    </p>
+  </article>
+</BaseLayout>

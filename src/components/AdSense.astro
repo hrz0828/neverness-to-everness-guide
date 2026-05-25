@@ -1,0 +1,40 @@
+---
+interface Props {
+  slotId: string;
+  className?: string;
+}
+
+const { slotId, className = "" } = Astro.props;
+const client = import.meta.env.PUBLIC_ADSENSE_CLIENT;
+---
+
+{
+  client && slotId && (
+    <div class={`my-8 flex w-full justify-center px-2 sm:px-4 ${className}`}>
+      <ins
+        class="adsbygoogle block w-full max-w-5xl"
+        style="display:block"
+        data-ad-client={client}
+        data-ad-slot={slotId}
+        data-ad-format="auto"
+        data-full-width-responsive="true"
+      />
+    </div>
+  )
+}
+
+{
+  client && slotId && (
+    <script is:inline>
+      {`(() => {
+        if (typeof window === "undefined") return;
+        window.adsbygoogle = window.adsbygoogle || [];
+        try {
+          window.adsbygoogle.push({});
+        } catch (error) {
+          console.warn("AdSense push failed:", error);
+        }
+      })();`}
+    </script>
+  )
+}

@@ -1,0 +1,148 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { siteConfig } from "../site.config";
+import { newsItems } from "../data/news";
+
+const featuredCharacters = [
+  {
+    name: "浔",
+    role: "光属性 / 爆发副C",
+    image: "/images/characters/xun.png",
+    imagePosition: "object-[82%_center]",
+    alt: "异环角色-浔立绘",
+    desc: "浔围绕“非闭合时计”运转，通过记录队友变轨技或援护技，并在10秒时停窗口复现技能、切换太刀形态打出高额爆发。",
+    href: "/characters/xun/"
+  },
+  {
+    name: "娜娜莉",
+    role: "灵属性 / 普攻主C",
+    image: "/images/characters/nanally.png",
+    imagePosition: "object-[72%_center]",
+    alt: "异环角色-娜娜莉立绘",
+    desc: "娜娜莉是开服版本高强度灵属性主C，依靠高频普攻、协同追击和副手协同打出稳定输出，同时拥有无重力跑图与经营加成。",
+    href: "/characters/nanally/"
+  },
+  {
+    name: "九原",
+    role: "灵属性 / 聚怪副C",
+    image: "/images/characters/jiuyuan.png",
+    imagePosition: "object-[73%_center]",
+    alt: "异环角色-九原立绘",
+    desc: "九原围绕致命玫约标记与清算爆发运转，兼具大范围聚怪、速切输出和灵属性队伍联动，是开荒与高难都值得投入的常驻S级角色。",
+    href: "/characters/jiuyuan/"
+  }
+];
+
+const newsCards = [...newsItems].sort((a, b) => b.date.localeCompare(a.date)).slice(0, 3);
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: "异环中文攻略站",
+  url: Astro.site?.toString() || siteConfig.url,
+  potentialAction: {
+    "@type": "SearchAction",
+    target: `${new URL("search/", Astro.site || siteConfig.url).toString()}?q={search_term_string}`,
+    "query-input": "required name=search_term_string"
+  }
+};
+---
+
+<BaseLayout
+  title="异环攻略站 | Neverness to Everness 中文指南"
+  description="高质量 NTE 中文攻略站：角色培养、地图探索、机制解析、版本资讯与抽卡养成工具。"
+  ogImage="/og-cover.webp"
+  jsonLd={jsonLd}
+>
+  <section class="relative min-h-[calc(100vh-7rem)] overflow-hidden rounded-xl border border-line">
+    <img
+      src="https://images.unsplash.com/photo-1519501025264-65ba15a82390?auto=format&fit=crop&w=1800&q=85"
+      alt="异环都市异象夜景主视觉"
+      class="absolute inset-0 size-full object-cover"
+      fetchpriority="high"
+      loading="eager"
+    />
+    <div class="absolute inset-0 bg-gradient-to-r from-black/95 via-black/70 to-black/35"></div>
+    <div class="relative flex min-h-[calc(100vh-7rem)] max-w-3xl flex-col justify-center px-5 py-16 sm:px-8">
+      <p class="mb-3 text-sm font-semibold text-neon">Neverness to Everness / NTE</p>
+      <h1 class="text-4xl font-black leading-tight text-white drop-shadow-[0_2px_18px_rgba(0,0,0,0.65)] sm:text-6xl">
+        当城市偏离常理，异能就是唯一坐标。
+      </h1>
+      <p class="mt-5 max-w-2xl text-base leading-7 text-zinc-200">
+        欢迎来到《异环》中文攻略站。这里记录赫麦诺都市中的角色养成、异常事件、探索路线与战斗机制，帮助调查员在霓虹、裂隙与反常异象之间找到最优解。
+      </p>
+      <form action="/search/" class="mt-6 flex max-w-xl gap-2">
+        <input
+          name="q"
+          class="min-w-0 flex-1 rounded-lg border border-line bg-black/55 px-3 py-3 text-sm outline-none focus:border-neon"
+          placeholder="搜索角色、材料、异象事件"
+        />
+        <button class="rounded-lg bg-neon px-4 py-3 text-sm font-bold text-black">搜索</button>
+      </form>
+    </div>
+  </section>
+
+  <section class="mt-10">
+    <div class="mb-4 flex items-end justify-between gap-4">
+      <h2 class="text-2xl font-bold">推荐角色</h2>
+      <a href="/characters/" class="text-sm text-neon">查看全部角色</a>
+    </div>
+    <div class="grid gap-4 md:grid-cols-3">
+      {
+        featuredCharacters.map((character) => (
+          <a
+            href={character.href}
+            class="card group block transition duration-300 hover:-translate-y-1 hover:border-neon hover:bg-white/[0.06]"
+          >
+            <div class="overflow-hidden rounded-xl">
+              <img
+                src={character.image}
+                alt={character.alt}
+                class:list={[
+                  "aspect-[4/5] w-full object-cover transition duration-300 group-hover:scale-105",
+                  character.imagePosition || "object-center"
+                ]}
+                loading="lazy"
+              />
+            </div>
+            <div class="mt-4">
+              <p class="text-xs font-semibold text-neon">{character.role}</p>
+              <h3 class="mt-1 text-xl font-bold transition group-hover:text-blue-400">{character.name}</h3>
+              <p class="mt-2 text-sm leading-6 text-zinc-400">{character.desc}</p>
+            </div>
+          </a>
+        ))
+      }
+    </div>
+  </section>
+
+  <section class="mt-10">
+    <div class="mb-4 flex items-end justify-between gap-4">
+      <h2 class="text-2xl font-bold">最新攻略/版本动态</h2>
+      <a href="/news/" class="text-sm text-neon">更多</a>
+    </div>
+    <div class="grid gap-4 md:grid-cols-3">
+      {
+        newsCards.map((news) => (
+          <a
+            href={`/news/${news.id}/`}
+            class="card group block transition duration-300 hover:-translate-y-1 hover:border-neon hover:bg-white/[0.06]"
+          >
+            <img
+              src={news.image}
+              alt={`异环攻略封面-${news.title}`}
+              class="aspect-[16/9] w-full rounded-lg object-cover"
+              loading="lazy"
+            />
+            <div class="mt-4 flex flex-wrap gap-2 text-xs text-zinc-500">
+              <span>{news.date}</span>
+              <span>{news.category || "攻略"}</span>
+            </div>
+            <h3 class="mt-2 font-bold transition group-hover:text-blue-400">{news.title}</h3>
+            <p class="mt-2 text-sm leading-6 text-zinc-400">{news.excerpt}</p>
+          </a>
+        ))
+      }
+    </div>
+  </section>
+</BaseLayout>

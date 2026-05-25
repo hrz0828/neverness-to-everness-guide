@@ -1,0 +1,116 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+html.light {
+  color-scheme: light;
+}
+
+body {
+  @apply min-h-screen bg-bg text-ink antialiased;
+  background:
+    radial-gradient(circle at 20% 0%, rgba(66, 244, 215, 0.11), transparent 28rem),
+    linear-gradient(180deg, #07090f 0%, #0b0e16 42%, #07090f 100%);
+}
+
+html.light body {
+  @apply bg-zinc-50 text-zinc-950;
+  background: linear-gradient(180deg, #f8fafc 0%, #eef2f7 100%);
+}
+
+a {
+  @apply text-zinc-100 transition-colors hover:text-neon;
+}
+
+html.light a {
+  @apply text-zinc-900 hover:text-teal-600;
+}
+
+.surface {
+  @apply border border-line bg-panel/80 shadow-glow backdrop-blur;
+}
+
+html.light .surface {
+  @apply border-zinc-200 bg-white/90 shadow-none;
+}
+
+.card {
+  @apply surface rounded-lg p-4;
+}
+
+.prose {
+  @apply text-zinc-200;
+}
+
+html.light .prose {
+  @apply text-zinc-800;
+}
+
+.prose h1,
+.prose h2,
+.prose h3,
+.prose strong {
+  @apply text-white;
+}
+
+html.light .prose h1,
+html.light .prose h2,
+html.light .prose h3,
+html.light .prose strong {
+  @apply text-zinc-950;
+}
+
+.character-guide {
+  @apply rounded-lg border border-zinc-200 bg-white p-5 text-zinc-700 shadow-sm dark:border-line dark:bg-panel/80 dark:text-zinc-300 dark:shadow-none sm:p-6;
+}
+
+.character-guide h2 {
+  @apply mt-10 border-b border-zinc-200 pb-3 text-2xl font-black text-zinc-950 dark:border-line dark:text-white;
+}
+
+.character-guide h2:first-child {
+  @apply mt-0;
+}
+
+.character-guide h3 {
+  @apply mt-7 text-lg font-bold text-zinc-950 dark:text-white;
+}
+
+.character-guide p {
+  @apply mt-4 text-sm leading-7 text-zinc-700 dark:text-zinc-300;
+}
+
+.character-guide strong {
+  @apply font-bold text-zinc-950 dark:text-white;
+}
+
+.character-guide ul,
+.character-guide ol {
+  @apply mt-4 space-y-2 pl-0 text-sm leading-7 text-zinc-700 dark:text-zinc-300;
+}
+
+.character-guide li {
+  @apply list-none rounded-lg border border-zinc-200 bg-zinc-50 px-4 py-3 dark:border-line dark:bg-black/20;
+}
+
+.character-guide ol {
+  counter-reset: guide-step;
+}
+
+.character-guide ol > li {
+  counter-increment: guide-step;
+  @apply relative pl-12;
+}
+
+.character-guide ol > li::before {
+  content: counter(guide-step);
+  @apply absolute left-4 top-3 grid size-6 place-items-center rounded-md bg-teal-500 text-xs font-black text-white dark:bg-neon dark:text-black;
+}
+
+.character-guide a {
+  @apply font-semibold text-teal-600 dark:text-neon;
+}
