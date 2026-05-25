@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build && pagefind --site dist",
-    "preview": "astro preview"
+    "preview": "astro preview",
+    "deploy": "npm run build && npx --yes wrangler pages deploy dist --project-name nte-guide"
   },
   "dependencies": {
     "@astrojs/mdx": "^3.1.9",

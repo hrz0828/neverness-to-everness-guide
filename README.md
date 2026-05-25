@@ -19,6 +19,20 @@ npm run build
 
 ## Cloudflare Pages 部署
 
+首次本地部署前，先登录 Cloudflare：
+
+```bash
+npx wrangler login
+```
+
+本地构建并发布：
+
+```bash
+npm run deploy
+```
+
+该指令会执行 `npm run build`，然后将 `dist` 发布到 Cloudflare Pages 项目 `nte-guide`。
+
 1. 将项目推送到 GitHub 或 GitLab。
 2. 打开 Cloudflare Dashboard，进入 Pages，选择 Create a project。
 3. 连接仓库。
