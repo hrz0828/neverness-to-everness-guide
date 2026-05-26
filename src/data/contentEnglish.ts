@@ -504,6 +504,93 @@ export const mapEnglish = {
 };
 
 export const newsEnglish = {
+  "15": {
+    category: "Limited Event",
+    title: "Whisker Patrol Starts May 27: 150 Daily Points, Multiplayer Last-Hit Rules and Pre-1.1 Stamina Plan",
+    excerpt:
+      "A dense event plan for Whisker Patrol from May 27 to June 3, covering point caps, multiplayer risks, high-risk anomaly rules and pre-1.1 resource timing.",
+    readTime: "9 min",
+    overview:
+      "Whisker Patrol runs from May 27, 2026 at 12:00 to June 3 at 04:59 (UTC+8). Players earn points by defeating anomalies, Garuda members and high-risk anomalies, with a 150-point daily cap and milestone rewards including Annulith, Expansion Cores and Fons. Because multiplayer points depend on last hits for ordinary targets and high-risk anomalies do not grant event points in multiplayer, the safest plan is to cap 150 points solo each day before spending time on regular stamina and 1.1 preparation.",
+    requirements: [
+      ["Event window", "May 27, 2026 12:00 to June 3, 2026 04:59 (UTC+8)"],
+      ["Daily cap", "Up to 150 event points per day, resetting at 05:00 server time"],
+      ["Main rewards", "Annulith, Expansion Cores, Fons and milestone rewards"]
+    ],
+    stepsTitle: "Daily 150-Point Route",
+    stepsNote: "Limited rewards before permanent farming",
+    steps: [
+      ["Check the point bar first", "Confirm today's remaining points and claimed milestones.", "Milestone rewards can be claimed once. Check the remaining daily point allowance before farming so you do not spend time after the cap."],
+      ["Clear anomalies solo first", "Use dense routes near teleports and main roads.", "Ordinary anomalies and Garuda members are the best base route. Minimize travel and raise points quickly before doing normal tasks."],
+      ["Use multiplayer only as backup", "Expect points only if you land the final hit.", "In multiplayer, only the Appraiser who lands the final blow on an anomaly or Garuda member gets points. It is fast but unreliable for personal capping."],
+      ["Handle high-risk anomalies solo if possible", "Multiplayer high-risk anomaly kills do not grant event points.", "If the goal is Whisker Patrol points, solo is safer. If the target is too slow or hard, switch to ordinary enemies to finish the cap."],
+      ["Swap to stamina priorities after capping", "Return to universal materials, skills and Fons planning.", "Once the 150 points are done, spend stamina on ascension, skills, Arc Plates, weapons, teleports and pre-June 3 pull budgeting."]
+    ],
+    challengeLabel: "Event Pitfalls",
+    boss: {
+      name: "Last-hit rules and cap waste",
+      summary:
+        "The event is mostly about efficiency, not hard combat. Multiplayer last hits, daily caps, reset time and high-risk scoring rules all affect real rewards.",
+      tips: [
+        "Start a new point cycle after the 05:00 reset instead of farming on a capped account.",
+        "Coordinate last hits in multiplayer or your personal points may barely move.",
+        "The event ends on June 3 at 04:59, so do not leave the final day until the maintenance window."
+      ]
+    },
+    rewards: ["Annulith", "Expansion Cores", "Fons", "Milestone rewards", "Pre-1.1 resource buffer"],
+    closing:
+      "Treat Whisker Patrol as a short daily priority: cap 150 points solo, claim milestones, then return to broader 1.1 preparation. Do not trade scoring certainty for multiplayer speed, and do not spend prime time farming after the daily cap.",
+    paragraphs: [
+      "Whisker Patrol has a short window, clear rewards and a hard daily point cap, right before Version 1.1. That makes it a priority task, not an all-day grind.",
+      "Point sources include anomalies, Garuda members and high-risk anomalies, but multiplayer changes the math. Ordinary enemies only award points to the final-hit player, while high-risk anomaly multiplayer kills do not grant event points.",
+      "The clean route is to finish 150 points first every day, then move to normal dailies. After the cap, the same combat only gives ordinary value, so universal materials, Fons and exploration cleanup become better uses of time.",
+      "The final day is tight: Whisker Patrol closes on June 3 at 04:59, while the current Hotori banner and Arc Research end at 05:59 (UTC+8). Clear points and shops before the update window."
+    ]
+  },
+  "14": {
+    category: "Version Calendar",
+    title: "Version 1.1 Dreamwalk Corridor Calendar: Lacrimosa, Chaos, Sunward Island, Underground Circuit and Fons Rush",
+    excerpt:
+      "A practical calendar for Version 1.1 events, banners, exploration, city hobbies and double-Fons priorities from June 3 to July 8.",
+    readTime: "13 min",
+    overview:
+      "Version 1.1 Dreamwalk Corridor is planned for June 3, 2026. Announced content includes the Dreamwalk Corridor episode, Sunward Island, Corridor of Echoes, S-Class characters Lacrimosa and Chaos, Porsche 918 Spyder collaboration, Pegasus Residence, Bagel SNS, Fight Club, Underground Circuit, Mist Pursuit and multiple events. Because many activities overlap, the key is to separate expiring rewards, pull decisions, exploration and double-income windows by date.",
+    requirements: [
+      ["Version start", "June 3, 2026"],
+      ["First-half banner", "Lacrimosa from June 3 to June 24"],
+      ["Second-half banner", "Chaos from June 24 to July 8"]
+    ],
+    stepsTitle: "1.1 Priority Calendar",
+    stepsNote: "Let closing dates decide priority",
+    steps: [
+      ["June 3: claim codes and open events", "Redeem DREAMWALK0603, TOMATO100 and RACENOLIMIT.", "The revealed codes expire on June 25. On day one, claim mail, compensation, event entries and early teleports before deep farming."],
+      ["June 3-24: test Lacrimosa before pulling deep", "Use trials, story experience and early feedback first.", "Lacrimosa is a Chaos-attribute damage character with Liquid Arc compatibility. She is higher priority for accounts lacking a new carry, but conservative players should wait for rotation and Arc data."],
+      ["June 3-8: unlock long-term event tracks", "Open What’s Baking, Underground Circuit, Sunward Travelogue and The Long Dream.", "These last until July 8, so do not rush full completion on day one. Unlock entries, daily or weekly goals and Sunward Island teleports first."],
+      ["June 8-15: prioritize Fons Rush", "Spend City Stamina on high-value Hethereau Hobbies during the double-Fons window.", "This is a short, clearly valuable economy window. Save some city stamina and route your money needs around it."],
+      ["June 24-July 8: reassess for Chaos and second-half events", "Use first-half pull results to decide Chaos, Fight Champions and Pixel Surge.", "If Lacrimosa consumed your budget, focus on event rewards and universal resources. If you saved, evaluate whether Chaos fixes a real team gap."]
+    ],
+    challengeLabel: "Version Resource Risk",
+    boss: {
+      name: "Too many events, no priority",
+      summary:
+        "Version 1.1 stacks story, areas, banners, vehicle collaboration, city systems and events. Without a calendar, players can miss codes, double income and second-half choices.",
+      tips: [
+        "Codes, mail, event shops and limited entries outrank exploration cleanup.",
+        "Budget separately for June 3-24 and June 24-July 8 instead of spending all Annulith on day one.",
+        "Fons Rush runs June 8-15, so prepare City Stamina and high-profit hobbies ahead of time."
+      ]
+    },
+    rewards: ["Redeem codes", "Lacrimosa budget", "Chaos budget", "Sunward Island exploration", "Double Fons", "Underground Circuit", "Porsche collaboration"],
+    closing:
+      "The best 1.1 opening is to claim irreversible rewards first, open long-term event tracks, and decide pull depth after practical testing. June 8-15 Fons Rush and the June 24 second-half banner both need resources left over.",
+    paragraphs: [
+      "Dreamwalk Corridor is the first major post-launch version and contains more than a normal event patch. Story, areas, banners, Porsche content, racing, Fight Club, Bagel SNS and multi-stage rewards all compete for time.",
+      "On June 3, use a fixed sequence: claim mail and compensation, redeem codes, open event entries, then progress story and Sunward Island teleports. This prevents early exploration or pulling from hiding time-limited rewards.",
+      "Pull planning should split the version into two halves. Lacrimosa arrives first and suits accounts needing a new damage core; Chaos arrives later and rewards players who keep enough budget for second-half information.",
+      "Fons Rush from June 8 to June 15 is the clearest economy spike. Fons are used by leveling, vehicles, housing and operations, so the double window is worth planning around.",
+      "For Sunward Island and Corridor of Echoes, do only the main route, teleports and event-required points first. Save 100% cleanup until routes and hidden-point information mature."
+    ]
+  },
   "13": {
     category: "Version Preview",
     title: "1.1 Dreamwalk Corridor Preview: Resource Stockpiling, Team Prep and Priorities Before June 3",
