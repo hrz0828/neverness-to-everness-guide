@@ -504,6 +504,94 @@ export const mapEnglish = {
 };
 
 export const newsEnglish = {
+  "17": {
+    category: "Pull Planning",
+    title: "1.1 Pull Budget: Lacrimosa, Chaos, Signature Arcs and the 200-Pull Outfit Trap",
+    excerpt:
+      "A practical 1.1 budget guide for Lacrimosa, Chaos, signature Arcs, pity carryover and the 50/120/200-pull cosmetic milestones.",
+    readTime: "12 min",
+    overview:
+      "Version 1.1 Dreamwalk Corridor starts on June 3, 2026. Lacrimosa's Fading Reverie banner runs June 3-24, and Chaos's Forsaken Path banner runs June 24-July 8. Limited character banners have no traditional 50/50: an S-Class pull is the featured limited character, with soft pity around 70 pulls, hard pity at 90, and pity carryover between limited character banners. Arc banners are a separate Tri-Key budget with S-Class Arc pity at 60 pulls and featured Arc guarantee at 80. For most players, the order should be character copy first, signature Arc only for long-term cores, and cosmetic milestones last.",
+    requirements: [
+      ["First half", "Lacrimosa: June 3-24, 2026; Chaos attribute, Liquid Arc compatibility"],
+      ["Second half", "Chaos: June 24-July 8, 2026; Lakshana attribute, Condensate Arc compatibility"],
+      ["Budget rule", "Character copy first, signature Arc second, 50/120/200-pull cosmetics last"]
+    ],
+    stepsTitle: "Pull Decision Order",
+    stepsNote: "Preserve choice first",
+    steps: [
+      ["Record pity and currency", "Separate character, standard and Arc banner progress.", "Limited character pity carries to later limited banners, but it is not standard-banner or Arc-banner progress. Record Hotori pity, Annulith, Solid Dice, Tri-Keys and claimable event income before June 3."],
+      ["Evaluate Lacrimosa by base copy value", "Prioritize if you lack a carry or a Chaos damage core.", "Lacrimosa arrives first and is most attractive for accounts needing a new damage anchor or Liquid-based setup. If your DPS roster is already stable, wait for rotation, energy and team data."],
+      ["Keep a separate Chaos budget", "Do not spend the entire version in the first half.", "Chaos arrives on June 24 and has a shorter window. Unless Lacrimosa is a must-pull, keep enough budget for second-half information and decisions."],
+      ["Use Tri-Keys only for core characters", "Avoid Arc banners unless you can approach the 80-pull guarantee.", "Arc banners can be much more expensive than character copies in practice. Signature Arcs are best for characters you are sure will stay in your main roster."],
+      ["Treat cosmetics as a luxury track", "50, 120 and 200 pulls are bonus nodes, not baseline power goals.", "Cosmetic milestones can be valuable only if you were already pulling that deep. Do not let the 200-pull outfit consume your second-half character budget."]
+    ],
+    challengeLabel: "Budget Trap",
+    boss: {
+      name: "Reading a friendly character banner as a cheap whole system",
+      summary:
+        "The character banner is clear, but Arc banners, cosmetic milestones and split-half scheduling can still drain the version budget quickly.",
+      tips: [
+        "Track limited character banners, Arc banners and standard banners separately.",
+        "Wait for Lacrimosa testing before committing Tri-Keys to her signature Arc.",
+        "Cosmetic nodes are extra value only when they align with a planned pull count."
+      ]
+    },
+    rewards: ["Lacrimosa budget", "Chaos budget", "Tri-Key plan", "Cosmetic milestone discipline", "Second-half flexibility"],
+    closing:
+      "Label every pull by purpose: character power, Arc investment or cosmetic spending. Tight budgets should prioritize character copies over signature Arcs, and signature Arcs over 200-pull cosmetics.",
+    paragraphs: [
+      "As of May 27, 2026, the banner dates are firm enough for budgeting, but unreleased character strength should still wait for testing.",
+      "The limited character banner is friendly because there is no normal 50/50 and hard pity is clear. The expensive part is what happens after the copy: signature Arcs and cosmetic milestones.",
+      "For combat value, most accounts should secure a long-term base copy first. Signature Arcs are for confirmed core characters, not every new release.",
+      "Players with Hotori, Nanally or another finished carry do not need to pull Lacrimosa on day one. Trial runs, event fit and team requirements should drive the decision.",
+      "Chaos should be judged with second-half information. Saving budget is not hesitation; it keeps the ability to react to the actual 1.1 environment."
+    ]
+  },
+  "16": {
+    category: "End-of-Version Checklist",
+    title: "May 27 Closing Checklist: Hotori Banner, Whisker Patrol, Codes and Must-Do Tasks Before June 3",
+    excerpt:
+      "A final-week checklist for Version 1.0 covering Hotori, Marching Beyond Time, Whisker Patrol, redeem codes, stamina and exploration cleanup.",
+    readTime: "10 min",
+    overview:
+      "Starting May 27, 2026, Version 1.0 has three overlapping countdowns: Whisker Patrol opens at 12:00 and ends June 3 at 04:59 (UTC+8); Hotori's limited board and the Marching Beyond Time S-Class Arc Research run until June 3 at 05:59; Version 1.1 Dreamwalk Corridor follows on June 3. The final-week priority is not what can be farmed forever, but what expires: event points, mail, codes, banner pity records, shops, teleports and universal materials.",
+    requirements: [
+      ["Event window", "Whisker Patrol: May 27, 2026 12:00 to June 3, 2026 04:59 (UTC+8)"],
+      ["Banner window", "Hotori and Marching Beyond Time end June 3, 2026 05:59 (UTC+8)"],
+      ["Version goal", "Clear limited rewards and preserve 1.1 pull and growth resources"]
+    ],
+    stepsTitle: "Final-Week Checklist",
+    stepsNote: "Sort by expiry time",
+    steps: [
+      ["Cap Whisker Patrol first each day", "Solo first, stop when capped.", "The event resets at 05:00 and allows up to 150 points per day. Multiplayer ordinary enemies only score for the final-hit player, and high-risk anomalies give no event points in multiplayer."],
+      ["Record Hotori banner status", "Whether you pull or skip, write down limited-banner pity.", "Hotori ends on June 3 at 05:59. Skippers should carry the record into Lacrimosa planning; pullers should finish decisions before the version switch."],
+      ["Confirm the Arc banner calmly", "Do not chase Marching Beyond Time just because the banner is ending.", "If Hotori is a long-term core and your Tri-Keys are near guarantee, consider it. Otherwise, keeping Tri-Keys for 1.1 is usually safer."],
+      ["Handle codes in two batches", "Redeem current codes now, then claim 1.1 codes before June 25.", "Use the phone menu redemption entry and claim rewards from mail. DREAMWALK0603, TOMATO100 and RACENOLIMIT are announced 1.1 codes that expire June 25."],
+      ["Move stamina to universal stock", "Ascension, skills, weapons, Fons and EXP first.", "Before 1.1 lands, avoid over-farming unconfirmed new-character materials. Universal resources are the safest final-week stamina target."]
+    ],
+    challengeLabel: "Closing Risk",
+    boss: {
+      name: "Mixing several June 3 deadlines",
+      summary:
+        "Whisker Patrol ends at 04:59, Hotori and the current Arc Research end at 05:59, and 1.1 content follows. Leaving everything to the final morning is the easiest way to miss rewards.",
+      tips: [
+        "Do a full limited-reward sweep on the evening of June 2.",
+        "Make pull decisions one day early; use the last day only for confirmation.",
+        "Check mail, event pages, shops, code redemption, Arc Research and the limited board separately."
+      ]
+    },
+    rewards: ["150 daily points", "Hotori pity record", "Arc-banner stop-loss", "Redeem-code value", "1.1 universal stock"],
+    closing:
+      "The clean final-week route is simple: cap Whisker Patrol daily, finish Hotori and Arc decisions before June 3, and spend pre-version stamina on universal resources.",
+    paragraphs: [
+      "May 27 is when the 1.0 closing schedule tightens. Whisker Patrol adds a daily 150-point task while Hotori and the current signature Arc approach their June 3 cutoff.",
+      "Whisker Patrol should be the first daily task because it has a short duration and daily cap. Solo routes are more reliable than multiplayer scoring.",
+      "Skipping Hotori still requires action: record your limited-banner progress because it affects the Lacrimosa budget. Players who own Hotori should not automatically chase her signature Arc unless the budget supports it.",
+      "Separate current usable codes from 1.1 livestream codes. DREAMWALK0603, TOMATO100 and RACENOLIMIT should be redeemed after the update and before June 25.",
+      "Use final-week stamina conservatively. Ascension, skill books, weapon upgrades, EXP and Fons are low-risk; unconfirmed specialized farming can wait for 1.1 implementation."
+    ]
+  },
   "15": {
     category: "Limited Event",
     title: "Whisker Patrol Starts May 27: 150 Daily Points, Multiplayer Last-Hit Rules and Pre-1.1 Stamina Plan",
