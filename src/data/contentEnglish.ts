@@ -504,6 +504,94 @@ export const mapEnglish = {
 };
 
 export const newsEnglish = {
+  "19": {
+    category: "Version Start",
+    title: "Version 1.1 Day-One Route: Sunward Island, Corridor of Echoes, Codes and Event Priority",
+    excerpt:
+      "A day-one checklist for Version 1.1 covering redeem codes, mail, Lacrimosa trial, new-area teleports, Sunward Travelogue, The Long Dream and daily stamina.",
+    readTime: "11 min",
+    overview:
+      "As of June 1, 2026, Version 1.1 Dreamwalk Corridor is confirmed for June 3. It adds the Dreamwalk Corridor episode, Sunward Island, Corridor of Echoes, Lacrimosa's limited board, and events including What's Baking, Underground Circuit, Sunward Travelogue and The Long Dream. The clean day-one route is to claim irreversible rewards, redeem DREAMWALK0603, TOMATO100 and RACENOLIMIT, open long-term event entries, unlock key new-area teleports, then decide Lacrimosa pull depth after trial and live testing.",
+    requirements: [
+      ["Version timing", "Version 1.1 Dreamwalk Corridor is expected on June 3, 2026"],
+      ["Day-one focus", "Redeem codes, mail, event entries, new-area teleports and Lacrimosa trial"],
+      ["Risk note", "Unreleased hidden routes, enemy details and character strength should defer to the live build"]
+    ],
+    stepsTitle: "June 3 Day-One Route",
+    stepsNote: "Limited entries before deep exploration",
+    steps: [
+      ["Clear account entries first", "Claim mail, compensation, login rewards and event alerts.", "The easiest day-one miss is a reward entry, not a combat stage. Check mail, event pages, free shop items and pass tasks before story or pulls."],
+      ["Redeem the 1.1 codes immediately", "Use DREAMWALK0603, TOMATO100 and RACENOLIMIT first.", "The announced codes expire June 25, but redeeming on day one prevents forgetfulness and updates your Lacrimosa and Chaos budget."],
+      ["Open long-term event tracks", "Confirm What's Baking, Underground Circuit, Sunward Travelogue and The Long Dream.", "These are expected to last until July 8. Open their entries, read daily or weekly rules and complete any minimum daily progress."],
+      ["Push story to new teleports", "Prioritize key movement points on Sunward Island and Corridor of Echoes.", "Day one should establish the travel network: main story nodes, teleports, event-required locations and repeat routes. Save 100% cleanup for later."],
+      ["Trial Lacrimosa before deep pulls", "Check feel, team needs, Arc dependence and event fit.", "Lacrimosa runs June 3-24. Trial and early live data should guide whether to pull only the base copy, signature Arc or cosmetic milestones."]
+    ],
+    challengeLabel: "Day-One Pitfall",
+    boss: {
+      name: "Missing limited value because new content is distracting",
+      summary:
+        "Version 1.1 launches story, areas, banners, events, codes and vehicle content together. Pulling or chasing map completion too early can hide mail, code, daily and teleport priorities.",
+      tips: [
+        "On June 3, handle account rewards, codes and event entries before the new map.",
+        "Do only story, teleports and event-required points on Sunward Island first.",
+        "Separate Lacrimosa's base copy and signature Arc decisions."
+      ]
+    },
+    rewards: ["1.1 codes", "Compensation", "Event progress", "New teleports", "Lacrimosa trial decision", "Chaos budget preservation"],
+    closing:
+      "The best Version 1.1 opening sorts tasks by expiry risk: claim and redeem first, open events, unlock teleports, then explore deeply and pull. This keeps short-term value safe while preserving later decisions.",
+    paragraphs: [
+      "Dreamwalk Corridor is the first major post-launch version, so day one will be denser than a normal event patch.",
+      "Start with account-level cleanup: mail, compensation, login rewards, free packs, event pages and redeem codes.",
+      "The long events should be opened early, but they do not need to be finished immediately.",
+      "For exploration, prioritize main route, teleports and event-required points before hidden collectible cleanup.",
+      "Lacrimosa is the first-half focus, but live testing should decide how deep you go."
+    ]
+  },
+  "18": {
+    category: "Vehicle Gameplay",
+    title: "Underground Circuit and Porsche 918 Week-One Guide: Tuning, Racing and Fons Planning",
+    excerpt:
+      "A week-one plan for Underground Circuit, Porsche 918 Spyder, higher tuning caps and the June 8-15 Fons Rush economy window.",
+    readTime: "10 min",
+    overview:
+      "Version 1.1 adds Underground Circuit, the Porsche 918 Spyder collaboration vehicle, higher vehicle tuning caps, baseline handling changes, auto-drive and third-person vehicle camera improvements. Since Underground Circuit runs June 3-July 8 and Fons Rush runs June 8-15, the first week should avoid dumping all Fons into cosmetics or unnecessary max tuning. Complete event goals, test track demands, then invest in acceleration, handling, durability or cosmetics based on actual needs.",
+    requirements: [
+      ["Gameplay window", "Underground Circuit is expected from June 3 to July 8, 2026"],
+      ["Collaboration", "Porsche Collaboration and Porsche 918 Spyder arrive in Version 1.1"],
+      ["Economy window", "Fons Rush runs June 8-15, 2026 and is a good time to refill Fons"]
+    ],
+    stepsTitle: "Week-One Vehicle Plan",
+    stepsNote: "Meet goals first, max later",
+    steps: [
+      ["Test default handling first", "Do not max-tune a new or old car immediately.", "Version 1.1 adjusts vehicle feel. Run city roads and entry Underground Circuit races with low investment before spending heavily."],
+      ["Tune by track type", "Handling for tight turns, acceleration for straights, durability for chase pressure.", "Top speed is not always the answer. Narrow city routes and obstacles often reward control more than raw speed."],
+      ["Budget Porsche 918 separately", "Separate vehicle, cosmetic, tuning and pull resources.", "Whatever the final acquisition route is, do not let Porsche spending consume Lacrimosa, Chaos or signature Arc budgets."],
+      ["Keep a Fons buffer before June 8", "Use Fons Rush to refill large economy gaps.", "If characters, vehicles, housing and city systems all need money, avoid spending everything on June 3. Save big refills for the double-Fons window."],
+      ["Prioritize event rewards over perfect times", "Claim milestones, shop currency and daily goals first.", "Underground Circuit lasts a while. Stable rewards should come before leaderboard pushing or full tuning."]
+    ],
+    challengeLabel: "Vehicle Economy Risk",
+    boss: {
+      name: "Treating racing as mandatory day-one max tuning",
+      summary:
+        "Vehicle gameplay can quietly consume Fons, tuning parts, cosmetics, collaboration spending and character pull budget at the same time.",
+      tips: [
+        "Clear basic event goals with low investment before adding more tuning.",
+        "Keep vehicle spending separate from character pulls, especially the second-half Chaos budget.",
+        "When Fons are tight, prioritize character growth and required event upgrades before cosmetics."
+      ]
+    },
+    rewards: ["Underground Circuit rewards", "Porsche 918 plan", "Tuning efficiency", "Fons Rush value", "Protected character budget"],
+    closing:
+      "The key to Version 1.1 vehicle content is not maxing a car on day one. Test tracks, claim stable rewards, then use Fons Rush to support deeper upgrades without slowing character growth.",
+    paragraphs: [
+      "Version 1.1 vehicle content is larger than one Porsche 918 Spyder. It also includes Underground Circuit and multiple driving quality-of-life changes.",
+      "The first week should identify track demands before committing expensive tuning.",
+      "Fons planning matters because characters, vehicles, housing and city systems all compete for the same economy.",
+      "Treat Porsche 918 as a separate spending track rather than part of your character pull budget.",
+      "Underground Circuit lasts until July 8, so stable rewards come before leaderboard pushing."
+    ]
+  },
   "17": {
     category: "Pull Planning",
     title: "1.1 Pull Budget: Lacrimosa, Chaos, Signature Arcs and the 200-Pull Outfit Trap",

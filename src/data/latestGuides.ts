@@ -2,6 +2,180 @@ const commonAuthor = "异环攻略站编辑部";
 
 export const latestGuides = [
   {
+    id: "19",
+    title: "1.1首日开荒路线：Sunward Island、Corridor of Echoes、兑换码与限时活动先后顺序",
+    date: "2026-06-01",
+    author: commonAuthor,
+    image: "/images/news/area-new-herland.jpg",
+    category: "版本开荒",
+    readTime: "11 分钟",
+    gallery: [
+      {
+        src: "/images/news/nte-main-poster.jpg",
+        alt: "异环 1.1 Dreamwalk Corridor 版本主视觉",
+        caption: "1.1 首日先处理会过期或影响后续效率的入口，再推进探索和剧情。"
+      },
+      {
+        src: "/images/news/area-skytower.jpg",
+        alt: "异环城市高塔与探索区域截图",
+        caption: "新区域开荒不建议首日追 100%，先解锁传送、活动入口和主线节点。"
+      }
+    ],
+    excerpt:
+      "按 2026 年 6 月 3 日 1.1 上线节奏整理首日优先级：兑换码、邮件、Lacrimosa试用、新区域传送、Sunward Travelogue、The Long Dream 与日常体力。",
+    guide: {
+      overview:
+        "截至 2026 年 6 月 1 日，1.1「Dreamwalk Corridor」已确认 6 月 3 日上线，新增主线章节 Dreamwalk Corridor、新地点 Sunward Island 与 Corridor of Echoes，并同步开放 Lacrimosa 限定板、What’s Baking、Underground Circuit、Sunward Travelouge、The Long Dream 等 6 月 3 日至 7 月 8 日活动。首日最稳路线不是把新地图清到 100%，而是先领取不可逆奖励、兑换 DREAMWALK0603/TOMATO100/RACENOLIMIT、打开长期活动入口、解锁新区域传送，再根据试用和实装手感决定是否抽 Lacrimosa。",
+      requirements: [
+        { label: "版本时间", value: "1.1「Dreamwalk Corridor」预计 2026-06-03 开启" },
+        { label: "首日重点", value: "兑换码、邮件补偿、活动入口、新区域传送、Lacrimosa 试用" },
+        { label: "风险提醒", value: "未实装的隐藏点位、敌人机制和角色强度以游戏内最终版本为准" }
+      ],
+      stepsTitle: "6月3日首日路线",
+      stepsNote: "先限时入口，再深度探索",
+      steps: [
+        {
+          title: "上线先清账户入口",
+          action: "领取邮件、维护补偿、登录奖励和活动红点",
+          detail:
+            "版本首日最容易漏的是奖励入口而不是战斗内容。进入游戏后先检查邮箱、活动页、版本礼包、商店免费项和通行证任务，再开始剧情或抽卡。这样可以把首日可用环石、Solid Dice、Tri-Keys 和体力道具先纳入预算。"
+        },
+        {
+          title: "立即兑换1.1公开码",
+          action: "DREAMWALK0603、TOMATO100、RACENOLIMIT 优先处理",
+          detail:
+            "这三个 1.1 公开码有效期至 6 月 25 日，但首日就兑换能避免后续被剧情、抽卡和活动分散注意力。兑换后记得从邮箱领取奖励，并把获得的资源重新计入 Lacrimosa 与 Chaos 两段预算。"
+        },
+        {
+          title: "先打开长期活动入口",
+          action: "确认 What’s Baking、Underground Circuit、Sunward Travelouge、The Long Dream",
+          detail:
+            "这些活动预计持续到 7 月 8 日，不需要首日全部打完，但要先点开入口，确认每日、每周、里程碑和商店规则。若存在首日可领取或每日累计目标，优先完成最低门槛，避免从第一天就少一天进度。"
+        },
+        {
+          title: "推进主线到新区域传送",
+          action: "Sunward Island 与 Corridor of Echoes 先解锁关键移动点",
+          detail:
+            "新区域首日目标是建立交通网络：主线节点、传送点、活动要求点和高频往返点优先。隐藏收集、拍照、支线对话和 100% 探索可等路线成熟后再补，避免在未确认地图结构时反复绕路。"
+        },
+        {
+          title: "抽卡前完成 Lacrimosa 试用",
+          action: "先看手感、队友需求、弧盘依赖和活动适配",
+          detail:
+            "Lacrimosa 池从 6 月 3 日到 6 月 24 日，不必在上线第一分钟做深抽决定。建议先完成试用、活动关卡体验和基础循环观察，再决定本体、专属弧盘或外观节点投入深度。"
+        }
+      ],
+      challengeLabel: "首日避坑",
+      boss: {
+        name: "被新内容分散导致限时收益漏掉",
+        summary:
+          "1.1 首日同时有新主线、新区域、新角色、活动、兑换码和车辆玩法。最常见的问题是刚上线就追地图收集或深抽，结果邮件、兑换码、活动每日目标和传送网络没有及时处理。",
+        tips: [
+          "6 月 3 日先完成账户奖励、兑换码和活动入口确认，再推进新地图。",
+          "Sunward Island 首日只做主线、传送和活动要求点，不急着 100% 清图。",
+          "Lacrimosa 本体和专属弧盘分开决策，不要把试用前的冲动抽卡当成强度判断。"
+        ]
+      },
+      rewards: ["1.1兑换码", "维护补偿", "活动首日进度", "新区域传送", "Lacrimosa试用判断", "Chaos预算保留"],
+      closing:
+        "1.1 首日最优解是按入口过期风险排序：先领奖和兑换，再开活动，再跑传送，最后才深度探索和抽卡。这样既不会错过短线收益，也能保留对 Lacrimosa 与 Chaos 的后续判断空间。"
+    },
+    paragraphs: [
+      "Dreamwalk Corridor 是《异环》上线后的第一个大版本，首日信息量会远高于普通活动。玩家容易被新区域、角色池和保时捷联动吸引，但真正影响长期效率的是第一小时的入口处理顺序。",
+      "推荐上线后先做账户层面的清理：邮件、补偿、登录奖励、免费礼包、活动页和兑换码。DREAMWALK0603、TOMATO100、RACENOLIMIT 虽然有效期到 6 月 25 日，但越早兑换越不容易遗忘，也能更准确地计算抽卡预算。",
+      "活动方面，What’s Baking、Underground Circuit、Sunward Travelouge 和 The Long Dream 都属于长周期内容。首日的重点是打开入口、看清每日或每周规则、完成最低累计目标，而不是把所有内容一次打完。",
+      "探索方面，Sunward Island 和 Corridor of Echoes 的优先级是主线、传送点和活动要求点。隐藏收集通常需要路线图和玩家实测沉淀，首日盲目追满探索度很容易浪费时间。",
+      "抽卡方面，Lacrimosa 是上半核心，但她的实际循环、队友需求和专属弧盘价值需要实装后观察。普通玩家先试用再投入，能给 6 月 24 日 Chaos 下半池留下更健康的预算空间。"
+    ]
+  },
+  {
+    id: "18",
+    title: "Underground Circuit与Porsche 918首周攻略：车辆改装、竞速活动和方斯消耗怎么规划",
+    date: "2026-06-01",
+    author: commonAuthor,
+    image: "/images/news/area-bridge-crossings.jpg",
+    category: "车辆玩法",
+    readTime: "10 分钟",
+    gallery: [
+      {
+        src: "/images/news/area-new-herland.jpg",
+        alt: "异环城市道路与载具系统截图",
+        caption: "1.1 会强化车辆与竞速内容，首周重点是稳定完成活动目标而不是盲目满改。"
+      },
+      {
+        src: "/images/news/city-gameplay.jpg",
+        alt: "异环都市任务与活动场景",
+        caption: "竞速、城市经营和 Fons Rush 会同时消耗方斯规划，车辆预算需要提前拆开。"
+      }
+    ],
+    excerpt:
+      "围绕 1.1 新增 Underground Circuit、Porsche 918 Spyder、车辆改装上限提升和 6月8日至15日 Fons Rush，整理首周车辆与方斯规划。",
+    guide: {
+      overview:
+        "1.1 将新增 Underground Circuit 竞速玩法、Porsche 联动车辆 Porsche 918 Spyder，并调整车辆基础手感、改装上限、自动驾驶与第三人称车辆镜头等体验项。由于 Underground Circuit 从 6 月 3 日持续到 7 月 8 日，而 Fons Rush 会在 6 月 8 日至 6 月 15 日提供城市体力相关双倍方斯窗口，首周车辆规划应避免开服当天把方斯全部砸进外观或非必要满改。先完成活动目标、测试赛道需求，再决定加速、操控、耐久和外观投入深度。",
+      requirements: [
+        { label: "玩法窗口", value: "Underground Circuit：预计 2026-06-03 至 2026-07-08" },
+        { label: "联动内容", value: "Porsche Collaboration 与 Porsche 918 Spyder 将在 1.1 版本登场" },
+        { label: "经济节点", value: "Fons Rush：2026-06-08 至 2026-06-15，适合补方斯库存" }
+      ],
+      stepsTitle: "首周车辆规划",
+      stepsNote: "先达标，再追满改",
+      steps: [
+        {
+          title: "先试默认手感",
+          action: "不要第一时间满改新车或旧车",
+          detail:
+            "1.1 会调整部分车辆基础数值和驾驶体验。上线后先用默认或低改配置跑几次城市道路和 Underground Circuit 入门赛，确认新镜头、操控、碰撞和赛道类型，再决定是否重投改装资源。"
+        },
+        {
+          title: "按赛道类型分配改装",
+          action: "短弯多先操控，长直线再加速，追逐任务补耐久",
+          detail:
+            "竞速目标通常不是单纯堆极速。弯道密集、障碍多或城区窄路更吃操控和刹车稳定；长直线路线才更偏加速与极速；若活动含追逐或碰撞压力，耐久和稳定性会比纸面速度更有价值。"
+        },
+        {
+          title: "把 Porsche 918 当独立预算",
+          action: "车辆、外观、改装件和抽卡资源分开记账",
+          detail:
+            "联动车辆可能同时牵动收集、外观和性能需求。无论最终获取方式如何，都建议把 Porsche 918 从角色池预算里拆出来，不要为了车辆或皮肤节点挤占 Lacrimosa、Chaos 与专属弧盘预算。"
+        },
+        {
+          title: "6月8日前保留方斯缓冲",
+          action: "等 Fons Rush 再集中补经济缺口",
+          detail:
+            "Fons Rush 窗口在 6 月 8 日至 15 日。首周如果车辆、角色升级、住房和城市经营同时缺钱，不要在 6 月 3 日一次性花干。先完成必要升级，等双倍方斯窗口再补大额库存。"
+        },
+        {
+          title: "活动奖励优先于极限成绩",
+          action: "先拿里程碑、商店货币和每日目标",
+          detail:
+            "Underground Circuit 持续时间较长，首周先确认奖励结构：每日目标、累计里程碑、商店兑换和排行榜是否分开。普通玩家优先拿稳定奖励，极限成绩和满改冲榜放在活动规则完全清楚之后。"
+        }
+      ],
+      challengeLabel: "车辆经济风险",
+      boss: {
+        name: "把竞速活动当成必须首日满改",
+        summary:
+          "车辆玩法最容易造成隐性资源消耗：方斯、改装件、外观、联动车辆和角色抽卡预算会同时抢资源。若首日盲目满改，可能在 6 月 8 日 Fons Rush 前就陷入角色养成和活动兑换都缺钱的局面。",
+        tips: [
+          "先用低改配置完成活动基础目标，确认赛道需求后再追加投入。",
+          "车辆预算和角色抽卡预算分账，尤其不要挤占下半 Chaos 预算。",
+          "方斯紧张时优先角色硬成长和活动必要升级，外观与冲榜改装后置。"
+        ]
+      },
+      rewards: ["Underground Circuit奖励", "Porsche 918规划", "车辆改装效率", "Fons Rush收益", "角色预算保护"],
+      closing:
+        "1.1 车辆玩法的关键不是首日把车拉满，而是先判断赛道需求、完成稳定奖励，再借 6 月 8 日后的 Fons Rush 补经济。把车辆、外观和抽卡拆账，才能同时玩新活动又不拖慢角色养成。"
+    },
+    paragraphs: [
+      "1.1 的车辆内容不只是多一辆 Porsche 918 Spyder。官方公开信息还包含 Underground Circuit、车辆改装上限提升、基础手感调整、自动驾驶和车辆镜头优化，这意味着旧的驾驶经验可能需要重新校准。",
+      "首周最重要的是先判断赛道需求。城区弯道、障碍密度和追逐目标会决定改装方向；如果只按极速堆配置，可能在窄路和急弯里损失更多时间。",
+      "方斯规划也要提前做。6 月 3 日同时有新角色、新活动、新区域和车辆内容，方斯会被角色升级、技能、车辆改装、住房和城市玩法同时消耗。6 月 8 日至 15 日的 Fons Rush 是补经济的关键窗口，首日不要把库存花到见底。",
+      "Porsche 918 建议视为独立消费线。它可能有收藏、外观和性能价值，但不应直接吞掉 Lacrimosa 或 Chaos 的抽卡预算。普通玩家最好先看获取方式、活动奖励和实际驾驶表现，再决定投入深度。",
+      "Underground Circuit 持续到 7 月 8 日，时间并不短。首周先拿每日、累计和商店稳定收益，等赛道路线、改装收益和排行榜机制明确后，再考虑冲极限成绩。"
+    ]
+  },
+  {
     id: "17",
     title: "1.1抽卡预算表：Lacrimosa、Chaos、专属弧盘与200抽外观到底怎么取舍",
     date: "2026-05-27",
