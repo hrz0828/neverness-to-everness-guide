@@ -92,7 +92,7 @@ if (!(await fileExists(sitemapPath))) {
 } else {
   const sitemap = await readFile(sitemapPath, "utf8");
   for (const url of sitemapUrls) {
-    if (!sitemap.includes(url)) {
+    if (!sitemap.includes(`<loc>https://nte.sts2hub.com${url}</loc>`)) {
       failures.push(`Sitemap is missing URL: https://nte.sts2hub.com${url}`);
     }
   }
