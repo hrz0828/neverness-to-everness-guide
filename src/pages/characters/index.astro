@@ -17,14 +17,14 @@ const characters = (await getCollection("characters")).sort((a, b) => {
 
 <BaseLayout
   title="角色攻略列表 | 异环"
-  description="查看异环全部角色基础信息、养成优先级、弧盘装备、配队方案、技能解析与材料 farming 路线。"
+  description="查看异环角色定位、技能机制、弧盘与空幕词条、觉醒优先级、队伍搭配、实战循环和开荒投入顺序。"
   jsonLd={{ "@context": "https://schema.org", "@type": "CollectionPage", name: "异环角色攻略列表" }}
 >
   <header>
     <p class="text-sm font-semibold text-neon" data-i18n="characters.kicker">Character Guides</p>
     <h1 class="mt-2 text-3xl font-black text-zinc-950 dark:text-white" data-i18n="characters.title">角色攻略列表</h1>
     <p class="mt-3 max-w-3xl text-sm leading-7 text-zinc-600 dark:text-zinc-400" data-i18n="characters.desc">
-      按角色定位、属性、武器与养成方向整理。点击卡片可查看技能机制、弧盘/空慕、觉醒节点、配队与实战循环。
+      按主C、副C、生存位和功能辅助整理角色。每张卡片进入后可查看技能轴、弧盘与空幕词条、觉醒投入顺序、配队模板和开荒实战循环。
     </p>
   </header>
 

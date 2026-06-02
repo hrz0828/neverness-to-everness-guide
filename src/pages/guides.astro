@@ -15,13 +15,13 @@ const systems = [
     alt: "异环城市异象探索街区游戏截图",
     tips: [
       "优先解锁城区传送点，再回头清理屋顶、地下通道和高架夹层的隐藏收集。",
-      "夜间更容易触发高等级反常事件，建议提前准备治疗位和控场角色。",
-      "遇到空间扭曲、信号噪点或路灯异常闪烁时，先环绕区域寻找调查交互点。"
+      "夜间巡逻和雨后街区更容易遇到高威胁异象委托，建议提前准备治疗位和控场角色。",
+      "遇到空间扭曲、信号噪点或路灯异常闪烁时，先沿街角、屋顶入口和桥下层寻找调查交互点。"
     ],
     tipsEn: [
       "Unlock district teleports first, then return for hidden collectibles on rooftops, underground paths and elevated layers.",
-      "High-level abnormal events are easier to trigger at night, so prepare healing and control before patrolling.",
-      "When space distortion, signal noise or abnormal streetlights appear, circle the area and look for investigation points."
+      "Night patrols and rainy districts are more likely to surface high-threat anomaly commissions, so prepare healing and control before entering.",
+      "When space distortion, signal noise or abnormal streetlights appear, check street corners, rooftop access points and under-bridge layers for investigation prompts."
     ]
   },
   {
@@ -33,46 +33,46 @@ const systems = [
     alt: "异环改装车系统城市道路游戏截图",
     tips: [
       "开荒期优先升级操控、加速和耐久，能显著提升跑图效率和追逐任务容错。",
-      "城区探索建议携带高机动配置，材料 farming 路线则更适合续航和稳定性配件。",
-      "部分异象事件会限制步行路径，改装车可作为快速脱离异常区域的关键工具。"
+      "城区探索建议携带高机动配置，材料循环路线则更适合续航和稳定性配件。",
+      "部分追逐、限时取样和异常封锁会限制步行路径，改装车可作为快速脱离异常区域的关键工具。"
     ],
     tipsEn: [
       "During progression, upgrade handling, acceleration and durability first to improve travel efficiency and chase-task tolerance.",
       "Use high-mobility setups for city exploration, and endurance or stability parts for material routes.",
-      "Some anomaly events restrict walking routes, so tuned vehicles can be the safest way to exit abnormal zones quickly."
+      "Some chase tasks, timed sampling routes and abnormal lockdowns restrict walking routes, so tuned vehicles can be the safest way to exit quickly."
     ]
   },
   {
     key: "events",
     tagKey: "advanced",
-    name: "异常事件追踪",
+    name: "异象委托追踪",
     tag: "进阶路线",
     image: "/images/news/city-gameplay.jpg",
-    alt: "异环都市街道异常事件追踪游戏截图",
+    alt: "异环都市街道异象委托追踪游戏截图",
     tips: [
-      "先记录事件刷新时间和天气条件，避免反复跑空点位。",
-      "高威胁事件通常伴随精英敌人和环境伤害，队伍中至少保留一个生存位。",
-      "完成事件后立刻清理周边收集物，很多隐藏奖励会在异象解除后短暂显现。"
+      "先记录异象委托的触发时段、天气和前置交互，避免反复跑空电话亭周边点位。",
+      "高威胁委托通常伴随精英敌人、环境伤害和倒计时目标，队伍中至少保留一个生存位。",
+      "完成委托后立刻清理周边收集物，部分隐藏宝箱、谕石提示和拍照点会在异象解除后显现。"
     ],
     tipsEn: [
-      "Record event refresh time and weather conditions first so you do not repeatedly visit empty locations.",
-      "High-threat events often include elites and environmental damage, so keep at least one survival slot in the team.",
-      "After an event is cleared, immediately check nearby collectibles because hidden rewards may appear after the anomaly fades."
+      "Record trigger windows, weather and prerequisite interactions first so you do not repeatedly check empty phone-booth areas.",
+      "High-threat commissions often include elites, environmental damage and timed objectives, so keep at least one survival slot in the team.",
+      "After a commission is cleared, immediately check nearby collectibles because hidden chests, oracle stone prompts and photo spots may appear after the anomaly fades."
     ]
   }
 ];
 ---
 
 <BaseLayout
-  title="通用机制/新手指南 | 异环"
-  description="异环战斗机制、开荒路线、资源规划、日常优先级与新手避坑指南。"
+  title="新手资源规划与城区机制 | 异环"
+  description="异环开荒体力分配、日常优先级、抽卡取舍、城区探索、车辆改装和版本复查指南。"
   jsonLd={{ "@context": "https://schema.org", "@type": "CollectionPage", name: "异环机制与新手指南" }}
 >
   <header class="max-w-4xl">
-    <p class="text-sm font-semibold text-neon" data-i18n="guides.kicker">新手入门 / 资源规划</p>
+    <p class="text-sm font-semibold text-neon" data-i18n="guides.kicker">新手资源规划与城区机制</p>
     <h1 class="text-3xl font-black" data-i18n="guides.title">通用机制 / 新手指南</h1>
     <p class="mt-3 text-sm leading-6 text-zinc-600 dark:text-zinc-400">
-      这里收纳新手期最容易用得上的内容：先怎么分配资源、每天先做什么、哪些材料值得优先刷、哪些判断需要随着版本更新重新检查。
+      这里收纳新手期最容易用得上的判断：体力先刷什么、日常委托怎么排、抽卡停手线怎么设、城区路线怎么补，以及哪些结论需要在版本更新后重新检查。
     </p>
   </header>
 

@@ -19,8 +19,8 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       const initialQuery = params.get("q")?.trim() || "";
       const getLang = () => document.documentElement.dataset.lang === "en" ? "en" : "zh";
       const placeholders = {
-        zh: "输入关键词，如：娜娜莉、灵系、异象事件",
-        en: "Enter keywords, e.g. Nanally, Spirit, anomaly event"
+        zh: "输入关键词，如：娜娜莉、九原、维特海默塔、抽卡预算",
+        en: "Enter keywords, e.g. Nanally, Jiuyuan, Wertheimer Tower, pull budget"
       };
       const ui = new PagefindUI({
         element: "#search",
