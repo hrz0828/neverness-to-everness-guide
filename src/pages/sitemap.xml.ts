@@ -6,10 +6,14 @@ const site = siteConfig.url;
 
 export async function GET() {
   const characters = await getCollection("characters");
+  const guides = await getCollection("guides");
+  const maps = await getCollection("maps");
   const staticPages = ["", "characters/", "news/", "explore/", "guides/", "tools/gacha-calculator/", "search/", "about/", "contact/", "editorial-policy/", "privacy/", "disclaimer/"];
   const characterPages = characters.map((entry) => `characters/${entry.slug}/`);
   const newsPages = newsItems.map((item) => `news/${item.id}/`);
-  const urls = [...staticPages, ...newsPages, ...characterPages].map((path) => {
+  const guidePages = guides.map((entry) => `guides/${entry.slug}/`);
+  const mapPages = maps.map((entry) => `explore/${entry.slug}/`);
+  const urls = [...staticPages, ...newsPages, ...characterPages, ...guidePages, ...mapPages].map((path) => {
     const loc = new URL(path, site).toString();
     return `<url><loc>${loc}</loc></url>`;
   });
