@@ -1,0 +1,76 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+export async function getStaticPaths() {
+  const guides = await getCollection("guides");
+  return guides.map((entry) => ({ params: { slug: entry.slug }, props: { entry } }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+const updatedAt = entry.data.updatedAt;
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  headline: entry.data.title,
+  description: entry.data.description,
+  dateModified: updatedAt,
+  author: {
+    "@type": "Organization",
+    name: "NTE Guide Editorial Team"
+  }
+};
+---
+
+<BaseLayout
+  title={`${entry.data.title} | 异环攻略`}
+  description={entry.data.description}
+  jsonLd={jsonLd}
+>
+  <article class="mx-auto max-w-4xl">
+    <nav class="text-sm text-zinc-500">
+      <a href="/" class="hover:text-neon">首页</a>
+      <span class="mx-2">/</span>
+      <a href="/guides/" class="hover:text-neon">机制/新手</a>
+      <span class="mx-2">/</span>
+      <span class="text-zinc-300">正文</span>
+    </nav>
+
+    <header class="mt-6 overflow-hidden rounded-lg border border-zinc-200 bg-white shadow-sm dark:border-line dark:bg-panel/80 dark:shadow-glow">
+      <div class="p-5 sm:p-6">
+        <p class="text-sm font-semibold text-neon">新手指南 / 深度攻略</p>
+        <h1 class="mt-2 text-3xl font-black leading-tight text-zinc-950 dark:text-white sm:text-5xl">
+          {entry.data.title}
+        </h1>
+        <p class="mt-4 max-w-3xl text-sm leading-7 text-zinc-600 dark:text-zinc-300">
+          {entry.data.description}
+        </p>
+        <div class="mt-5 flex flex-wrap gap-4 text-sm text-zinc-500">
+          <span>最后更新：{updatedAt}</span>
+          <span>内容类型：可索引攻略正文</span>
+        </div>
+      </div>
+
+      <div class="border-t border-zinc-200 bg-zinc-50 px-5 py-4 dark:border-line dark:bg-black/20 sm:px-6">
+        <p class="text-sm font-semibold text-zinc-950 dark:text-white">继续阅读</p>
+        <div class="mt-3 flex flex-wrap gap-3">
+          <a class="rounded-md border border-zinc-200 bg-white px-3 py-2 text-sm font-semibold text-zinc-700 hover:text-teal-600 dark:border-line dark:bg-panel/80 dark:text-zinc-200 dark:hover:text-neon" href="/guides/">
+            返回机制/新手
+          </a>
+          <a class="rounded-md border border-zinc-200 bg-white px-3 py-2 text-sm font-semibold text-zinc-700 hover:text-teal-600 dark:border-line dark:bg-panel/80 dark:text-zinc-200 dark:hover:text-neon" href="/explore/">
+            前往探索页
+          </a>
+          <a class="rounded-md border border-zinc-200 bg-white px-3 py-2 text-sm font-semibold text-zinc-700 hover:text-teal-600 dark:border-line dark:bg-panel/80 dark:text-zinc-200 dark:hover:text-neon" href="/tools/gacha-calculator/">
+            打开抽卡计算器
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <div class="character-guide mt-8">
+      <Content />
+    </div>
+  </article>
+</BaseLayout>
