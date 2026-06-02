@@ -27,10 +27,11 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         showSubResults: true,
         translations: {
           placeholder: placeholders[getLang()]
-        },
-        autofocus: true
+        }
       });
-      if (initialQuery) ui.triggerSearch(initialQuery);
+      if (initialQuery) {
+        ui.triggerSearch(initialQuery);
+      }
       window.addEventListener("nte-language-change", () => {
         document.querySelector("#search input")?.setAttribute("placeholder", placeholders[getLang()]);
       });
