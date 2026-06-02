@@ -32,6 +32,12 @@ const expectedPages = [
   }
 ];
 
+const requiredTextChecks = [
+  { file: "privacy/index.html", text: "Google AdSense" },
+  { file: "editorial-policy/index.html", text: "修订记录" },
+  { file: "disclaimer/index.html", text: "非官方网站" }
+];
+
 const sitemapUrls = [
   "/guides/beginner/",
   "/explore/skytower-route/",
@@ -64,6 +70,19 @@ for (const page of expectedPages) {
     if (!html.includes(text)) {
       failures.push(`Generated page is missing required text "${text}": ${path.posix.join(page.slug, "index.html")}`);
     }
+  }
+}
+
+for (const check of requiredTextChecks) {
+  const filePath = path.join(distDir, check.file);
+  if (!(await fileExists(filePath))) {
+    failures.push(`Missing generated page: ${check.file}`);
+    continue;
+  }
+
+  const html = await readFile(filePath, "utf8");
+  if (!html.includes(check.text)) {
+    failures.push(`Generated page is missing required text "${check.text}": ${check.file}`);
   }
 }
 
