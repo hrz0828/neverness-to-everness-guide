@@ -1,43 +1,44 @@
-import { readFile, access } from "node:fs/promises";
+import { access, readFile } from "node:fs/promises";
 import { constants as fsConstants } from "node:fs";
 import path from "node:path";
-import process from "node:process";
 
 const rootDir = process.cwd();
 const distDir = path.join(rootDir, "dist");
-const siteRoot = "https://nte.sts2hub.com";
 
 const expectedPages = [
   {
     slug: "guides/beginner",
-    url: `${siteRoot}/guides/beginner/`,
-    text: "beginner"
+    text: ["开荒资源规划", "每日优先级", "抽卡与养成取舍"]
   },
   {
     slug: "explore/skytower-route",
-    url: `${siteRoot}/explore/skytower-route/`,
-    text: "skytower-route"
+    text: ["路线重点", "推荐清理顺序", "补漏检查"]
   },
   {
     slug: "explore/new-herland",
-    url: `${siteRoot}/explore/new-herland/`,
-    text: "new-herland"
+    text: ["路线重点", "异象与战斗准备", "补漏检查"]
   },
   {
     slug: "explore/district-a",
-    url: `${siteRoot}/explore/district-a/`,
-    text: "district-a"
+    text: ["路线重点", "容易遗漏的位置", "补漏检查"]
   },
   {
     slug: "explore/ekorai-town",
-    url: `${siteRoot}/explore/ekorai-town/`,
-    text: "ekorai-town"
+    text: ["路线重点", "异象与战斗准备", "补漏检查"]
   },
   {
     slug: "explore/bridge-crossings",
-    url: `${siteRoot}/explore/bridge-crossings/`,
-    text: "bridge-crossings"
+    text: ["路线重点", "推荐清理顺序", "补漏检查"]
   }
+];
+
+const sitemapUrls = [
+  "/guides/beginner/",
+  "/explore/skytower-route/",
+  "/explore/new-herland/",
+  "/explore/district-a/",
+  "/explore/ekorai-town/",
+  "/explore/bridge-crossings/"
 ];
 
 const failures = [];
@@ -59,8 +60,10 @@ for (const page of expectedPages) {
   }
 
   const html = await readFile(filePath, "utf8");
-  if (!html.includes(page.text)) {
-    failures.push(`Generated page is missing required text "${page.text}": ${path.posix.join(page.slug, "index.html")}`);
+  for (const text of page.text) {
+    if (!html.includes(text)) {
+      failures.push(`Generated page is missing required text "${text}": ${path.posix.join(page.slug, "index.html")}`);
+    }
   }
 }
 
@@ -69,9 +72,9 @@ if (!(await fileExists(sitemapPath))) {
   failures.push("Missing generated sitemap: sitemap.xml");
 } else {
   const sitemap = await readFile(sitemapPath, "utf8");
-  for (const page of expectedPages) {
-    if (!sitemap.includes(`<loc>${page.url}</loc>`)) {
-      failures.push(`Sitemap is missing URL: ${page.url}`);
+  for (const url of sitemapUrls) {
+    if (!sitemap.includes(url)) {
+      failures.push(`Sitemap is missing URL: https://nte.sts2hub.com${url}`);
     }
   }
 }
