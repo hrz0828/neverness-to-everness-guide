@@ -8,8 +8,7 @@
     "dev": "astro dev",
     "build": "astro build && pagefind --site dist",
     "preview": "astro preview",
-    "verify:adsense-content": "node scripts/verify-adsense-content.mjs",
-    "deploy": "npm run build && npx --yes wrangler pages deploy dist --project-name nte-guide"
+    "verify:adsense-content": "node scripts/verify-adsense-content.mjs"
   },
   "dependencies": {
     "@astrojs/mdx": "^3.1.9",
