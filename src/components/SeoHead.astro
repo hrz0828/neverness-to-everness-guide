@@ -2,7 +2,7 @@
 const { title, description, ogImage = "/og-cover.webp", jsonLd } = Astro.props;
 const canonical = new URL(Astro.url.pathname, Astro.site).toString();
 const og = new URL(ogImage, Astro.site).toString();
-const adsenseClient = import.meta.env.PUBLIC_ADSENSE_CLIENT;
+const adsenseClient = "ca-pub-3222328785646871";
 ---
 
 <meta charset="utf-8" />
