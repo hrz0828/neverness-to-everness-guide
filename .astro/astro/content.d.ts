@@ -152,6 +152,13 @@ declare module 'astro:content' {
 
 	type ContentEntryMap = {
 		"characters": {
+"anhunqu.mdx": {
+	id: "anhunqu.mdx";
+  slug: "anhunqu";
+  body: string;
+  collection: "characters";
+  data: InferEntrySchema<"characters">
+} & { render(): Render[".mdx"] };
 "baicang.mdx": {
 	id: "baicang.mdx";
   slug: "baicang";
@@ -210,9 +217,23 @@ declare module 'astro:content' {
 } & { render(): Render[".mdx"] };
 };
 "guides": {
+"anomaly-commission-checklist.mdx": {
+	id: "anomaly-commission-checklist.mdx";
+  slug: "anomaly-commission-checklist";
+  body: string;
+  collection: "guides";
+  data: InferEntrySchema<"guides">
+} & { render(): Render[".mdx"] };
 "beginner.mdx": {
 	id: "beginner.mdx";
   slug: "beginner";
+  body: string;
+  collection: "guides";
+  data: InferEntrySchema<"guides">
+} & { render(): Render[".mdx"] };
+"team-building.mdx": {
+	id: "team-building.mdx";
+  slug: "team-building";
   body: string;
   collection: "guides";
   data: InferEntrySchema<"guides">
