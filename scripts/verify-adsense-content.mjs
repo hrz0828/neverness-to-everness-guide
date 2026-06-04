@@ -8,27 +8,35 @@ const distDir = path.join(rootDir, "dist");
 const expectedPages = [
   {
     slug: "guides/beginner",
-    text: ["开荒资源规划", "每日优先级", "抽卡与养成取舍"]
+    text: ["开荒资源规划", "每日优先级", "一周复盘清单"]
+  },
+  {
+    slug: "guides/team-building",
+    text: ["先确定队伍职责", "实战循环怎么设计", "新手配队检查表"]
+  },
+  {
+    slug: "guides/anomaly-commission-checklist",
+    text: ["接取前先确认条件", "解谜卡住时怎么排查", "任务空间补漏"]
   },
   {
     slug: "explore/skytower-route",
-    text: ["路线重点", "推荐清理顺序", "补漏检查"]
+    text: ["路线重点", "分阶段目标", "补漏检查"]
   },
   {
     slug: "explore/new-herland",
-    text: ["路线重点", "异象与战斗准备", "补漏检查"]
+    text: ["路线重点", "经营与载具点位", "补漏检查"]
   },
   {
     slug: "explore/district-a",
-    text: ["路线重点", "容易遗漏的位置", "补漏检查"]
+    text: ["路线重点", "夜间巡查路线", "补漏检查"]
   },
   {
     slug: "explore/ekorai-town",
-    text: ["路线重点", "异象与战斗准备", "补漏检查"]
+    text: ["路线重点", "影像幽宅前置检查", "补漏检查"]
   },
   {
     slug: "explore/bridge-crossings",
-    text: ["路线重点", "推荐清理顺序", "补漏检查"]
+    text: ["路线重点", "载具与道路事件", "补漏检查"]
   }
 ];
 
@@ -40,6 +48,8 @@ const requiredTextChecks = [
 
 const sitemapUrls = [
   "/guides/beginner/",
+  "/guides/team-building/",
+  "/guides/anomaly-commission-checklist/",
   "/explore/skytower-route/",
   "/explore/new-herland/",
   "/explore/district-a/",

@@ -2,7 +2,12 @@
 import { getCollection } from "astro:content";
 import BaseLayout from "../layouts/BaseLayout.astro";
 
-const guides = await getCollection("guides");
+const guideOrder = ["beginner", "team-building", "anomaly-commission-checklist"];
+const getGuideOrder = (slug) => {
+  const index = guideOrder.indexOf(slug);
+  return index === -1 ? guideOrder.length : index;
+};
+const guides = [...await getCollection("guides")].sort((a, b) => getGuideOrder(a.slug) - getGuideOrder(b.slug));
 const featuredGuide = guides.find((guide) => guide.slug === "beginner") ?? guides[0];
 
 const systems = [
