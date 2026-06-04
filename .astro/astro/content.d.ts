@@ -224,9 +224,30 @@ declare module 'astro:content' {
   collection: "guides";
   data: InferEntrySchema<"guides">
 } & { render(): Render[".mdx"] };
+"banner-analysis-framework.mdx": {
+	id: "banner-analysis-framework.mdx";
+  slug: "banner-analysis-framework";
+  body: string;
+  collection: "guides";
+  data: InferEntrySchema<"guides">
+} & { render(): Render[".mdx"] };
 "beginner.mdx": {
 	id: "beginner.mdx";
   slug: "beginner";
+  body: string;
+  collection: "guides";
+  data: InferEntrySchema<"guides">
+} & { render(): Render[".mdx"] };
+"boss-combat-guide.mdx": {
+	id: "boss-combat-guide.mdx";
+  slug: "boss-combat-guide";
+  body: string;
+  collection: "guides";
+  data: InferEntrySchema<"guides">
+} & { render(): Render[".mdx"] };
+"character-tier-list.mdx": {
+	id: "character-tier-list.mdx";
+  slug: "character-tier-list";
   body: string;
   collection: "guides";
   data: InferEntrySchema<"guides">
@@ -238,6 +259,27 @@ declare module 'astro:content' {
   collection: "guides";
   data: InferEntrySchema<"guides">
 } & { render(): Render[".mdx"] };
+"exploration-checklist.mdx": {
+	id: "exploration-checklist.mdx";
+  slug: "exploration-checklist";
+  body: string;
+  collection: "guides";
+  data: InferEntrySchema<"guides">
+} & { render(): Render[".mdx"] };
+"faq.mdx": {
+	id: "faq.mdx";
+  slug: "faq";
+  body: string;
+  collection: "guides";
+  data: InferEntrySchema<"guides">
+} & { render(): Render[".mdx"] };
+"first-30-days-route.mdx": {
+	id: "first-30-days-route.mdx";
+  slug: "first-30-days-route";
+  body: string;
+  collection: "guides";
+  data: InferEntrySchema<"guides">
+} & { render(): Render[".mdx"] };
 "gacha-budget.mdx": {
 	id: "gacha-budget.mdx";
   slug: "gacha-budget";
@@ -245,9 +287,37 @@ declare module 'astro:content' {
   collection: "guides";
   data: InferEntrySchema<"guides">
 } & { render(): Render[".mdx"] };
+"growth-material-route.mdx": {
+	id: "growth-material-route.mdx";
+  slug: "growth-material-route";
+  body: string;
+  collection: "guides";
+  data: InferEntrySchema<"guides">
+} & { render(): Render[".mdx"] };
+"systems-overview.mdx": {
+	id: "systems-overview.mdx";
+  slug: "systems-overview";
+  body: string;
+  collection: "guides";
+  data: InferEntrySchema<"guides">
+} & { render(): Render[".mdx"] };
 "team-building.mdx": {
 	id: "team-building.mdx";
   slug: "team-building";
+  body: string;
+  collection: "guides";
+  data: InferEntrySchema<"guides">
+} & { render(): Render[".mdx"] };
+"team-comps.mdx": {
+	id: "team-comps.mdx";
+  slug: "team-comps";
+  body: string;
+  collection: "guides";
+  data: InferEntrySchema<"guides">
+} & { render(): Render[".mdx"] };
+"version-review-checklist.mdx": {
+	id: "version-review-checklist.mdx";
+  slug: "version-review-checklist";
   body: string;
   collection: "guides";
   data: InferEntrySchema<"guides">

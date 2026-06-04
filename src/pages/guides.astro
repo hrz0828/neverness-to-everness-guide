@@ -1,14 +1,60 @@
 ---
 import { getCollection } from "astro:content";
 import BaseLayout from "../layouts/BaseLayout.astro";
+import { guideVisuals } from "../data/guideVisuals";
 
-const guideOrder = ["beginner", "team-building", "anomaly-commission-checklist", "gacha-budget", "daily-weekly-priority"];
+const guideOrder = [
+  "character-tier-list",
+  "team-comps",
+  "growth-material-route",
+  "banner-analysis-framework",
+  "boss-combat-guide",
+  "exploration-checklist",
+  "systems-overview",
+  "first-30-days-route",
+  "faq",
+  "version-review-checklist",
+  "beginner",
+  "team-building",
+  "anomaly-commission-checklist",
+  "gacha-budget",
+  "daily-weekly-priority"
+];
 const getGuideOrder = (slug) => {
   const index = guideOrder.indexOf(slug);
   return index === -1 ? guideOrder.length : index;
 };
 const guides = [...await getCollection("guides")].sort((a, b) => getGuideOrder(a.slug) - getGuideOrder(b.slug));
-const featuredGuide = guides.find((guide) => guide.slug === "beginner") ?? guides[0];
+const guideMeta = {
+  "character-tier-list": { category: "角色养成", tag: "练谁", time: "6 分钟" },
+  "team-comps": { category: "角色养成", tag: "配队", time: "7 分钟" },
+  "team-building": { category: "角色养成", tag: "循环", time: "5 分钟" },
+  "growth-material-route": { category: "抽卡资源", tag: "养成", time: "6 分钟" },
+  "banner-analysis-framework": { category: "抽卡资源", tag: "卡池", time: "6 分钟" },
+  "gacha-budget": { category: "抽卡资源", tag: "预算", time: "5 分钟" },
+  "beginner": { category: "新手入门", tag: "开荒", time: "6 分钟" },
+  "first-30-days-route": { category: "新手入门", tag: "30天", time: "7 分钟" },
+  "daily-weekly-priority": { category: "新手入门", tag: "日常", time: "5 分钟" },
+  "faq": { category: "新手入门", tag: "FAQ", time: "4 分钟" },
+  "boss-combat-guide": { category: "探索战斗", tag: "BOSS", time: "6 分钟" },
+  "exploration-checklist": { category: "探索战斗", tag: "查漏", time: "6 分钟" },
+  "anomaly-commission-checklist": { category: "探索战斗", tag: "异象", time: "5 分钟" },
+  "systems-overview": { category: "系统机制", tag: "机制", time: "6 分钟" },
+  "version-review-checklist": { category: "系统机制", tag: "版本", time: "5 分钟" }
+};
+const guideGroups = [
+  { name: "新手入门", desc: "刚入坑、回坑或想整理账号节奏时先看这里。", slugs: ["beginner", "first-30-days-route", "daily-weekly-priority", "faq"] },
+  { name: "角色养成", desc: "解决练谁、怎么配队、循环不顺和材料投入的问题。", slugs: ["character-tier-list", "team-comps", "team-building"] },
+  { name: "抽卡资源", desc: "抽卡前先算预算，养成时再看材料和方斯消耗。", slugs: ["banner-analysis-framework", "gacha-budget", "growth-material-route"] },
+  { name: "探索战斗", desc: "地图查漏、异象委托和高压战斗卡关时使用。", slugs: ["exploration-checklist", "anomaly-commission-checklist", "boss-combat-guide"] },
+  { name: "系统机制", desc: "看不懂系统名词或版本内容变化时快速补课。", slugs: ["systems-overview", "version-review-checklist"] }
+].map((group) => ({
+  ...group,
+  guides: group.slugs.map((slug) => guides.find((guide) => guide.slug === slug)).filter(Boolean)
+}));
+const featuredGuides = ["beginner", "character-tier-list", "exploration-checklist"]
+  .map((slug) => guides.find((guide) => guide.slug === slug))
+  .filter(Boolean);
 
 const systems = [
   {
@@ -70,67 +116,101 @@ const systems = [
 
 <BaseLayout
   title="新手资源规划与城区机制 | 异环"
-  description="异环开荒体力分配、日常优先级、抽卡取舍、城区探索、车辆改装和版本复查指南。"
+  description="异环开荒体力、日常周常、抽卡养成、城区探索、车辆改装和版本内容指南。"
   jsonLd={{ "@context": "https://schema.org", "@type": "CollectionPage", name: "异环机制与新手指南" }}
 >
-  <header class="max-w-4xl">
-    <p class="text-sm font-semibold text-neon" data-i18n="guides.kicker">新手资源规划与城区机制</p>
-    <h1 class="text-3xl font-black" data-i18n="guides.title">通用机制 / 新手指南</h1>
-    <p class="mt-3 text-sm leading-6 text-zinc-600 dark:text-zinc-400">
-      这里收纳新手期最容易用得上的判断：体力先刷什么、日常委托怎么排、抽卡停手线怎么设、城区路线怎么补，以及哪些结论需要在版本更新后重新检查。
+  <header class="max-w-3xl">
+    <p class="text-sm font-semibold text-neon" data-i18n="guides.kicker">开荒、养成、探索与抽卡</p>
+    <h1 class="text-3xl font-black leading-tight text-zinc-950 dark:text-white sm:text-4xl" data-i18n="guides.title">异环攻略指南</h1>
+    <p class="mt-3 text-base leading-7 text-zinc-600 dark:text-zinc-400">
+      不知道先练谁、体力刷什么、卡池要不要抽，或者探索度卡住时，从这里按问题找攻略。
     </p>
   </header>
 
-  <section class="mt-8 grid gap-4 lg:grid-cols-[1.15fr_0.85fr]">
-    <article class="rounded-lg border border-zinc-200 bg-white p-5 shadow-sm dark:border-line dark:bg-panel/80 dark:shadow-glow">
-      <p class="text-sm font-semibold text-teal-600 dark:text-neon">推荐先看</p>
-      <h2 class="mt-2 text-2xl font-black text-zinc-950 dark:text-white">
-        <a class="hover:text-teal-600 dark:hover:text-neon" href={featuredGuide ? `/guides/${featuredGuide.slug}/` : "/guides/"}>
-          {featuredGuide?.data.title || "新手入门与资源规划"}
-        </a>
-      </h2>
-      <p class="mt-3 text-sm leading-7 text-zinc-600 dark:text-zinc-400">
-        这篇指南把开荒资源、每日优先级、体力顺序、抽卡取舍和版本复查串成一条实际可执行的路线，适合第一次整理队伍和材料分配时阅读。
-      </p>
-      <div class="mt-5 flex flex-wrap gap-2">
-        <span class="rounded-md border border-zinc-200 bg-zinc-50 px-3 py-1.5 text-xs font-semibold text-zinc-600 dark:border-line dark:bg-black/20 dark:text-zinc-300">开荒资源规划</span>
-        <span class="rounded-md border border-zinc-200 bg-zinc-50 px-3 py-1.5 text-xs font-semibold text-zinc-600 dark:border-line dark:bg-black/20 dark:text-zinc-300">每日优先级</span>
-        <span class="rounded-md border border-zinc-200 bg-zinc-50 px-3 py-1.5 text-xs font-semibold text-zinc-600 dark:border-line dark:bg-black/20 dark:text-zinc-300">体力使用顺序</span>
-        <span class="rounded-md border border-zinc-200 bg-zinc-50 px-3 py-1.5 text-xs font-semibold text-zinc-600 dark:border-line dark:bg-black/20 dark:text-zinc-300">抽卡与养成取舍</span>
+  <section class="mt-8">
+    <div class="mb-4 flex items-end justify-between gap-4">
+      <div>
+        <p class="text-sm font-semibold text-teal-600 dark:text-neon">推荐先看</p>
+        <h2 class="mt-1 text-2xl font-black text-zinc-950 dark:text-white">从最常见的问题开始</h2>
       </div>
-      <div class="mt-5 flex flex-wrap gap-3">
-        <a href={featuredGuide ? `/guides/${featuredGuide.slug}/` : "/guides/"} class="rounded-lg border border-neon/60 px-4 py-2 text-sm font-semibold text-neon transition hover:bg-neon hover:text-black">
-          阅读完整指南
-        </a>
-        <a href="/explore/" class="rounded-lg border border-zinc-200 px-4 py-2 text-sm font-semibold text-zinc-700 transition hover:border-teal-600 hover:text-teal-600 dark:border-line dark:text-zinc-200 dark:hover:text-neon">
-          先看探索页
-        </a>
-      </div>
-    </article>
-
-    <div class="rounded-lg border border-zinc-200 bg-white p-5 shadow-sm dark:border-line dark:bg-panel/80 dark:shadow-none">
-      <p class="text-sm font-semibold text-teal-600 dark:text-neon">指南状态</p>
-      <div class="mt-4 space-y-3">
-        {guides.map((g) => (
-          <div class="rounded-lg border border-zinc-200 bg-zinc-50 p-4 dark:border-line dark:bg-black/20">
-            <a href={`/guides/${g.slug}/`} class="font-bold text-zinc-950 hover:text-neon dark:text-white">
-              {g.data.title}
-            </a>
-            <p class="mt-2 text-sm leading-6 text-zinc-600 dark:text-zinc-400">{g.data.description}</p>
-            <p class="mt-2 text-xs text-zinc-500">最后更新：{g.data.updatedAt}</p>
-          </div>
-        ))}
-      </div>
-      <div class="mt-5 rounded-lg border border-teal-200 bg-teal-50 p-4 dark:border-neon/30 dark:bg-neon/10">
-        <p class="text-xs font-semibold uppercase text-teal-600 dark:text-neon">下一步</p>
-        <p class="mt-2 text-sm leading-6 text-zinc-700 dark:text-zinc-200">
-          先看完整新手指南，再用抽卡计算器核对资源阈值，最后回到探索页检查有没有漏掉会影响开荒路线的内容。
-        </p>
-        <a href="/tools/gacha-calculator/" class="mt-3 inline-flex text-sm font-semibold text-teal-700 hover:text-teal-900 dark:text-neon dark:hover:text-white">
-          打开抽卡计算器
-        </a>
-      </div>
+      <a href="/tools/gacha-calculator/" class="hidden text-sm font-semibold text-teal-700 hover:text-teal-900 dark:text-neon dark:hover:text-white sm:inline">
+        打开抽卡计算器
+      </a>
     </div>
+    <div class="grid gap-4 lg:grid-cols-3">
+      {featuredGuides.map((guide, index) => {
+        const meta = guideMeta[guide.slug];
+        const visual = guideVisuals[guide.slug];
+        return (
+          <a
+            href={`/guides/${guide.slug}/`}
+            class:list={[
+              "group block rounded-lg border bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:border-teal-500 hover:shadow-md dark:bg-panel/80 dark:hover:border-neon dark:hover:shadow-glow",
+              index === 0 ? "border-teal-300 dark:border-neon/60" : "border-zinc-200 dark:border-line"
+            ]}
+          >
+            <div class="relative -mx-1 -mt-1 overflow-hidden rounded-md">
+              <img src={visual?.image} alt={visual?.alt || guide.data.title} class="aspect-[16/9] w-full object-cover transition duration-300 group-hover:scale-[1.03]" loading={index === 0 ? "eager" : "lazy"} />
+              <div class="absolute inset-x-0 bottom-0 flex items-end justify-between gap-3 bg-gradient-to-t from-black/80 to-transparent p-3 text-xs font-semibold">
+                <span class="rounded-md bg-black/55 px-2.5 py-1 text-neon backdrop-blur">{meta?.tag}</span>
+                <span class="text-zinc-200">{meta?.time}</span>
+              </div>
+            </div>
+            <h3 class="mt-4 min-h-[3.25rem] text-xl font-black leading-snug text-zinc-950 group-hover:text-teal-700 dark:text-white dark:group-hover:text-neon">
+              {guide.data.title}
+            </h3>
+            <p class="mt-3 line-clamp-2 min-h-[3.5rem] text-sm leading-7 text-zinc-600 dark:text-zinc-400">
+              {guide.data.description}
+            </p>
+          </a>
+        );
+      })}
+    </div>
+  </section>
+
+  <section class="mt-10 space-y-8">
+    {guideGroups.map((group) => (
+      <section>
+        <div class="mb-4 flex flex-col gap-1 sm:flex-row sm:items-end sm:justify-between">
+          <div>
+            <h2 class="text-2xl font-black text-zinc-950 dark:text-white">{group.name}</h2>
+            <p class="mt-1 max-w-2xl text-sm leading-6 text-zinc-600 dark:text-zinc-400">{group.desc}</p>
+          </div>
+        </div>
+        <div class="grid gap-3 md:grid-cols-2 xl:grid-cols-3">
+          {group.guides.map((guide) => {
+            const meta = guideMeta[guide.slug];
+            const visual = guideVisuals[guide.slug];
+            return (
+              <a
+                href={`/guides/${guide.slug}/`}
+                class="group grid min-h-[18rem] content-between overflow-hidden rounded-lg border border-zinc-200 bg-white shadow-sm transition hover:border-teal-500 hover:bg-teal-50/40 dark:border-line dark:bg-panel/70 dark:hover:border-neon dark:hover:bg-white/[0.05]"
+              >
+                <div>
+                  <div class="relative overflow-hidden">
+                    <img src={visual?.image} alt={visual?.alt || guide.data.title} class="aspect-[16/9] w-full object-cover transition duration-300 group-hover:scale-[1.03]" loading="lazy" />
+                    <div class="absolute left-3 top-3 rounded-md bg-black/60 px-2 py-1 text-xs font-semibold text-neon backdrop-blur">{meta?.tag}</div>
+                  </div>
+                  <div class="px-4 pt-4">
+                    <div class="mb-2 flex items-center justify-between gap-3 text-xs">
+                      <span class="font-semibold text-teal-700 dark:text-neon">{meta?.category}</span>
+                      <span class="text-zinc-500">{meta?.time}</span>
+                    </div>
+                    <h3 class="line-clamp-2 text-lg font-bold leading-snug text-zinc-950 group-hover:text-teal-700 dark:text-white dark:group-hover:text-neon">
+                      {guide.data.title}
+                    </h3>
+                    <p class="mt-2 line-clamp-2 text-sm leading-6 text-zinc-600 dark:text-zinc-400">
+                      {guide.data.description}
+                    </p>
+                  </div>
+                </div>
+                <p class="px-4 pb-4 pt-3 text-xs text-zinc-500">最后更新：{guide.data.updatedAt}</p>
+              </a>
+            );
+          })}
+        </div>
+      </section>
+    ))}
   </section>
 
   <section class="mt-10 space-y-8">

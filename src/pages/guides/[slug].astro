@@ -1,6 +1,7 @@
 ---
 import { getCollection } from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import { guideVisuals } from "../../data/guideVisuals";
 
 export async function getStaticPaths() {
   const guides = await getCollection("guides");
@@ -10,6 +11,7 @@ export async function getStaticPaths() {
 const { entry } = Astro.props;
 const { Content } = await entry.render();
 const updatedAt = entry.data.updatedAt;
+const visual = guideVisuals[entry.slug];
 
 const jsonLd = {
   "@context": "https://schema.org",
@@ -29,7 +31,7 @@ const jsonLd = {
   description={entry.data.description}
   jsonLd={jsonLd}
 >
-  <article class="mx-auto max-w-4xl">
+  <article class="guide-article mx-auto max-w-4xl">
     <nav class="text-sm text-zinc-500">
       <a href="/" class="hover:text-neon">首页</a>
       <span class="mx-2">/</span>
@@ -39,18 +41,28 @@ const jsonLd = {
     </nav>
 
     <header class="mt-6 overflow-hidden rounded-lg border border-zinc-200 bg-white shadow-sm dark:border-line dark:bg-panel/80 dark:shadow-glow">
-      <div class="p-5 sm:p-6">
-        <p class="text-sm font-semibold text-neon">新手指南 / 深度攻略</p>
-        <h1 class="mt-2 text-3xl font-black leading-tight text-zinc-950 dark:text-white sm:text-5xl">
-          {entry.data.title}
-        </h1>
-        <p class="mt-4 max-w-3xl text-sm leading-7 text-zinc-600 dark:text-zinc-300">
-          {entry.data.description}
-        </p>
-        <div class="mt-5 flex flex-wrap gap-4 text-sm text-zinc-500">
-          <span>最后更新：{updatedAt}</span>
-          <span>内容类型：可索引攻略正文</span>
+      <div class="grid gap-5 p-5 sm:p-7 lg:grid-cols-[1fr_0.82fr] lg:items-center">
+        <div>
+          <p class="text-sm font-semibold text-teal-600 dark:text-neon">异环攻略 / 玩家指南</p>
+          <h1 class="mt-2 max-w-3xl text-balance text-3xl font-black leading-tight text-zinc-950 dark:text-white sm:text-5xl">
+            {entry.data.title}
+          </h1>
+          <p class="mt-4 max-w-2xl text-pretty text-base leading-8 text-zinc-600 dark:text-zinc-300">
+            {entry.data.description}
+          </p>
+          <div class="mt-5 flex flex-wrap gap-x-4 gap-y-2 text-sm text-zinc-500">
+            <span>最后更新：{updatedAt}</span>
+            <span>内容类型：攻略正文</span>
+          </div>
         </div>
+        {visual && (
+          <figure class="overflow-hidden rounded-lg border border-zinc-200 bg-zinc-50 dark:border-line dark:bg-black/20">
+            <img src={visual.image} alt={visual.alt} class="aspect-[16/9] w-full object-cover" loading="eager" />
+            <figcaption class="px-3 py-2 text-xs leading-5 text-zinc-500 dark:text-zinc-400">
+              配图来源：{visual.source}
+            </figcaption>
+          </figure>
+        )}
       </div>
 
       <div class="border-t border-zinc-200 bg-zinc-50 px-5 py-4 dark:border-line dark:bg-black/20 sm:px-6">
@@ -69,7 +81,7 @@ const jsonLd = {
       </div>
     </header>
 
-    <div class="character-guide mt-8">
+    <div class="character-guide guide-copy mt-8">
       <Content />
     </div>
   </article>
