@@ -19,6 +19,14 @@ const expectedPages = [
     text: ["接取前先确认条件", "解谜卡住时怎么排查", "任务空间补漏"]
   },
   {
+    slug: "guides/gacha-budget",
+    text: ["先定义抽卡目标", "停手线怎么设置", "抽卡前检查清单"]
+  },
+  {
+    slug: "guides/daily-weekly-priority",
+    text: ["每天只有 15 分钟时", "活动优先级判断", "一周复盘模板"]
+  },
+  {
     slug: "explore/skytower-route",
     text: ["路线重点", "分阶段目标", "补漏检查"]
   },
@@ -50,6 +58,8 @@ const sitemapUrls = [
   "/guides/beginner/",
   "/guides/team-building/",
   "/guides/anomaly-commission-checklist/",
+  "/guides/gacha-budget/",
+  "/guides/daily-weekly-priority/",
   "/explore/skytower-route/",
   "/explore/new-herland/",
   "/explore/district-a/",

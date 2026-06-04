@@ -2,7 +2,7 @@
 import { getCollection } from "astro:content";
 import BaseLayout from "../layouts/BaseLayout.astro";
 
-const guideOrder = ["beginner", "team-building", "anomaly-commission-checklist"];
+const guideOrder = ["beginner", "team-building", "anomaly-commission-checklist", "gacha-budget", "daily-weekly-priority"];
 const getGuideOrder = (slug) => {
   const index = guideOrder.indexOf(slug);
   return index === -1 ? guideOrder.length : index;

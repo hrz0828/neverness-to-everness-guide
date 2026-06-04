@@ -231,6 +231,20 @@ declare module 'astro:content' {
   collection: "guides";
   data: InferEntrySchema<"guides">
 } & { render(): Render[".mdx"] };
+"daily-weekly-priority.mdx": {
+	id: "daily-weekly-priority.mdx";
+  slug: "daily-weekly-priority";
+  body: string;
+  collection: "guides";
+  data: InferEntrySchema<"guides">
+} & { render(): Render[".mdx"] };
+"gacha-budget.mdx": {
+	id: "gacha-budget.mdx";
+  slug: "gacha-budget";
+  body: string;
+  collection: "guides";
+  data: InferEntrySchema<"guides">
+} & { render(): Render[".mdx"] };
 "team-building.mdx": {
 	id: "team-building.mdx";
   slug: "team-building";
