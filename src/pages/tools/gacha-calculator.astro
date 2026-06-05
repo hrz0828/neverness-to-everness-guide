@@ -206,6 +206,27 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
     </div>
   </section>
 
+  <section class="mt-10 grid gap-5 lg:grid-cols-[1fr_1fr]">
+    <article class="rounded-lg border border-zinc-200 bg-white p-5 shadow-sm dark:border-line dark:bg-panel/80 dark:shadow-none">
+      <p class="text-sm font-semibold text-teal-700 dark:text-neon">工具怎么用</p>
+      <h2 class="mt-2 text-2xl font-black text-zinc-950 dark:text-white">先填资源，再看缺口，不要只看单次结果</h2>
+      <div class="mt-4 space-y-3 text-sm leading-7 text-zinc-600 dark:text-zinc-300">
+        <p>抽卡预算页适合在新卡池上线前使用。先填写当前限定角色池垫抽、已有环石、限定骰、三钥和卡池剩余天数，再输入你想要的角色本体和弧盘数量。工具会按最坏保底估算需要多少抽，并把活动、日常和探索补票折算进可用资源。</p>
+        <p>养成规划页适合在抽到角色后使用。你可以输入主C、副C/辅助数量、计划天数、每日体力和材料本消耗，再用滑杆调整突破、技能、弧盘和空幕的分配比例。结果不是强制配方，而是帮助你判断本周资源是否会被分散。</p>
+      </div>
+    </article>
+
+    <article class="rounded-lg border border-zinc-200 bg-white p-5 shadow-sm dark:border-line dark:bg-panel/80 dark:shadow-none">
+      <p class="text-sm font-semibold text-teal-700 dark:text-neon">参数与风险说明</p>
+      <h2 class="mt-2 text-2xl font-black text-zinc-950 dark:text-white">以游戏内公告为准，保留停手线</h2>
+      <ul class="mt-4 space-y-3 text-sm leading-7 text-zinc-600 dark:text-zinc-300">
+        <li class="rounded-md border border-zinc-200 bg-zinc-50 p-3 dark:border-line dark:bg-black/20">卡池规则、保底继承、弧盘命中率、活动奖励和兑换资源可能随版本变化。抽卡前请对照游戏内公告更新“规则参数”。</li>
+        <li class="rounded-md border border-zinc-200 bg-zinc-50 p-3 dark:border-line dark:bg-black/20">如果预算刚好够最坏保底，不建议同时追角色本体、专属弧盘和觉醒节点。优先保角色选择权，再考虑弧盘和外观。</li>
+        <li class="rounded-md border border-zinc-200 bg-zinc-50 p-3 dark:border-line dark:bg-black/20">本工具所有输入都在浏览器本地处理，保存按钮只会把参数写入本机 localStorage，不会主动上传你的抽卡资源或养成计划。</li>
+      </ul>
+    </article>
+  </section>
+
   <script>
     const STORAGE_KEY = "nte-tool-state-v2";
     const ids = [
