@@ -14,10 +14,20 @@ export const guideVisuals: Record<string, { image: string; alt: string; source: 
     alt: "异环都市战斗场景",
     source: "站内素材"
   },
+  "arc-module-substats": {
+    image: "/images/guides/nte-poster-1.avif",
+    alt: "异环弧盘空幕与角色养成参考画面",
+    source: "Steam 官方商店 CDN"
+  },
   "growth-material-route": {
     image: "/images/guides/nte-poster-1.avif",
     alt: "异环城市探索与角色养成画面",
     source: "Steam 官方商店 CDN"
+  },
+  "shop-exchange-priority": {
+    image: "/images/news/area-new-herland.jpg",
+    alt: "异环城市商店与资源周转场景",
+    source: "站内素材"
   },
   "banner-analysis-framework": {
     image: "/images/guides/nte-poster-2.avif",

@@ -224,6 +224,13 @@ declare module 'astro:content' {
   collection: "guides";
   data: InferEntrySchema<"guides">
 } & { render(): Render[".mdx"] };
+"arc-module-substats.mdx": {
+	id: "arc-module-substats.mdx";
+  slug: "arc-module-substats";
+  body: string;
+  collection: "guides";
+  data: InferEntrySchema<"guides">
+} & { render(): Render[".mdx"] };
 "banner-analysis-framework.mdx": {
 	id: "banner-analysis-framework.mdx";
   slug: "banner-analysis-framework";
@@ -290,6 +297,13 @@ declare module 'astro:content' {
 "growth-material-route.mdx": {
 	id: "growth-material-route.mdx";
   slug: "growth-material-route";
+  body: string;
+  collection: "guides";
+  data: InferEntrySchema<"guides">
+} & { render(): Render[".mdx"] };
+"shop-exchange-priority.mdx": {
+	id: "shop-exchange-priority.mdx";
+  slug: "shop-exchange-priority";
   body: string;
   collection: "guides";
   data: InferEntrySchema<"guides">

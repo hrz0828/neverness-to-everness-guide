@@ -6,7 +6,9 @@ import { guideVisuals } from "../data/guideVisuals";
 const guideOrder = [
   "character-tier-list",
   "team-comps",
+  "arc-module-substats",
   "growth-material-route",
+  "shop-exchange-priority",
   "banner-analysis-framework",
   "boss-combat-guide",
   "exploration-checklist",
@@ -29,7 +31,9 @@ const guideMeta = {
   "character-tier-list": { category: "角色养成", tag: "练谁", time: "6 分钟" },
   "team-comps": { category: "角色养成", tag: "配队", time: "7 分钟" },
   "team-building": { category: "角色养成", tag: "循环", time: "5 分钟" },
+  "arc-module-substats": { category: "角色养成", tag: "词条", time: "8 分钟" },
   "growth-material-route": { category: "抽卡资源", tag: "养成", time: "6 分钟" },
+  "shop-exchange-priority": { category: "抽卡资源", tag: "商店", time: "7 分钟" },
   "banner-analysis-framework": { category: "抽卡资源", tag: "卡池", time: "6 分钟" },
   "gacha-budget": { category: "抽卡资源", tag: "预算", time: "5 分钟" },
   "beginner": { category: "新手入门", tag: "开荒", time: "6 分钟" },
@@ -44,8 +48,8 @@ const guideMeta = {
 };
 const guideGroups = [
   { name: "新手入门", desc: "刚入坑、回坑或想整理账号节奏时先看这里。", slugs: ["beginner", "first-30-days-route", "daily-weekly-priority", "faq"] },
-  { name: "角色养成", desc: "解决练谁、怎么配队、循环不顺和材料投入的问题。", slugs: ["character-tier-list", "team-comps", "team-building"] },
-  { name: "抽卡资源", desc: "抽卡前先算预算，养成时再看材料和方斯消耗。", slugs: ["banner-analysis-framework", "gacha-budget", "growth-material-route"] },
+  { name: "角色养成", desc: "解决练谁、怎么配队、循环不顺和词条投入的问题。", slugs: ["character-tier-list", "team-comps", "team-building", "arc-module-substats"] },
+  { name: "抽卡资源", desc: "抽卡前先算预算，养成时再看材料、商店和方斯消耗。", slugs: ["banner-analysis-framework", "gacha-budget", "growth-material-route", "shop-exchange-priority"] },
   { name: "探索战斗", desc: "地图查漏、异象委托和高压战斗卡关时使用。", slugs: ["exploration-checklist", "anomaly-commission-checklist", "boss-combat-guide"] },
   { name: "系统机制", desc: "看不懂系统名词或版本内容变化时快速补课。", slugs: ["systems-overview", "version-review-checklist"] }
 ].map((group) => ({
