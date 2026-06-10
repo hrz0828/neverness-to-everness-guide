@@ -1,4 +1,14 @@
 export const guideVisuals: Record<string, { image: string; alt: string; source: string }> = {
+  "version-1-1-banner-planning": {
+    image: "/images/guides/nte-poster-2.avif",
+    alt: "异环 1.1 版本卡池与角色规划参考画面",
+    source: "Steam 官方商店 CDN"
+  },
+  "june-2026-codes-rewards-route": {
+    image: "/images/guides/nte-poster-3.avif",
+    alt: "异环 2026 年 6 月兑换码与开服资源领取参考画面",
+    source: "Steam 官方商店 CDN"
+  },
   "character-tier-list": {
     image: "/images/guides/nte-header.jpg",
     alt: "异环角色与都市主视觉",

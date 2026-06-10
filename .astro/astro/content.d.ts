@@ -301,6 +301,13 @@ declare module 'astro:content' {
   collection: "guides";
   data: InferEntrySchema<"guides">
 } & { render(): Render[".mdx"] };
+"june-2026-codes-rewards-route.mdx": {
+	id: "june-2026-codes-rewards-route.mdx";
+  slug: "june-2026-codes-rewards-route";
+  body: string;
+  collection: "guides";
+  data: InferEntrySchema<"guides">
+} & { render(): Render[".mdx"] };
 "shop-exchange-priority.mdx": {
 	id: "shop-exchange-priority.mdx";
   slug: "shop-exchange-priority";
@@ -325,6 +332,13 @@ declare module 'astro:content' {
 "team-comps.mdx": {
 	id: "team-comps.mdx";
   slug: "team-comps";
+  body: string;
+  collection: "guides";
+  data: InferEntrySchema<"guides">
+} & { render(): Render[".mdx"] };
+"version-1-1-banner-planning.mdx": {
+	id: "version-1-1-banner-planning.mdx";
+  slug: "version-1-1-banner-planning";
   body: string;
   collection: "guides";
   data: InferEntrySchema<"guides">
