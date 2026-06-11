@@ -2,6 +2,93 @@ const commonAuthor = "异环攻略站编辑部";
 
 export const latestGuides = [
   {
+    id: "20",
+    title: "1.1版本热点快报：当前卡池、强度快照和资源优先级",
+    date: "2026-06-11",
+    author: commonAuthor,
+    image: "/images/guides/nte-poster-2.avif",
+    category: "版本热点",
+    readTime: "8 分钟",
+    gallery: [
+      {
+        src: "/images/guides/nte-poster-2.avif",
+        alt: "异环 1.1 版本热点与卡池快报参考画面",
+        caption: "当前版本最该优先处理的是卡池节奏、免费资源和明确的预算停手线。"
+      },
+      {
+        src: "/images/guides/nte-poster-3.avif",
+        alt: "异环 6 月兑换码与开服资源领取参考画面",
+        caption: "兑换码、邮箱补偿和活动奖励会直接影响这周的抽卡判断。"
+      }
+    ],
+    excerpt:
+      "汇总 2026 年 6 月最新卡池、S 级角色强度、兑换码和保底规则，帮助你先判断这周该抽谁、留多少资源。",
+    guide: {
+      overview:
+        "截至 2026 年 6 月 11 日，Lacrimosa 仍在 1.1 上半卡池，Chaos 会在 6 月 24 日接档，1.2 已确认 Shinku 与 Iroi。当前版本最重要的不是追热度，而是先判断当前池是否解决你的账号短板，再把免费资源、兑换码和后续预算一起算清。",
+      requirements: [
+        { label: "当前卡池", value: "Lacrimosa：2026-06-03 至 2026-06-24" },
+        { label: "后续卡池", value: "Chaos：2026-06-24 至 2026-07-08；1.2 已确认 Shinku 与 Iroi" },
+        { label: "资源重点", value: "兑换码、邮箱补偿、活动奖励、Annulith 与 Tri-Keys" }
+      ],
+      stepsTitle: "版本热点判断顺序",
+      stepsNote: "先看需求，再看热度",
+      steps: [
+        {
+          title: "先判断账号短板",
+          action: "缺主 C、缺生存、缺辅助还是缺第二队",
+          detail:
+            "当前版本的抽卡价值，首先取决于你缺什么。没有明确短板时，版本热点很容易把你带进冲动消费。"
+        },
+        {
+          title: "再看当前池适不适合你",
+          action: "Lacrimosa 本体优先于专属弧盘",
+          detail:
+            "如果你需要的是一个能立刻进队的核心输出，Lacrimosa 本体优先级最高。专属弧盘和外观节点只有在预算足够时才考虑。"
+        },
+        {
+          title: "清掉免费资源",
+          action: "先领兑换码、邮件补偿和活动奖励",
+          detail:
+            "免费 Annulith、方斯和养成材料会直接改变你的停手线。先领完再做抽卡判断，才不会把预算估低。"
+        },
+        {
+          title: "给后续版本留预算",
+          action: "Chaos 和 1.2 都需要保底空间",
+          detail:
+            "如果你已经有成型主队，别把 1.1 上半抽空。给 Chaos 和 1.2 留资源，才能保留后续版本的选择权。"
+        },
+        {
+          title: "最后才看强度榜",
+          action: "S 级强度只是参考，不是强制抽取",
+          detail:
+            "当前公开强度里，Fadia、Haniel、Hotori、Lacrimosa、Nanally、Sakiri、Zero 都属于高评价角色，但是否值得抽还要看你的队伍缺口。"
+        }
+      ],
+      challengeLabel: "版本误区",
+      boss: {
+        name: "把版本热点误读成版本必抽",
+        summary:
+          "版本热点只说明大家在讨论什么，不等于你的账号一定需要什么。最容易翻车的是只看热度，不看预算和队伍缺口。",
+        tips: [
+          "角色池、弧盘池和外观节点要分开记账。",
+          "先把兑换码和邮箱奖励领完，再算实际可抽数量。",
+          "如果你已拥有稳定主队，留资源给 Chaos 或 1.2 往往更稳。"
+        ]
+      },
+      rewards: ["当前卡池判断", "强度快照", "兑换码收益", "预算停手线", "后续版本选择权"],
+      closing:
+        "这周最稳的版本热点打法，是先判断账号短板，再决定 Lacrimosa 要不要抽，之后把免费资源和后续预算一起算进去。"
+    },
+    paragraphs: [
+      "6 月 11 日这一版的热点关键词其实很集中：Lacrimosa、Chaos、1.2、兑换码和强度快照。只要把这几项按顺序拆开，抽卡决策就会清晰很多。",
+      "当前公开强度里，Fadia、Haniel、Hotori、Lacrimosa、Nanally、Sakiri 和 Zero 都属于高评价角色，但这不意味着所有账号都要追。强度榜适合做参考，不适合直接当抽卡命令。",
+      "最实用的做法是先领完兑换码和邮箱奖励，再把 Annulith、Tri-Keys 和方斯分开记账。这样你会知道自己究竟是能抽当前池，还是应该为 Chaos 和 1.2 留预算。",
+      "如果你已经有完整主队，Lacrimosa 可能只是补强，不一定是刚需。反过来，如果你当前最缺的就是一个稳定的主输出，本周的上半池就会更值得考虑。",
+      "版本热点攻略的目标不是追着每个新闻跑，而是让你在版本密集更新时仍然有选择权。"
+    ]
+  },
+  {
     id: "19",
     title: "1.1首日开荒路线：Sunward Island、Corridor of Echoes、兑换码与限时活动先后顺序",
     date: "2026-06-01",

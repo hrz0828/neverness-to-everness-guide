@@ -504,6 +504,50 @@ export const mapEnglish = {
 };
 
 export const newsEnglish = {
+  "20": {
+    category: "Version Hotspot",
+    title: "Version 1.1 Hotspot Briefing: Current Banner, Strength Snapshot and Resource Priority",
+    excerpt:
+      "A June 2026 briefing that compresses current banners, character strength, redeem codes and pity rules into a practical pull decision.",
+    readTime: "8 min",
+    overview:
+      "As of June 11, 2026, Lacrimosa remains the first-half banner in Version 1.1, Chaos will follow on June 24, and Version 1.2 is already confirmed to bring Shinku and Iroi. The main question is not what the community is excited about, but whether the current banner solves your roster gap and how much budget you should preserve for future banners.",
+    requirements: [
+      ["Current banner", "Lacrimosa runs from June 3 to June 24, 2026"],
+      ["Upcoming banner", "Chaos runs from June 24 to July 8, 2026; Shinku and Iroi are confirmed for Version 1.2"],
+      ["Resource focus", "Redeem codes, mail rewards, event rewards, Annulith and Tri-Keys"]
+    ],
+    stepsTitle: "Hotspot Decision Order",
+    stepsNote: "Need first, hype second",
+    steps: [
+      ["Identify the roster gap", "Decide whether you need a main carry, survival, support or a second team slot.", "Pull value starts with your account needs. Without a clear gap, version hype can easily push you into impulse spending."],
+      ["Check whether the current banner fits", "Treat Lacrimosa's base copy as the first decision, not her signature Arc.", "If you need a character that can enter your team immediately, the base copy has the highest priority. Signature Arcs and cosmetic nodes only matter after the base kit is secured."],
+      ["Claim free resources first", "Redeem codes, claim mail and collect event rewards before budgeting.", "Free Annulith, Fons and growth materials directly affect your stop-loss line. Claiming them first gives you a realistic pull budget."],
+      ["Reserve future budget", "Keep room for Chaos and Version 1.2.", "If your main team is already stable, avoid emptying the version on the first banner. Saving budget preserves later options."],
+      ["Use tier lists as a reference only", "Strong characters still need a roster fit.", "The public strength snapshot includes Fadia, Haniel, Hotori, Lacrimosa, Nanally, Sakiri and Zero, but the right choice still depends on what your account lacks."]
+    ],
+    challengeLabel: "Version Misread",
+    boss: {
+      name: "Treating a hotspot as a mandatory pull",
+      summary:
+        "A version hotspot tells you what is being discussed, not what your account must chase. The biggest mistake is reading hype as a purchase order.",
+      tips: [
+        "Keep character, Arc and cosmetic budgets separate.",
+        "Claim codes and mail before calculating your real pull count.",
+        "If you already have a stable main team, saving for Chaos or Version 1.2 is often safer."
+      ]
+    },
+    rewards: ["Current banner judgment", "Strength snapshot", "Code rewards", "Budget stop-loss", "Future flexibility"],
+    closing:
+      "The safest 1.1 hotspot approach is to check your roster gap first, then decide whether Lacrimosa is a real need, and only after that fold in free resources and future banner plans.",
+    paragraphs: [
+      "The main 1.1 topics right now are Lacrimosa, Chaos, Version 1.2, redeem codes and the current strength snapshot.",
+      "The public strength list is useful as a reference, but it should not become a universal pull command.",
+      "Claiming codes and mailbox rewards before budgeting gives you a much more accurate view of how much you can actually spend.",
+      "For stable accounts, Lacrimosa is often a nice upgrade rather than a necessity. For accounts missing a true carry, she is much more relevant.",
+      "A good hotspot guide should preserve choice, not remove it."
+    ]
+  },
   "19": {
     category: "Version Start",
     title: "Version 1.1 Day-One Route: Sunward Island, Corridor of Echoes, Codes and Event Priority",
