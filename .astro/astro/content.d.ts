@@ -343,6 +343,13 @@ declare module 'astro:content' {
   collection: "guides";
   data: InferEntrySchema<"guides">
 } & { render(): Render[".mdx"] };
+"version-hotspot-briefing.mdx": {
+	id: "version-hotspot-briefing.mdx";
+  slug: "version-hotspot-briefing";
+  body: string;
+  collection: "guides";
+  data: InferEntrySchema<"guides">
+} & { render(): Render[".mdx"] };
 "version-review-checklist.mdx": {
 	id: "version-review-checklist.mdx";
   slug: "version-review-checklist";

@@ -4,6 +4,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import { guideVisuals } from "../data/guideVisuals";
 
 const guideOrder = [
+  "version-hotspot-briefing",
   "version-1-1-banner-planning",
   "june-2026-codes-rewards-route",
   "character-tier-list",
@@ -30,6 +31,7 @@ const getGuideOrder = (slug) => {
 };
 const guides = [...await getCollection("guides")].sort((a, b) => getGuideOrder(a.slug) - getGuideOrder(b.slug));
 const guideMeta = {
+  "version-hotspot-briefing": { category: "版本热点", tag: "快报", time: "8 分钟" },
   "version-1-1-banner-planning": { category: "版本热点", tag: "1.1卡池", time: "8 分钟" },
   "june-2026-codes-rewards-route": { category: "版本热点", tag: "兑换码", time: "7 分钟" },
   "character-tier-list": { category: "角色养成", tag: "练谁", time: "6 分钟" },
@@ -51,7 +53,7 @@ const guideMeta = {
   "version-review-checklist": { category: "系统机制", tag: "版本", time: "5 分钟" }
 };
 const guideGroups = [
-  { name: "版本热点", desc: "跟随当前版本更新的卡池、兑换码和活动资源攻略。", slugs: ["version-1-1-banner-planning", "june-2026-codes-rewards-route"] },
+  { name: "版本热点", desc: "跟随当前版本更新的卡池、兑换码和活动资源攻略。", slugs: ["version-hotspot-briefing", "version-1-1-banner-planning", "june-2026-codes-rewards-route"] },
   { name: "新手入门", desc: "刚入坑、回坑或想整理账号节奏时先看这里。", slugs: ["beginner", "first-30-days-route", "daily-weekly-priority", "faq"] },
   { name: "角色养成", desc: "解决练谁、怎么配队、循环不顺和词条投入的问题。", slugs: ["character-tier-list", "team-comps", "team-building", "arc-module-substats"] },
   { name: "抽卡资源", desc: "抽卡前先算预算，养成时再看材料、商店和方斯消耗。", slugs: ["banner-analysis-framework", "gacha-budget", "growth-material-route", "shop-exchange-priority"] },

@@ -1,4 +1,9 @@
 export const guideVisuals: Record<string, { image: string; alt: string; source: string }> = {
+  "version-hotspot-briefing": {
+    image: "/images/guides/nte-poster-2.avif",
+    alt: "异环 1.1 版本热点与卡池快报参考画面",
+    source: "Steam 官方商店 CDN"
+  },
   "version-1-1-banner-planning": {
     image: "/images/guides/nte-poster-2.avif",
     alt: "异环 1.1 版本卡池与角色规划参考画面",
