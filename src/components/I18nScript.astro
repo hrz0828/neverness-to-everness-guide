@@ -306,7 +306,7 @@
       });
 
       const label = document.getElementById("languageToggleLabel");
-      if (label) label.textContent = lang === "en" ? "中" : "EN";
+      if (label) label.textContent = lang === "en" ? "ZH" : "EN";
       window.dispatchEvent(new CustomEvent("nte-language-change", { detail: { lang } }));
     }
 

@@ -2,6 +2,7 @@
 import { getCollection } from "astro:content";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { guideVisuals } from "../data/guideVisuals";
+import { guideEnglish } from "../data/contentEnglish";
 
 const guideOrder = [
   "version-hotspot-briefing",
@@ -52,6 +53,11 @@ const guideMeta = {
   "systems-overview": { category: "系统机制", tag: "机制", time: "6 分钟" },
   "version-review-checklist": { category: "系统机制", tag: "版本", time: "5 分钟" }
 };
+const guideMetaEn = Object.fromEntries(Object.entries(guideEnglish).map(([slug, guide]) => [slug, {
+  category: guide.category,
+  tag: guide.tag,
+  time: guide.time
+}]));
 const guideGroups = [
   { name: "版本热点", desc: "跟随当前版本更新的卡池、兑换码和活动资源攻略。", slugs: ["version-hotspot-briefing", "version-1-1-banner-planning", "june-2026-codes-rewards-route"] },
   { name: "新手入门", desc: "刚入坑、回坑或想整理账号节奏时先看这里。", slugs: ["beginner", "first-30-days-route", "daily-weekly-priority", "faq"] },
@@ -123,6 +129,14 @@ const systems = [
     ]
   }
 ];
+const guideGroupsEn = {
+  "版本热点": { name: "Version Hotspots", desc: "Banner, code and event-resource guides that follow the current version." },
+  "新手入门": { name: "Beginner", desc: "Start here when you are new, returning or reorganizing account rhythm." },
+  "角色养成": { name: "Character Growth", desc: "Solve who to build, how to compose teams, rotation issues and stat investment." },
+  "抽卡资源": { name: "Pull Resources", desc: "Set pull budgets first, then plan growth materials, shops and Fons spending." },
+  "探索战斗": { name: "Exploration Combat", desc: "Use these when map cleanup, anomaly commissions or hard fights get stuck." },
+  "系统机制": { name: "Systems", desc: "Quick references for system terms and version-level changes." }
+};
 ---
 
 <BaseLayout
@@ -134,23 +148,26 @@ const systems = [
     <p class="text-sm font-semibold text-neon" data-i18n="guides.kicker">开荒、养成、探索与抽卡</p>
     <h1 class="text-3xl font-black leading-tight text-zinc-950 dark:text-white sm:text-4xl" data-i18n="guides.title">异环攻略指南</h1>
     <p class="mt-3 text-base leading-7 text-zinc-600 dark:text-zinc-400">
-      不知道先练谁、体力刷什么、卡池要不要抽，或者探索度卡住时，从这里按问题找攻略。
+      <span class="lang-zh">不知道先练谁、体力刷什么、卡池要不要抽，或者探索度卡住时，从这里按问题找攻略。</span>
+      <span class="lang-en">When you are unsure who to build, what to farm, whether to pull, or how to fix stuck exploration progress, start from the problem here.</span>
     </p>
   </header>
 
   <section class="mt-8">
     <div class="mb-4 flex items-end justify-between gap-4">
       <div>
-        <p class="text-sm font-semibold text-teal-600 dark:text-neon">推荐先看</p>
-        <h2 class="mt-1 text-2xl font-black text-zinc-950 dark:text-white">从最常见的问题开始</h2>
+        <p class="text-sm font-semibold text-teal-600 dark:text-neon"><span class="lang-zh">推荐先看</span><span class="lang-en">Start Here</span></p>
+        <h2 class="mt-1 text-2xl font-black text-zinc-950 dark:text-white"><span class="lang-zh">从最常见的问题开始</span><span class="lang-en">Begin with the most common problems</span></h2>
       </div>
       <a href="/tools/gacha-calculator/" class="hidden text-sm font-semibold text-teal-700 hover:text-teal-900 dark:text-neon dark:hover:text-white sm:inline">
-        打开抽卡计算器
+        <span class="lang-zh">打开抽卡计算器</span><span class="lang-en">Open Pull Calculator</span>
       </a>
     </div>
     <div class="grid gap-4 lg:grid-cols-3">
       {featuredGuides.map((guide, index) => {
         const meta = guideMeta[guide.slug];
+        const metaEn = guideMetaEn[guide.slug];
+        const english = guideEnglish[guide.slug];
         const visual = guideVisuals[guide.slug];
         return (
           <a
@@ -163,15 +180,17 @@ const systems = [
             <div class="relative -mx-1 -mt-1 overflow-hidden rounded-md">
               <img src={visual?.image} alt={visual?.alt || guide.data.title} class="aspect-[16/9] w-full object-cover transition duration-300 group-hover:scale-[1.03]" loading={index === 0 ? "eager" : "lazy"} />
               <div class="absolute inset-x-0 bottom-0 flex items-end justify-between gap-3 bg-gradient-to-t from-black/80 to-transparent p-3 text-xs font-semibold">
-                <span class="rounded-md bg-black/55 px-2.5 py-1 text-neon backdrop-blur">{meta?.tag}</span>
-                <span class="text-zinc-200">{meta?.time}</span>
+                <span class="rounded-md bg-black/55 px-2.5 py-1 text-neon backdrop-blur"><span class="lang-zh">{meta?.tag}</span><span class="lang-en">{metaEn?.tag}</span></span>
+                <span class="text-zinc-200"><span class="lang-zh">{meta?.time}</span><span class="lang-en">{metaEn?.time}</span></span>
               </div>
             </div>
             <h3 class="mt-4 min-h-[3.25rem] text-xl font-black leading-snug text-zinc-950 group-hover:text-teal-700 dark:text-white dark:group-hover:text-neon">
-              {guide.data.title}
+              <span class="lang-zh">{guide.data.title}</span>
+              <span class="lang-en">{english?.title || guide.data.title}</span>
             </h3>
             <p class="mt-3 line-clamp-2 min-h-[3.5rem] text-sm leading-7 text-zinc-600 dark:text-zinc-400">
-              {guide.data.description}
+              <span class="lang-zh">{guide.data.description}</span>
+              <span class="lang-en">{english?.description || guide.data.description}</span>
             </p>
           </a>
         );
@@ -184,13 +203,15 @@ const systems = [
       <section>
         <div class="mb-4 flex flex-col gap-1 sm:flex-row sm:items-end sm:justify-between">
           <div>
-            <h2 class="text-2xl font-black text-zinc-950 dark:text-white">{group.name}</h2>
-            <p class="mt-1 max-w-2xl text-sm leading-6 text-zinc-600 dark:text-zinc-400">{group.desc}</p>
+            <h2 class="text-2xl font-black text-zinc-950 dark:text-white"><span class="lang-zh">{group.name}</span><span class="lang-en">{guideGroupsEn[group.name]?.name}</span></h2>
+            <p class="mt-1 max-w-2xl text-sm leading-6 text-zinc-600 dark:text-zinc-400"><span class="lang-zh">{group.desc}</span><span class="lang-en">{guideGroupsEn[group.name]?.desc}</span></p>
           </div>
         </div>
         <div class="grid gap-3 md:grid-cols-2 xl:grid-cols-3">
           {group.guides.map((guide) => {
             const meta = guideMeta[guide.slug];
+            const metaEn = guideMetaEn[guide.slug];
+            const english = guideEnglish[guide.slug];
             const visual = guideVisuals[guide.slug];
             return (
               <a
@@ -200,22 +221,24 @@ const systems = [
                 <div>
                   <div class="relative overflow-hidden">
                     <img src={visual?.image} alt={visual?.alt || guide.data.title} class="aspect-[16/9] w-full object-cover transition duration-300 group-hover:scale-[1.03]" loading="lazy" />
-                    <div class="absolute left-3 top-3 rounded-md bg-black/60 px-2 py-1 text-xs font-semibold text-neon backdrop-blur">{meta?.tag}</div>
+                    <div class="absolute left-3 top-3 rounded-md bg-black/60 px-2 py-1 text-xs font-semibold text-neon backdrop-blur"><span class="lang-zh">{meta?.tag}</span><span class="lang-en">{metaEn?.tag}</span></div>
                   </div>
                   <div class="px-4 pt-4">
                     <div class="mb-2 flex items-center justify-between gap-3 text-xs">
-                      <span class="font-semibold text-teal-700 dark:text-neon">{meta?.category}</span>
-                      <span class="text-zinc-500">{meta?.time}</span>
+                      <span class="font-semibold text-teal-700 dark:text-neon"><span class="lang-zh">{meta?.category}</span><span class="lang-en">{metaEn?.category}</span></span>
+                      <span class="text-zinc-500"><span class="lang-zh">{meta?.time}</span><span class="lang-en">{metaEn?.time}</span></span>
                     </div>
                     <h3 class="line-clamp-2 text-lg font-bold leading-snug text-zinc-950 group-hover:text-teal-700 dark:text-white dark:group-hover:text-neon">
-                      {guide.data.title}
+                      <span class="lang-zh">{guide.data.title}</span>
+                      <span class="lang-en">{english?.title || guide.data.title}</span>
                     </h3>
                     <p class="mt-2 line-clamp-2 text-sm leading-6 text-zinc-600 dark:text-zinc-400">
-                      {guide.data.description}
+                      <span class="lang-zh">{guide.data.description}</span>
+                      <span class="lang-en">{english?.description || guide.data.description}</span>
                     </p>
                   </div>
                 </div>
-                <p class="px-4 pb-4 pt-3 text-xs text-zinc-500">最后更新：{guide.data.updatedAt}</p>
+                <p class="px-4 pb-4 pt-3 text-xs text-zinc-500"><span class="lang-zh">最后更新：</span><span class="lang-en">Updated: </span>{guide.data.updatedAt}</p>
               </a>
             );
           })}

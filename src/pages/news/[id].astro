@@ -64,7 +64,10 @@ const english = newsEnglish[item.id];
             <figure class="overflow-hidden rounded-lg border border-zinc-200 bg-white shadow-sm dark:border-line dark:bg-panel/80 dark:shadow-none">
               <img src={image.src} alt={image.alt} class="aspect-[16/9] w-full object-cover" loading="lazy" />
               {image.caption && (
-                <figcaption class="px-3 py-2 text-xs leading-5 text-zinc-500 dark:text-zinc-400">{image.caption}</figcaption>
+                <figcaption class="px-3 py-2 text-xs leading-5 text-zinc-500 dark:text-zinc-400">
+                  <span class="lang-zh">{image.caption}</span>
+                  <span class="lang-en">Guide reference image</span>
+                </figcaption>
               )}
             </figure>
           ))}

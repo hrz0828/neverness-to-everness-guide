@@ -4,6 +4,13 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import { siteConfig } from "../site.config";
 
 const logs = await getCollection("updates");
+const updateEnglish = {
+  "v0-1-0": {
+    title: "Site Initialization",
+    description:
+      "Initial guide hub setup with core pages, navigation, privacy and editorial policy pages, and the first batch of NTE guide content."
+  }
+};
 ---
 
 <BaseLayout
@@ -120,8 +127,8 @@ const logs = await getCollection("updates");
       logs.map((l) => (
         <article class="card">
           <p class="text-xs text-zinc-500">{l.data.date}</p>
-          <h2 class="mt-2 font-bold">{l.data.title}</h2>
-          <p class="mt-2 text-sm leading-6 text-zinc-400">{l.data.description}</p>
+          <h2 class="mt-2 font-bold"><span class="lang-zh">{l.data.title}</span><span class="lang-en">{updateEnglish[l.slug]?.title || l.data.title}</span></h2>
+          <p class="mt-2 text-sm leading-6 text-zinc-400"><span class="lang-zh">{l.data.description}</span><span class="lang-en">{updateEnglish[l.slug]?.description || l.data.description}</span></p>
         </article>
       ))
     }

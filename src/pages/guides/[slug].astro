@@ -2,6 +2,7 @@
 import { getCollection } from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import { guideVisuals } from "../../data/guideVisuals";
+import { guideEnglish, guideFallbackBody } from "../../data/contentEnglish";
 
 export async function getStaticPaths() {
   const guides = await getCollection("guides");
@@ -12,6 +13,8 @@ const { entry } = Astro.props;
 const { Content } = await entry.render();
 const updatedAt = entry.data.updatedAt;
 const visual = guideVisuals[entry.slug];
+const english = guideEnglish[entry.slug];
+const englishBody = english?.body || (english ? guideFallbackBody(english) : "");
 
 const jsonLd = {
   "@context": "https://schema.org",
@@ -33,56 +36,66 @@ const jsonLd = {
 >
   <article class="guide-article mx-auto max-w-4xl">
     <nav class="text-sm text-zinc-500">
-      <a href="/" class="hover:text-neon">首页</a>
+      <a href="/" class="hover:text-neon"><span class="lang-zh">首页</span><span class="lang-en">Home</span></a>
       <span class="mx-2">/</span>
-      <a href="/guides/" class="hover:text-neon">机制/新手</a>
+      <a href="/guides/" class="hover:text-neon"><span class="lang-zh">机制/新手</span><span class="lang-en">Systems / Beginner</span></a>
       <span class="mx-2">/</span>
-      <span class="text-zinc-300">正文</span>
+      <span class="text-zinc-300"><span class="lang-zh">正文</span><span class="lang-en">Guide</span></span>
     </nav>
 
     <header class="mt-6 overflow-hidden rounded-lg border border-zinc-200 bg-white shadow-sm dark:border-line dark:bg-panel/80 dark:shadow-glow">
       <div class="grid gap-5 p-5 sm:p-7 lg:grid-cols-[1fr_0.82fr] lg:items-center">
         <div>
-          <p class="text-sm font-semibold text-teal-600 dark:text-neon">异环攻略 / 玩家指南</p>
+          <p class="text-sm font-semibold text-teal-600 dark:text-neon">
+            <span class="lang-zh">异环攻略 / 玩家指南</span>
+            <span class="lang-en">NTE Guide / Player Guide</span>
+          </p>
           <h1 class="mt-2 max-w-3xl text-balance text-3xl font-black leading-tight text-zinc-950 dark:text-white sm:text-5xl">
-            {entry.data.title}
+            <span class="lang-zh">{entry.data.title}</span>
+            <span class="lang-en">{english?.title || entry.data.title}</span>
           </h1>
-          <p class="mt-4 max-w-2xl text-pretty text-base leading-8 text-zinc-600 dark:text-zinc-300">
+          <p class="lang-zh mt-4 max-w-2xl text-pretty text-base leading-8 text-zinc-600 dark:text-zinc-300">
             {entry.data.description}
           </p>
+          {english && (
+            <p class="lang-en mt-4 max-w-2xl text-pretty text-base leading-8 text-zinc-600 dark:text-zinc-300">
+              {english.description}
+            </p>
+          )}
           <div class="mt-5 flex flex-wrap gap-x-4 gap-y-2 text-sm text-zinc-500">
-            <span>最后更新：{updatedAt}</span>
-            <span>内容类型：攻略正文</span>
+            <span><span class="lang-zh">最后更新：</span><span class="lang-en">Updated: </span>{updatedAt}</span>
+            <span><span class="lang-zh">内容类型：攻略正文</span><span class="lang-en">Content type: Guide article</span></span>
           </div>
         </div>
         {visual && (
           <figure class="overflow-hidden rounded-lg border border-zinc-200 bg-zinc-50 dark:border-line dark:bg-black/20">
             <img src={visual.image} alt={visual.alt} class="aspect-[16/9] w-full object-cover" loading="eager" />
             <figcaption class="px-3 py-2 text-xs leading-5 text-zinc-500 dark:text-zinc-400">
-              配图来源：{visual.source}
+              <span class="lang-zh">配图来源：</span><span class="lang-en">Image source: Steam official store CDN</span>
             </figcaption>
           </figure>
         )}
       </div>
 
       <div class="border-t border-zinc-200 bg-zinc-50 px-5 py-4 dark:border-line dark:bg-black/20 sm:px-6">
-        <p class="text-sm font-semibold text-zinc-950 dark:text-white">继续阅读</p>
+        <p class="text-sm font-semibold text-zinc-950 dark:text-white"><span class="lang-zh">继续阅读</span><span class="lang-en">Continue Reading</span></p>
         <div class="mt-3 flex flex-wrap gap-3">
           <a class="rounded-md border border-zinc-200 bg-white px-3 py-2 text-sm font-semibold text-zinc-700 hover:text-teal-600 dark:border-line dark:bg-panel/80 dark:text-zinc-200 dark:hover:text-neon" href="/guides/">
-            返回机制/新手
+            <span class="lang-zh">返回机制/新手</span><span class="lang-en">Back to Systems</span>
           </a>
           <a class="rounded-md border border-zinc-200 bg-white px-3 py-2 text-sm font-semibold text-zinc-700 hover:text-teal-600 dark:border-line dark:bg-panel/80 dark:text-zinc-200 dark:hover:text-neon" href="/explore/">
-            前往探索页
+            <span class="lang-zh">前往探索页</span><span class="lang-en">Go to Explore</span>
           </a>
           <a class="rounded-md border border-zinc-200 bg-white px-3 py-2 text-sm font-semibold text-zinc-700 hover:text-teal-600 dark:border-line dark:bg-panel/80 dark:text-zinc-200 dark:hover:text-neon" href="/tools/gacha-calculator/">
-            打开抽卡计算器
+            <span class="lang-zh">打开抽卡计算器</span><span class="lang-en">Open Pull Calculator</span>
           </a>
         </div>
       </div>
     </header>
 
-    <div class="character-guide guide-copy mt-8">
+    <div class="character-guide guide-copy lang-zh mt-8">
       <Content />
     </div>
+    {english && <div class="character-guide guide-copy lang-en mt-8" set:html={englishBody} />}
   </article>
 </BaseLayout>

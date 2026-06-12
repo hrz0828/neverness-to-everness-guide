@@ -1,4 +1,37 @@
+export const characterNameEnglish = {
+  anhunqu: "Anhunqu",
+  baicang: "Bai Cang",
+  fadiya: "Fadiya",
+  hasuoer: "Hasuoer",
+  jiuyuan: "Jiuyuan",
+  mint: "Mint",
+  nanally: "Nanally",
+  xiaozhi: "Xiaozhi",
+  xun: "Xun"
+};
+
 export const characterEnglish = {
+  anhunqu: {
+    description:
+      "Anhunqu is a Dark on-field DoT carry built around Nightmare damage, dual-form pressure and sustained field time.",
+    role: "On-field DPS / DoT",
+    element: "Dark",
+    weapon: "Arc Plate",
+    html: `
+      <h2>Role</h2>
+      <p>Anhunqu is a Dark damage dealer who prefers stable field time and repeated damage-over-time pressure instead of a single short burst. Build her when your account needs a dedicated Dark carry and can support her with survival, grouping or damage amplification.</p>
+      <h2>Core Mechanics</h2>
+      <ul>
+        <li><strong>Nightmare DoT:</strong> keep the damage-over-time state active before committing the main damage window.</li>
+        <li><strong>Dual-form play:</strong> swap forms according to the current window instead of spending every skill as soon as it is ready.</li>
+        <li><strong>Team support:</strong> she benefits from teammates who keep enemies grouped and stable long enough for DoT value to accumulate.</li>
+      </ul>
+      <h2>Build Advice</h2>
+      <p>Prioritize Dark damage, crit, attack and the skills that maintain her core damage cycle. Avoid spreading resources across too many carries before Anhunqu reaches a comfortable clearing line.</p>
+      <h2>Teams</h2>
+      <p>Use Anhunqu with a survival slot, a support or debuffer, and a flexible sub-DPS or grouping unit. Accounts with Fadiya-style protection or strong utility supports can make her field time much safer.</p>
+    `
+  },
   baicang: {
     description:
       "Bai Cang is an S-rank Curse burst DPS. She uses Scarlet Veil to mark enemies, stacks Camellia marks, then detonates them with a heavy burst window.",
@@ -315,6 +348,165 @@ export const beginnerEnglish = `
   <h2>Common Mistakes</h2>
   <p>Do not chase perfect sub-stats too early. During progression, a correct main stat usually gives more practical value than an extreme sub-stat roll on the wrong piece.</p>
 `;
+
+export const guideEnglish = {
+  "version-hotspot-briefing": {
+    category: "Version Hotspots",
+    tag: "Briefing",
+    time: "8 min",
+    title: "Version 1.1 Hotspot Briefing",
+    description: "A practical snapshot of current banners, strength notes, codes and resource priorities for Version 1.1."
+  },
+  "version-1-1-banner-planning": {
+    category: "Version Hotspots",
+    tag: "1.1 Banner",
+    time: "8 min",
+    title: "Version 1.1 Banner Planning",
+    description: "Compare Lacrimosa, Chaos, signature Arcs and future banners before spending your pull budget."
+  },
+  "june-2026-codes-rewards-route": {
+    category: "Version Hotspots",
+    tag: "Codes",
+    time: "7 min",
+    title: "June 2026 Codes and Reward Route",
+    description: "Track June codes, mail unlocks and reward-claiming order before using the resources."
+  },
+  "character-tier-list": {
+    category: "Character Growth",
+    tag: "Priority",
+    time: "6 min",
+    title: "Character Investment Priority",
+    description: "Decide who to build first by role, team cost and progression value."
+  },
+  "team-comps": {
+    category: "Character Growth",
+    tag: "Teams",
+    time: "7 min",
+    title: "Team Template Library",
+    description: "Use ready-made team directions and replacement logic for progression and harder fights."
+  },
+  "team-building": {
+    category: "Character Growth",
+    tag: "Rotation",
+    time: "5 min",
+    title: "Team Building and Rotation Basics",
+    description: "Check main DPS, sub DPS, survival and utility slots when your team feels unstable."
+  },
+  "arc-module-substats": {
+    category: "Character Growth",
+    tag: "Stats",
+    time: "8 min",
+    title: "Arc Plate and Module Sub-Stat Guide",
+    description: "Plan main stats, set bonuses and sub-stat farming around each character role."
+  },
+  "growth-material-route": {
+    category: "Pull Resources",
+    tag: "Growth",
+    time: "6 min",
+    title: "Growth Material Route",
+    description: "Prioritize stamina, Fons, skill books, Arc materials and module resources."
+  },
+  "shop-exchange-priority": {
+    category: "Pull Resources",
+    tag: "Shop",
+    time: "7 min",
+    title: "Shop Exchange Priority",
+    description: "Choose which event, permanent and Fons shop resources are worth buying first."
+  },
+  "banner-analysis-framework": {
+    category: "Pull Resources",
+    tag: "Banner",
+    time: "6 min",
+    title: "Banner Analysis Framework",
+    description: "Review base copy value, Arc dependency, awakenings and next-banner budget before pulling."
+  },
+  "gacha-budget": {
+    category: "Pull Resources",
+    tag: "Budget",
+    time: "5 min",
+    title: "Pull Budget and Stop Line Planning",
+    description: "Calculate pity, risk and growth cost before spending on character, standard or Arc banners."
+  },
+  beginner: {
+    category: "Beginner",
+    tag: "Start",
+    time: "6 min",
+    title: "Beginner Guide and Resource Planning",
+    description: "Start with stamina, Fons, character growth and daily priorities when you are unsure what to do first.",
+    body: beginnerEnglish
+  },
+  "first-30-days-route": {
+    category: "Beginner",
+    tag: "30 Days",
+    time: "7 min",
+    title: "First 30 Days Progression Route",
+    description: "A staged route for story progress, stamina use, pull saving, exploration and second-team planning."
+  },
+  "daily-weekly-priority": {
+    category: "Beginner",
+    tag: "Daily",
+    time: "5 min",
+    title: "Daily, Weekly and Event Priority",
+    description: "Use limited play time well by ordering dailies, weeklies, stamina, events and cleanup routes."
+  },
+  faq: {
+    category: "Beginner",
+    tag: "FAQ",
+    time: "4 min",
+    title: "Frequently Asked Questions",
+    description: "Quick answers for pulls, stamina, character growth, Arc Plates, modules and exploration progress."
+  },
+  "boss-combat-guide": {
+    category: "Exploration Combat",
+    tag: "Boss",
+    time: "6 min",
+    title: "Boss and Hard-Combat Basics",
+    description: "Improve boss attempts by watching warnings, toughness windows, survival skills and burst timing."
+  },
+  "exploration-checklist": {
+    category: "Exploration Combat",
+    tag: "Cleanup",
+    time: "6 min",
+    title: "100% Exploration Cleanup Checklist",
+    description: "Check phone booths, oracle stones, rooftops, under-bridge layers, night anomalies and hidden chests."
+  },
+  "anomaly-commission-checklist": {
+    category: "Exploration Combat",
+    tag: "Anomaly",
+    time: "5 min",
+    title: "Anomaly Commission Checklist",
+    description: "Troubleshoot entry conditions, spatial routes, puzzles and combat preparation for anomaly commissions."
+  },
+  "systems-overview": {
+    category: "Systems",
+    tag: "Systems",
+    time: "6 min",
+    title: "Core Systems Overview",
+    description: "Build a basic mental model for Arc Plates, modules, toughness, anomalies, vehicles and operations."
+  },
+  "version-review-checklist": {
+    category: "Systems",
+    tag: "Version",
+    time: "5 min",
+    title: "Version Update Review Checklist",
+    description: "After an update, recheck announcements, banners, character strength, event value, maps and shops."
+  }
+};
+
+export function guideFallbackBody(guide) {
+  return `
+    <h2>What This Guide Covers</h2>
+    <p>${guide.description}</p>
+    <h2>How To Use It</h2>
+    <p>Start from the account problem named in the title, then compare the advice against your current roster, stamina, pull budget and version schedule. If a rule has changed in game, use the latest in-game notice as the source of truth.</p>
+    <h2>Review Checklist</h2>
+    <ul>
+      <li>Confirm whether the recommendation solves a real account bottleneck.</li>
+      <li>Check update dates and current event windows before committing resources.</li>
+      <li>Keep character growth, pull budget and exploration cleanup as separate plans.</li>
+    </ul>
+  `;
+}
 
 export const mapEnglish = {
   "skytower-route": {
