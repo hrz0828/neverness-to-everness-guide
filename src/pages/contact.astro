@@ -15,7 +15,7 @@ const updatedAt = siteConfig.updatedAt;
     dateModified: updatedAt
   }}
 >
-  <article class="prose max-w-none">
+  <article class="prose lang-zh max-w-none">
     <p class="text-sm font-semibold text-neon" data-i18n="contact.kicker">Contact</p>
     <h1 data-i18n="contact.title">联系我们</h1>
     <p>最后更新日期：{updatedAt}</p>
@@ -44,6 +44,38 @@ const updatedAt = siteConfig.updatedAt;
     <h2 data-i18n="contact.sla">处理时效</h2>
     <p>
       普通内容反馈通常会在 3-7 个工作日内处理；涉及版权、隐私或明显错误的信息会优先检查。若问题需要等待游戏版本更新或官方资料确认，页面会在确认后再进行修订。
+    </p>
+  </article>
+
+  <article class="prose lang-en max-w-none">
+    <p class="text-sm font-semibold text-neon">Contact</p>
+    <h1>Contact Us</h1>
+    <p>Last updated: {updatedAt}</p>
+
+    <p>
+      If you find outdated guide information, missing content, image rights issues, privacy questions, advertising concerns or site bugs, contact us through the email below.
+    </p>
+
+    <h2>Email</h2>
+    <p>
+      Email: <a href={`mailto:${siteConfig.contactEmail}`}>{siteConfig.contactEmail}</a>
+    </p>
+    <p>
+      To help us act quickly, include the page URL, a clear problem description, screenshots if useful, and verifiable rights documentation for copyright or trademark requests.
+    </p>
+
+    <h2>Feedback We Can Act On</h2>
+    <ul>
+      <li>Incorrect character skills, stat recommendations, map locations or quest steps.</li>
+      <li>Broken pages, dead links, image loading issues or irrelevant search results.</li>
+      <li>Copyright, trademark, asset use, attribution or source-labeling concerns.</li>
+      <li>Privacy policy, cookie, advertising or data handling questions.</li>
+      <li>Requests for new character, event, tool or topic coverage.</li>
+    </ul>
+
+    <h2>Response Time</h2>
+    <p>
+      General content feedback is usually reviewed within 3-7 business days. Copyright, privacy and clear factual errors are prioritized. If a correction depends on a game update or official confirmation, the page is revised after the information can be verified.
     </p>
   </article>
 </BaseLayout>

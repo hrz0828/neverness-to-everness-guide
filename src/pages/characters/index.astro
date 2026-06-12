@@ -29,6 +29,56 @@ const characters = (await getCollection("characters")).sort((a, b) => {
     </p>
   </header>
 
+  <section class="lang-zh mt-8 grid gap-5 lg:grid-cols-[1fr_1fr]">
+    <article class="rounded-lg border border-zinc-200 bg-white p-5 shadow-sm dark:border-line dark:bg-panel/80">
+      <p class="text-sm font-semibold text-teal-700 dark:text-neon">角色攻略怎么读</p>
+      <h2 class="mt-2 text-2xl font-black text-zinc-950 dark:text-white">先看定位，再看循环和投入顺序</h2>
+      <div class="mt-4 space-y-3 text-sm leading-7 text-zinc-600 dark:text-zinc-300">
+        <p>
+          角色页面会把“能不能练”和“怎么使用”分开写。列表卡片只展示稀有度、属性、武器和定位，进入详情后再看技能轴、核心机制、弧盘与空幕词条、觉醒节点和配队模板。
+        </p>
+        <p>
+          如果资源有限，建议先筛选主C、生存位和功能辅助，再对照 <a href="/guides/team-building/">配队循环指南</a> 判断队伍是否缺聚怪、破韧、治疗或后台输出。不要只按稀有度平均培养，开荒期通常先保证一个主输出和两个稳定功能位。
+        </p>
+      </div>
+    </article>
+
+    <article class="rounded-lg border border-zinc-200 bg-white p-5 shadow-sm dark:border-line dark:bg-panel/80">
+      <p class="text-sm font-semibold text-teal-700 dark:text-neon">角色页如何复核</p>
+      <h2 class="mt-2 text-2xl font-black text-zinc-950 dark:text-white">版本更新后优先检查会影响决策的项目</h2>
+      <ul class="mt-4 space-y-3 text-sm leading-7 text-zinc-600 dark:text-zinc-300">
+        <li class="rounded-md border border-zinc-200 bg-zinc-50 p-3 dark:border-line dark:bg-black/20">技能倍率、冷却时间、能量需求、觉醒节点和弧盘效果以游戏内最新描述为准，本站会在页面标注最后更新时间。</li>
+        <li class="rounded-md border border-zinc-200 bg-zinc-50 p-3 dark:border-line dark:bg-black/20">强度评价会结合当前敌人环境、材料压力和队伍成型成本，不把单次爆发截图当作唯一依据。</li>
+        <li class="rounded-md border border-zinc-200 bg-zinc-50 p-3 dark:border-line dark:bg-black/20">如果发现角色机制或配队建议过期，可以通过 <a href="/contact/">联系我们</a> 提交页面链接、问题描述和可核验信息。</li>
+      </ul>
+    </article>
+  </section>
+
+  <section class="lang-en mt-8 grid gap-5 lg:grid-cols-[1fr_1fr]">
+    <article class="rounded-lg border border-zinc-200 bg-white p-5 shadow-sm dark:border-line dark:bg-panel/80">
+      <p class="text-sm font-semibold text-teal-700 dark:text-neon">How To Read Character Guides</p>
+      <h2 class="mt-2 text-2xl font-black text-zinc-950 dark:text-white">Check role first, then rotation and investment order</h2>
+      <div class="mt-4 space-y-3 text-sm leading-7 text-zinc-600 dark:text-zinc-300">
+        <p>
+          Character pages separate whether a unit is worth building from how that unit should be played. List cards show rarity, element, weapon and combat role; detail pages cover skill timing, core mechanics, Arc Plate and module stats, awakening breakpoints and team templates.
+        </p>
+        <p>
+          If resources are limited, filter by main DPS, survival slot and utility support before spreading materials. Use the <a href="/guides/team-building/">team-building guide</a> to decide whether the account lacks grouping, toughness breaking, healing or off-field damage.
+        </p>
+      </div>
+    </article>
+
+    <article class="rounded-lg border border-zinc-200 bg-white p-5 shadow-sm dark:border-line dark:bg-panel/80">
+      <p class="text-sm font-semibold text-teal-700 dark:text-neon">How Character Pages Are Reviewed</p>
+      <h2 class="mt-2 text-2xl font-black text-zinc-950 dark:text-white">Version changes are checked against decision-making fields</h2>
+      <ul class="mt-4 space-y-3 text-sm leading-7 text-zinc-600 dark:text-zinc-300">
+        <li class="rounded-md border border-zinc-200 bg-zinc-50 p-3 dark:border-line dark:bg-black/20">Skill multipliers, cooldowns, energy needs, awakenings and Arc Plate effects should always be verified against the latest in-game text.</li>
+        <li class="rounded-md border border-zinc-200 bg-zinc-50 p-3 dark:border-line dark:bg-black/20">Strength notes consider enemy environment, material pressure and team cost instead of relying on one burst screenshot.</li>
+        <li class="rounded-md border border-zinc-200 bg-zinc-50 p-3 dark:border-line dark:bg-black/20">Outdated mechanics or team advice can be reported through the <a href="/contact/">contact page</a> with the page URL and verifiable details.</li>
+      </ul>
+    </article>
+  </section>
+
   <div class="mt-8 grid grid-cols-1 gap-5 sm:grid-cols-2 xl:grid-cols-3">
     {
       characters.map((character) => (

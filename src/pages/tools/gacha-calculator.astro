@@ -206,7 +206,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
     </div>
   </section>
 
-  <section class="mt-10 grid gap-5 lg:grid-cols-[1fr_1fr]">
+  <section class="lang-zh mt-10 grid gap-5 lg:grid-cols-[1fr_1fr]">
     <article class="rounded-lg border border-zinc-200 bg-white p-5 shadow-sm dark:border-line dark:bg-panel/80 dark:shadow-none">
       <p class="text-sm font-semibold text-teal-700 dark:text-neon">工具怎么用</p>
       <h2 class="mt-2 text-2xl font-black text-zinc-950 dark:text-white">先填资源，再看缺口，不要只看单次结果</h2>
@@ -225,6 +225,65 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
         <li class="rounded-md border border-zinc-200 bg-zinc-50 p-3 dark:border-line dark:bg-black/20">本工具所有输入都在浏览器本地处理，保存按钮只会把参数写入本机 localStorage，不会主动上传你的抽卡资源或养成计划。</li>
       </ul>
     </article>
+  </section>
+
+  <section class="lang-en mt-10 grid gap-5 lg:grid-cols-[1fr_1fr]">
+    <article class="rounded-lg border border-zinc-200 bg-white p-5 shadow-sm dark:border-line dark:bg-panel/80 dark:shadow-none">
+      <p class="text-sm font-semibold text-teal-700 dark:text-neon">How To Use This Tool</p>
+      <h2 class="mt-2 text-2xl font-black text-zinc-950 dark:text-white">Enter resources first, then read the gap instead of one isolated result</h2>
+      <div class="mt-4 space-y-3 text-sm leading-7 text-zinc-600 dark:text-zinc-300">
+        <p>The pull budget panel is meant for banner planning. Enter current pity, owned Annulith, limited dice, tri-keys and remaining banner days, then set target character and Arc Plate copies. The tool estimates a worst-case pull budget and folds daily, event and exploration income into available resources.</p>
+        <p>The growth panel is for post-pull planning. Enter main DPS count, support count, daily stamina, run cost and plan length, then adjust level, skill, Arc Plate and module shares. The result is not a forced recipe; it shows whether your weekly resources are being spread too thin.</p>
+      </div>
+    </article>
+
+    <article class="rounded-lg border border-zinc-200 bg-white p-5 shadow-sm dark:border-line dark:bg-panel/80 dark:shadow-none">
+      <p class="text-sm font-semibold text-teal-700 dark:text-neon">Rules and Risk Notes</p>
+      <h2 class="mt-2 text-2xl font-black text-zinc-950 dark:text-white">Use in-game notices as the final source</h2>
+      <ul class="mt-4 space-y-3 text-sm leading-7 text-zinc-600 dark:text-zinc-300">
+        <li class="rounded-md border border-zinc-200 bg-zinc-50 p-3 dark:border-line dark:bg-black/20">Banner rules, pity carryover, Arc Plate rates, event rewards and exchange resources may change by version. Check the rules panel before making pull decisions.</li>
+        <li class="rounded-md border border-zinc-200 bg-zinc-50 p-3 dark:border-line dark:bg-black/20">If your budget barely covers worst-case pity, avoid chasing character copy, signature Arc Plate and awakenings at the same time. Secure the character first.</li>
+        <li class="rounded-md border border-zinc-200 bg-zinc-50 p-3 dark:border-line dark:bg-black/20">Inputs are processed locally in your browser. Saving writes parameters to localStorage and does not upload your pull plan.</li>
+      </ul>
+    </article>
+  </section>
+
+  <section class="lang-zh mt-6 rounded-lg border border-zinc-200 bg-white p-5 shadow-sm dark:border-line dark:bg-panel/80">
+    <p class="text-sm font-semibold text-teal-700 dark:text-neon">计算结果如何使用</p>
+    <h2 class="mt-2 text-2xl font-black text-zinc-950 dark:text-white">把结果当作决策表，而不是抽卡承诺</h2>
+    <div class="mt-4 grid gap-4 md:grid-cols-3">
+      <article class="rounded-md border border-zinc-200 bg-zinc-50 p-4 text-sm leading-7 text-zinc-600 dark:border-line dark:bg-black/20 dark:text-zinc-300">
+        <h3 class="font-bold text-zinc-950 dark:text-white">预算充足时</h3>
+        <p class="mt-2">先锁定角色本体，再决定是否追弧盘。若距离下个版本还有高价值角色，建议保留至少一轮硬保底资源，不要把所有环石压在当前池。</p>
+      </article>
+      <article class="rounded-md border border-zinc-200 bg-zinc-50 p-4 text-sm leading-7 text-zinc-600 dark:border-line dark:bg-black/20 dark:text-zinc-300">
+        <h3 class="font-bold text-zinc-950 dark:text-white">预算临界时</h3>
+        <p class="mt-2">以最坏保底缺口为准，不把未确认活动奖励算满。角色已到手但弧盘预算不足时，优先回到材料、技能和队伍循环补强，并在版本更新后重新核对规则。</p>
+      </article>
+      <article class="rounded-md border border-zinc-200 bg-zinc-50 p-4 text-sm leading-7 text-zinc-600 dark:border-line dark:bg-black/20 dark:text-zinc-300">
+        <h3 class="font-bold text-zinc-950 dark:text-white">养成分散时</h3>
+        <p class="mt-2">如果体力规划显示一周内无法完成主C和两个功能位，就暂停随机词条刷取。先补等级、突破、核心技能和稳定弧盘，再追求完美副词条。</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="lang-en mt-6 rounded-lg border border-zinc-200 bg-white p-5 shadow-sm dark:border-line dark:bg-panel/80">
+    <p class="text-sm font-semibold text-teal-700 dark:text-neon">How To Use Calculator Results</p>
+    <h2 class="mt-2 text-2xl font-black text-zinc-950 dark:text-white">Treat the output as a decision table, not a pull guarantee</h2>
+    <div class="mt-4 grid gap-4 md:grid-cols-3">
+      <article class="rounded-md border border-zinc-200 bg-zinc-50 p-4 text-sm leading-7 text-zinc-600 dark:border-line dark:bg-black/20 dark:text-zinc-300">
+        <h3 class="font-bold text-zinc-950 dark:text-white">When budget is healthy</h3>
+        <p class="mt-2">Secure the character first, then decide whether the Arc Plate is still worth pursuing. If a high-value future unit is close, keep at least one hard-pity reserve.</p>
+      </article>
+      <article class="rounded-md border border-zinc-200 bg-zinc-50 p-4 text-sm leading-7 text-zinc-600 dark:border-line dark:bg-black/20 dark:text-zinc-300">
+        <h3 class="font-bold text-zinc-950 dark:text-white">When budget is tight</h3>
+        <p class="mt-2">Use worst-case pity as the baseline and do not count unconfirmed rewards at full value. If the character is secured but the Arc Plate is not, return to materials, skills and team rotation upgrades.</p>
+      </article>
+      <article class="rounded-md border border-zinc-200 bg-zinc-50 p-4 text-sm leading-7 text-zinc-600 dark:border-line dark:bg-black/20 dark:text-zinc-300">
+        <h3 class="font-bold text-zinc-950 dark:text-white">When growth is spread thin</h3>
+        <p class="mt-2">If the plan cannot finish one main DPS and two functional slots within the week, pause random-stat farming and finish levels, ascensions, core skills and stable Arc Plate upgrades first.</p>
+      </article>
+    </div>
   </section>
 
   <script>

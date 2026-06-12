@@ -51,7 +51,29 @@ const expectedPages = [
 const requiredTextChecks = [
   { file: "privacy/index.html", text: "Google AdSense" },
   { file: "editorial-policy/index.html", text: "修订记录" },
-  { file: "disclaimer/index.html", text: "非官方网站" }
+  { file: "disclaimer/index.html", text: "非官方网站" },
+  { file: "index.html", text: "本站原创整理方法" },
+  { file: "index.html", text: "适合先看的攻略路径" },
+  { file: "characters/index.html", text: "角色页如何复核" },
+  { file: "search/index.html", text: "搜索使用建议" },
+  { file: "tools/gacha-calculator/index.html", text: "计算结果如何使用" },
+  { file: "editorial-policy/index.html", text: "低价值内容处理" },
+  { file: "index.html", text: "How We Create Original Guide Content" },
+  { file: "characters/index.html", text: "How To Read Character Guides" },
+  { file: "search/index.html", text: "Search Tips" },
+  { file: "tools/gacha-calculator/index.html", text: "How To Use Calculator Results" },
+  { file: "about/index.html", text: "Who Maintains This Site" },
+  { file: "contact/index.html", text: "Feedback We Can Act On" },
+  { file: "privacy/index.html", text: "Google AdSense and Third-Party Advertising" },
+  { file: "disclaimer/index.html", text: "Unofficial Fan Site Notice" },
+  { file: "editorial-policy/index.html", text: "Low-Value Content Handling" }
+];
+
+const minimumChineseCharacters = [
+  { file: "index.html", count: 1100 },
+  { file: "characters/index.html", count: 950 },
+  { file: "search/index.html", count: 450 },
+  { file: "tools/gacha-calculator/index.html", count: 1000 }
 ];
 
 const sitemapUrls = [
@@ -103,6 +125,26 @@ for (const check of requiredTextChecks) {
   const html = await readFile(filePath, "utf8");
   if (!html.includes(check.text)) {
     failures.push(`Generated page is missing required text "${check.text}": ${check.file}`);
+  }
+}
+
+for (const check of minimumChineseCharacters) {
+  const filePath = path.join(distDir, check.file);
+  if (!(await fileExists(filePath))) {
+    failures.push(`Missing generated page: ${check.file}`);
+    continue;
+  }
+
+  const html = await readFile(filePath, "utf8");
+  const text = html
+    .replace(/<script[\s\S]*?<\/script>/g, " ")
+    .replace(/<style[\s\S]*?<\/style>/g, " ")
+    .replace(/<[^>]+>/g, " ");
+  const chineseCharacters = (text.match(/[\u4e00-\u9fff]/g) || []).length;
+  if (chineseCharacters < check.count) {
+    failures.push(
+      `Generated page has only ${chineseCharacters} Chinese characters; expected at least ${check.count}: ${check.file}`
+    );
   }
 }
 

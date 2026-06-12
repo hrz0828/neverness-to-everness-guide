@@ -11,7 +11,7 @@ const logs = await getCollection("updates");
   description="了解异环攻略站的内容范围、维护方式、信息来源、更新日志与联系方式。"
   jsonLd={{ "@context": "https://schema.org", "@type": "AboutPage", name: "关于异环攻略站" }}
 >
-  <article class="prose max-w-none">
+  <article class="prose lang-zh max-w-none">
     <p class="text-sm font-semibold text-neon" data-i18n="about.kicker">About</p>
     <h1 data-i18n="about.title">关于异环攻略站</h1>
     <p data-i18n="about.desc">
@@ -59,6 +59,57 @@ const logs = await getCollection("updates");
     <h2 data-i18n="about.contact">联系我们</h2>
     <p>
       如需反馈攻略错误、提出内容建议、请求删除版权相关内容或咨询隐私问题，请访问 <a href="/contact/">联系我们</a> 页面，或发送邮件至 <a href={`mailto:${siteConfig.contactEmail}`}>{siteConfig.contactEmail}</a>。
+    </p>
+  </article>
+
+  <article class="prose lang-en max-w-none">
+    <p class="text-sm font-semibold text-neon">About</p>
+    <h1>About NTE Guide</h1>
+    <p>
+      NTE Guide is a fan-made guide and reference site for Neverness to Everness players. It organizes character builds, team ideas, map exploration, anomaly commissions, version updates and browser-based planning tools into pages that are easy to search and use during progression.
+    </p>
+
+    <h2>Who Maintains This Site</h2>
+    <p>
+      This site is maintained by regular players and is not affiliated with the official game team. We built it because open-world RPG information is often scattered across announcements, community posts, video comments and screenshots, which makes it hard for new players to decide what to build, farm or revisit.
+    </p>
+    <p>
+      We focus on actionable guide value. Character pages explain roles and rotations, map pages describe layered cleanup routes, tools explain their parameters, and version-sensitive pages show what should be rechecked after updates.
+    </p>
+
+    <h2>What This Site Covers</h2>
+    <ul>
+      <li>Character guides: role, mechanics, stats, awakening order, teams and combat rotations.</li>
+      <li>Map exploration: teleports, collection routes, hidden mechanics, anomaly commissions and district routing.</li>
+      <li>Beginner guides: resource planning, daily priorities, progression mistakes and version review notes.</li>
+      <li>Tools: local browser calculators for pull budgets and growth planning.</li>
+      <li>Version updates: practical summaries around events, characters and gameplay changes.</li>
+    </ul>
+
+    <h2>Sources and Maintenance</h2>
+    <p>
+      Content is based on public game information, editorial organization, testing experience, player feedback and official announcements. Guides are marked with update dates and revised when characters, routes, rules or reward structures change.
+    </p>
+    <p>
+      Official artwork, store-page screenshots or in-game screenshots are used only as guide context, commentary or indexing material. Copyright and attribution issues can be reported through the contact page.
+    </p>
+
+    <h2>Content Quality and Ad Review Readiness</h2>
+    <p>
+      To avoid thin or low-value pages, we prioritize long-form guides that solve specific player problems, such as character investment, layered map cleanup, anomaly troubleshooting, resource planning and tool usage. Index pages organize navigation, while article pages provide steps, reasoning, mistakes to avoid and version review points.
+    </p>
+    <p>
+      Pages that are too short, repetitive or unsupported by version evidence are expanded, merged, delayed or removed from navigation. Ads should not cover content, block navigation or require clicks before reading.
+    </p>
+
+    <h2>Independence Notice</h2>
+    <p>
+      This is an unofficial fan-made guide site. It does not represent the official position of the developer, publisher or any rights holder. Game names, characters, images and related assets belong to their lawful owners and are used for guide commentary and reference.
+    </p>
+
+    <h2>Contact</h2>
+    <p>
+      For corrections, content suggestions, copyright requests or privacy questions, use the <a href="/contact/">contact page</a> or email <a href={`mailto:${siteConfig.contactEmail}`}>{siteConfig.contactEmail}</a>.
     </p>
   </article>
 

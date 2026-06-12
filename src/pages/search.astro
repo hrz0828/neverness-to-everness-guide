@@ -8,6 +8,60 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   jsonLd={{ "@context": "https://schema.org", "@type": "SearchResultsPage", name: "异环站内搜索" }}
 >
   <h1 class="text-3xl font-black" data-i18n="search.title">站内搜索</h1>
+  <section class="lang-zh mt-5 grid gap-5 lg:grid-cols-[1fr_1fr]">
+    <article class="rounded-lg border border-zinc-200 bg-white p-5 shadow-sm dark:border-line dark:bg-panel/80">
+      <p class="text-sm font-semibold text-teal-700 dark:text-neon">搜索使用建议</p>
+      <h2 class="mt-2 text-2xl font-black text-zinc-950 dark:text-white">用角色名、地区名和问题词组合搜索</h2>
+      <div class="mt-4 space-y-3 text-sm leading-7 text-zinc-600 dark:text-zinc-300">
+        <p>
+          本站搜索覆盖角色攻略、地图路线、机制指南、版本动态和工具说明。建议使用具体关键词，例如“九原 聚怪”“安魂曲 DOT”“维特海默塔 谕石”“抽卡预算”“前 30 天路线”，比只搜“攻略”更容易找到正文页。
+        </p>
+        <p>
+          如果你正在排查探索度，可以同时输入区域和收集类型，例如“新赫兰德 电话亭”“桥区 屋顶”“零号城区 夜间”。如果你在规划养成，可以搜索“主C 技能书”“弧盘 词条”“商店兑换”。
+        </p>
+        <p>
+          搜索结果来自本站已发布页面，不包含未整理完成的草稿内容。
+        </p>
+      </div>
+    </article>
+
+    <article class="rounded-lg border border-zinc-200 bg-white p-5 shadow-sm dark:border-line dark:bg-panel/80">
+      <p class="text-sm font-semibold text-teal-700 dark:text-neon">找不到内容时</p>
+      <h2 class="mt-2 text-2xl font-black text-zinc-950 dark:text-white">先回到专题目录，再提交补充需求</h2>
+      <ul class="mt-4 space-y-3 text-sm leading-7 text-zinc-600 dark:text-zinc-300">
+        <li class="rounded-md border border-zinc-200 bg-zinc-50 p-3 dark:border-line dark:bg-black/20">角色相关内容先看 <a href="/characters/">角色攻略列表</a>，新角色可能会先出现在版本动态中，再补完整详情页。</li>
+        <li class="rounded-md border border-zinc-200 bg-zinc-50 p-3 dark:border-line dark:bg-black/20">开荒、抽卡、材料和队伍循环先看 <a href="/guides/">攻略指南</a>，目录按版本热点、新手入门、角色养成、抽卡资源和探索战斗整理。</li>
+        <li class="rounded-md border border-zinc-200 bg-zinc-50 p-3 dark:border-line dark:bg-black/20">如果页面缺失、链接失效或搜索结果明显不相关，可以通过 <a href="/contact/">联系我们</a> 反馈关键词和期望内容。</li>
+      </ul>
+    </article>
+  </section>
+  <section class="lang-en mt-5 grid gap-5 lg:grid-cols-[1fr_1fr]">
+    <article class="rounded-lg border border-zinc-200 bg-white p-5 shadow-sm dark:border-line dark:bg-panel/80">
+      <p class="text-sm font-semibold text-teal-700 dark:text-neon">Search Tips</p>
+      <h2 class="mt-2 text-2xl font-black text-zinc-950 dark:text-white">Combine character names, districts and problem words</h2>
+      <div class="mt-4 space-y-3 text-sm leading-7 text-zinc-600 dark:text-zinc-300">
+        <p>
+          Site search covers character guides, map routes, system guides, version updates and tool explanations. Use specific phrases such as “Jiuyuan grouping”, “Anhunqu DOT”, “Wertheimer Tower oracle stone”, “pull budget” or “first 30 days route”.
+        </p>
+        <p>
+          For exploration cleanup, combine the district and item type, for example “New Herland phone booth”, “bridge rooftops” or “District Zero night route”. For account planning, try “main DPS skill books”, “Arc Plate stats” or “shop exchange”.
+        </p>
+        <p>
+          Search results only include published pages, not unfinished drafts or placeholder content.
+        </p>
+      </div>
+    </article>
+
+    <article class="rounded-lg border border-zinc-200 bg-white p-5 shadow-sm dark:border-line dark:bg-panel/80">
+      <p class="text-sm font-semibold text-teal-700 dark:text-neon">If Search Does Not Find It</p>
+      <h2 class="mt-2 text-2xl font-black text-zinc-950 dark:text-white">Use topic hubs first, then send a correction request</h2>
+      <ul class="mt-4 space-y-3 text-sm leading-7 text-zinc-600 dark:text-zinc-300">
+        <li class="rounded-md border border-zinc-200 bg-zinc-50 p-3 dark:border-line dark:bg-black/20">Character content starts from the <a href="/characters/">character guide list</a>. New characters may appear in version updates before full detail pages are added.</li>
+        <li class="rounded-md border border-zinc-200 bg-zinc-50 p-3 dark:border-line dark:bg-black/20">Progression, pulls, materials and team rotations start from the <a href="/guides/">guide hub</a>, which groups content by beginner, character, pull-resource and exploration topics.</li>
+        <li class="rounded-md border border-zinc-200 bg-zinc-50 p-3 dark:border-line dark:bg-black/20">If a page is missing, a link is broken, or a search result is clearly unrelated, report the keyword and expected topic through <a href="/contact/">contact</a>.</li>
+      </ul>
+    </article>
+  </section>
   <div id="search" class="mt-6"></div>
 
   <link rel="stylesheet" href="/pagefind/pagefind-ui.css" />

@@ -15,7 +15,7 @@ const updatedAt = siteConfig.updatedAt;
     dateModified: updatedAt
   }}
 >
-  <article class="prose max-w-none">
+  <article class="prose lang-zh max-w-none">
     <p class="text-sm font-semibold text-neon" data-i18n="privacy.kicker">Privacy Policy</p>
     <h1 data-i18n="privacy.title">隐私政策</h1>
     <p>最后更新日期：{updatedAt}</p>
@@ -102,6 +102,75 @@ const updatedAt = siteConfig.updatedAt;
       与
       <a href="https://support.google.com/adsense/answer/10924669" rel="nofollow noopener noreferrer" target="_blank">Privacy & messaging</a>
       了解更多。本站仍应根据实际部署地区和法律要求补充 Cookie 同意横幅或其他合规措施。
+    </p>
+  </article>
+
+  <article class="prose lang-en max-w-none">
+    <p class="text-sm font-semibold text-neon">Privacy Policy</p>
+    <h1>Privacy Policy</h1>
+    <p>Last updated: {updatedAt}</p>
+
+    <p>
+      Welcome to NTE Guide. This site provides Neverness to Everness guides, character references, system explanations and browser-based tools. This policy explains what information may be processed when you visit the site.
+    </p>
+
+    <h2>1. Information We Process</h2>
+    <p>
+      This site does not require user registration and does not intentionally collect names, government IDs, phone numbers, precise addresses, payment information or sensitive health information.
+    </p>
+    <p>
+      When you visit, the browser, hosting provider or third-party services may process common technical data such as browser type, device type, pages visited, time of access, approximate IP-region information, cookie identifiers or similar technical identifiers. These are used for site operation, security, measurement and advertising.
+    </p>
+
+    <h2>2. Local Tools and Browser Storage</h2>
+    <p>
+      Calculators and filters on this site usually run locally in your browser. Unless a page says otherwise, your inputs are processed in the browser and may be saved with localStorage, sessionStorage or similar local storage so your settings can be reused later.
+    </p>
+    <p>
+      Local tool data is not intentionally uploaded by this site. You can clear it through your browser's cookie and site-data settings.
+    </p>
+
+    <h2>3. Google AdSense and Third-Party Advertising</h2>
+    <p>
+      If this site uses Google AdSense or other Google advertising products, third-party vendors including Google may use cookies to serve ads based on a user's prior visits to this site or other websites. Google's use of advertising cookies enables Google and its partners to serve ads based on visits to this site and/or other sites on the internet.
+    </p>
+    <p>
+      Third-party advertising services may use cookies, advertising identifiers, web beacons or similar technologies to serve ads, measure performance, limit repeated ad display and improve ad services.
+    </p>
+
+    <h2>4. Third-Party Cookies and DoubleClick Cookies</h2>
+    <p>
+      Third-party cookies are cookies set by domains other than this site. Google advertising cookies may be associated with Google-related domains such as doubleclick.net or google.com. DoubleClick cookies may be used for personalized advertising, frequency control and ad performance measurement.
+    </p>
+    <p>
+      If additional advertising networks are added in the future, their cookie or similar technology use will be disclosed where practical.
+    </p>
+
+    <h2>5. Managing Personalized Ads and Cookies</h2>
+    <ul>
+      <li>You can manage or opt out of personalized Google ads at <a href="https://adssettings.google.com/" rel="nofollow noopener noreferrer" target="_blank">Google Ads Settings</a>.</li>
+      <li>You can visit <a href="https://www.aboutads.info/choices/" rel="nofollow noopener noreferrer" target="_blank">AboutAds Choices</a> to opt out of some third-party interest-based advertising.</li>
+      <li>You can block, delete or limit cookies in your browser settings. Some site features, preferences, local tools or ad display may be affected.</li>
+    </ul>
+
+    <h2>6. Third-Party Links</h2>
+    <p>
+      This site may link to official game pages, communities, video platforms, sources or third-party services. Those sites have their own privacy policies and data practices.
+    </p>
+
+    <h2>7. Children's Privacy</h2>
+    <p>
+      This site is intended for general game-guide readers and is not directed at children. We do not knowingly collect sensitive personal information from children. If you believe such information was collected by mistake, contact us so it can be reviewed.
+    </p>
+
+    <h2>8. Policy Updates</h2>
+    <p>
+      This policy may be updated because of site features, advertising services, legal requirements or third-party service changes. The last updated date will change when the page is revised.
+    </p>
+
+    <h2>9. Contact</h2>
+    <p>
+      For privacy, cookie, advertising or data handling questions, use the <a href="/contact/">contact page</a> or email <a href={`mailto:${siteConfig.contactEmail}`}>{siteConfig.contactEmail}</a>.
     </p>
   </article>
 </BaseLayout>

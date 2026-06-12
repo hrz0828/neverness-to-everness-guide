@@ -15,7 +15,7 @@ const updatedAt = siteConfig.updatedAt;
     dateModified: updatedAt
   }}
 >
-  <article class="prose max-w-none">
+  <article class="prose lang-zh max-w-none">
     <p class="text-sm font-semibold text-neon">Editorial Policy</p>
     <h1>编辑准则</h1>
     <p>最后更新日期：{updatedAt}</p>
@@ -54,9 +54,70 @@ const updatedAt = siteConfig.updatedAt;
       对于重大版本更新、角色重做、地图重绘或工具逻辑变化，站点会优先更新对应页面的标题、正文和更新时间。必要时会在更新日志或页面正文中补充变更说明，帮助读者判断哪些结论已经过期。
     </p>
 
-    <h2>7. 版权处理</h2>
+    <h2>7. 低价值内容处理</h2>
+    <p>
+      本站不会为了增加页面数量而发布只有标题、少量摘要、重复卡片或未完成占位内容的页面。列表页需要提供清晰导航和阅读说明，正文页需要包含可执行步骤、判断依据、常见误区、版本复查点或工具使用说明。
+    </p>
+    <p>
+      如果某个页面内容过短、与其他页面高度重复、缺少原创整理，或只复制公告而没有补充解读，本站会优先选择扩写、合并到更完整的专题、从导航中移除，或暂缓发布到公开站点。对搜索页、联系页等功能页面，本站会补充使用说明和替代路径，避免用户进入后没有可用信息。
+    </p>
+
+    <h2>8. 版权处理</h2>
     <p>
       本站尊重游戏开发商、发行商、创作者和其他权利人的合法权益。若权利人认为本站内容涉及侵权或不当使用，请提供具体链接和权利证明，我们会在核实后及时处理。
+    </p>
+  </article>
+
+  <article class="prose lang-en max-w-none">
+    <p class="text-sm font-semibold text-neon">Editorial Policy</p>
+    <h1>Editorial Policy</h1>
+    <p>Last updated: {updatedAt}</p>
+
+    <p>
+      This site aims to provide searchable, reviewable and maintainable Neverness to Everness guide content. The following principles explain how pages are written, checked and updated.
+    </p>
+
+    <h2>1. Source Handling</h2>
+    <p>
+      Guides are based on public game information, official announcements, editorial testing, player feedback and post-update organization. When a recommendation is based on testing or judgment, we use language such as "recommended", "suitable" or "best for" instead of presenting subjective opinions as absolute facts.
+    </p>
+
+    <h2>2. Human Review</h2>
+    <p>
+      Pages are reviewed before publication where practical. We check titles, step order, route descriptions, update dates and source consistency. If version-dependent information cannot be confirmed, it is not written as a final conclusion.
+    </p>
+
+    <h2>3. Update Principles</h2>
+    <p>
+      Character values, skill text, pull rules, quest steps and map collectibles may change by version. We prioritize updates that affect player decisions, such as character investment, event routing, material farming and high-value rewards.
+    </p>
+
+    <h2>4. Corrections</h2>
+    <p>
+      Errors, missing details and outdated information can be reported through the <a href="/contact/">contact page</a>. When feedback is verifiable, the relevant page is revised and its update date or notes may be adjusted.
+    </p>
+
+    <h2>5. Advertising Independence</h2>
+    <p>
+      This site may display Google AdSense or similar advertising. Ad revenue does not control guide conclusions, character evaluations or content order. Sponsored or promotional content, if added in the future, will be labeled clearly.
+    </p>
+
+    <h2>6. Revision Records</h2>
+    <p>
+      Major game updates, character reworks, map changes and tool-logic changes are reflected in page titles, body text and updated dates where relevant. Important changes may also be summarized in page notes or changelog entries.
+    </p>
+
+    <h2>7. Low-Value Content Handling</h2>
+    <p>
+      We do not publish pages only to increase page count. A page should not consist only of a title, a short summary, repeated cards or an unfinished placeholder. Index pages need clear navigation and reading context; article pages need steps, reasoning, mistakes to avoid, version review points or tool-use explanations.
+    </p>
+    <p>
+      Pages that are too short, highly repetitive, copied without added analysis, or unsupported by original organization are expanded, merged into a stronger topic page, removed from navigation or delayed until they are useful. Functional pages such as search and contact include usage guidance and alternate paths so users are not left with an empty screen.
+    </p>
+
+    <h2>8. Copyright Handling</h2>
+    <p>
+      We respect the rights of developers, publishers, creators and other rights holders. If a rights holder believes content on this site is infringing or improperly used, they can provide the specific URL and rights documentation for review.
     </p>
   </article>
 </BaseLayout>
