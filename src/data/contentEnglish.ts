@@ -349,6 +349,60 @@ export const beginnerEnglish = `
   <p>Do not chase perfect sub-stats too early. During progression, a correct main stat usually gives more practical value than an extreme sub-stat roll on the wrong piece.</p>
 `;
 
+export const cityExplorationExperienceEnglish = `
+  <p>City exploration feels best when each session has a clear route. Instead of chasing every icon at once, start from teleports and phone booths, then clear one district layer at a time.</p>
+  <h2>Set One Session Goal</h2>
+  <p>Choose whether this session is for transport unlocks, district cleanup or anomaly review. Short sessions should focus on phone booths and a small nearby area. Longer sessions can add rooftops, underpasses, bridge layers and post-anomaly checks.</p>
+  <h2>Phone Booths Shape the Route</h2>
+  <p>Phone booths are the practical starting points for city play. Unlock main-road, bridgehead, plaza and shopping-street booths first, then use them to sweep building backs, underground entrances and elevated layers.</p>
+  <h2>Vehicles Solve Distance, Not Height</h2>
+  <p>Vehicles are excellent for long roads, chase tasks and cross-district travel. When an objective appears close but cannot be reached, stop driving and inspect the building. Rooftops, stairs, underpasses and alleys often matter more than speed.</p>
+  <h2>Clear by Vertical Layer</h2>
+  <ol>
+    <li>Walk the ground layer: roads, shop fronts, plazas and alley mouths.</li>
+    <li>Check the upper layer: stairs, rooftops, skybridges and wall platforms.</li>
+    <li>Check the lower layer: underpasses, bridge shadows, ramps and parking areas.</li>
+    <li>Return after tasks: anomaly exits and puzzle rooms may expose new interactions.</li>
+  </ol>
+  <h2>Anomaly Commissions</h2>
+  <p>Anomalies are part of the city rhythm, but not every anomaly needs to interrupt the route. Handle nearby and readable ones immediately, record unclear time or weather conditions, and revisit hard combat anomalies after the team is stronger.</p>
+  <h2>Experience Checklist</h2>
+  <ul>
+    <li>Is the phone-booth network dense enough for the current district?</li>
+    <li>Did you choose one small area instead of chasing scattered icons?</li>
+    <li>Did you separate ground, rooftop, underground and bridge layers?</li>
+    <li>Did you inspect anomaly locations after containment?</li>
+  </ul>
+`;
+
+export const combatGrowthExperienceEnglish = `
+  <p>Combat starts to feel smooth when growth solves the real problem in the team. Higher rarity and bigger numbers help, but role clarity, rotation timing, survival comfort and correct Arc or module investment matter more in repeated play.</p>
+  <h2>Identify the Pain Point</h2>
+  <p>Before spending resources, decide what feels wrong: low damage, awkward rotation, unstable survival or scattered targeting. Each problem asks for a different solution, so do not answer every issue by farming random sub-stats.</p>
+  <h2>Define Team Jobs</h2>
+  <p>A comfortable team has a main damage slot, a quick contribution or sub-DPS slot, a survival slot and a utility slot for grouping, buffs, toughness pressure or mechanics. When each character has a job, swaps feel intentional instead of random.</p>
+  <h2>Build a Repeatable Rotation</h2>
+  <ol>
+    <li>Use supports or sub-DPS characters to prepare buffs, grouping, marks or debuffs.</li>
+    <li>Set survival tools before the dangerous window begins.</li>
+    <li>Bring in the main carry when enemies are controlled, broken or fully prepared.</li>
+    <li>Leave the field after the damage window and rebuild the next cycle.</li>
+  </ol>
+  <h2>Use Bosses as Tests</h2>
+  <p>Bosses and high-pressure anomaly commissions reveal problems that easy fights hide. Watch whether your burst is ready during openings, whether the carry is interrupted, whether protection expires too early and whether your skills miss moving targets.</p>
+  <h2>Invest Arcs and Modules Around the Job</h2>
+  <p>Main carries usually want correct main stats, matching damage type and stable damage bonuses. Survival and utility characters may value uptime, protection, control or easier triggers more than personal damage. A good piece is one that improves the character's job.</p>
+  <h2>Stop Line</h2>
+  <p>Stop deep farming when the main carry clears current content reliably, survival prevents repeated failures, key support skills are online and module main stats are correct. At that point, building the next important character often improves the account more than chasing one more perfect roll.</p>
+  <h2>Review Checklist</h2>
+  <ul>
+    <li>Does the team have clear damage, survival and utility roles?</li>
+    <li>Does the main carry enter after buffs, grouping or toughness windows are ready?</li>
+    <li>Did the latest upgrade make a specific fight easier?</li>
+    <li>Is the next resource spend solving a real combat problem?</li>
+  </ul>
+`;
+
 export const guideEnglish = {
   "version-hotspot-briefing": {
     category: "Version Hotspots",
@@ -391,6 +445,14 @@ export const guideEnglish = {
     time: "5 min",
     title: "Team Building and Rotation Basics",
     description: "Check main DPS, sub DPS, survival and utility slots when your team feels unstable."
+  },
+  "combat-growth-play-experience": {
+    category: "Character Growth",
+    tag: "Feel",
+    time: "8 min",
+    title: "Combat and Growth Play Experience",
+    description: "Use role clarity, rotations, survival comfort, boss pressure and Arc or module investment to judge whether upgrades really improve combat feel.",
+    body: combatGrowthExperienceEnglish
   },
   "arc-module-substats": {
     category: "Character Growth",
@@ -462,6 +524,14 @@ export const guideEnglish = {
     time: "6 min",
     title: "Boss and Hard-Combat Basics",
     description: "Improve boss attempts by watching warnings, toughness windows, survival skills and burst timing."
+  },
+  "city-exploration-play-experience": {
+    category: "Exploration Combat",
+    tag: "Feel",
+    time: "8 min",
+    title: "City Exploration Play Experience",
+    description: "Plan phone booths, vehicles, vertical routes, anomaly commissions and short sessions so city exploration feels structured instead of scattered.",
+    body: cityExplorationExperienceEnglish
   },
   "exploration-checklist": {
     category: "Exploration Combat",

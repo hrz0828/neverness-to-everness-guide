@@ -29,6 +29,11 @@ export const guideVisuals: Record<string, { image: string; alt: string; source: 
     alt: "异环都市战斗场景",
     source: "站内素材"
   },
+  "combat-growth-play-experience": {
+    image: "/images/news/city-gameplay.jpg",
+    alt: "异环城市战斗与角色养成体验参考画面",
+    source: "站内素材"
+  },
   "arc-module-substats": {
     image: "/images/guides/nte-poster-1.avif",
     alt: "异环弧盘空幕与角色养成参考画面",
@@ -77,6 +82,11 @@ export const guideVisuals: Record<string, { image: string; alt: string; source: 
   "boss-combat-guide": {
     image: "/images/news/city-gameplay.jpg",
     alt: "异环战斗与异象委托场景",
+    source: "站内素材"
+  },
+  "city-exploration-play-experience": {
+    image: "/images/news/area-illusion-town.jpg",
+    alt: "异环城市探索、异象与街区游玩体验参考画面",
     source: "站内素材"
   },
   "exploration-checklist": {

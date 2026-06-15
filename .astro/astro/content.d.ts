@@ -259,6 +259,20 @@ declare module 'astro:content' {
   collection: "guides";
   data: InferEntrySchema<"guides">
 } & { render(): Render[".mdx"] };
+"city-exploration-play-experience.mdx": {
+	id: "city-exploration-play-experience.mdx";
+  slug: "city-exploration-play-experience";
+  body: string;
+  collection: "guides";
+  data: InferEntrySchema<"guides">
+} & { render(): Render[".mdx"] };
+"combat-growth-play-experience.mdx": {
+	id: "combat-growth-play-experience.mdx";
+  slug: "combat-growth-play-experience";
+  body: string;
+  collection: "guides";
+  data: InferEntrySchema<"guides">
+} & { render(): Render[".mdx"] };
 "daily-weekly-priority.mdx": {
 	id: "daily-weekly-priority.mdx";
   slug: "daily-weekly-priority";
