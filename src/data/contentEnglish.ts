@@ -350,57 +350,59 @@ export const beginnerEnglish = `
 `;
 
 export const cityExplorationExperienceEnglish = `
-  <p>City exploration feels best when each session has a clear route. Instead of chasing every icon at once, start from teleports and phone booths, then clear one district layer at a time.</p>
-  <h2>Set One Session Goal</h2>
-  <p>Choose whether this session is for transport unlocks, district cleanup or anomaly review. Short sessions should focus on phone booths and a small nearby area. Longer sessions can add rooftops, underpasses, bridge layers and post-anomaly checks.</p>
-  <h2>Phone Booths Shape the Route</h2>
-  <p>Phone booths are the practical starting points for city play. Unlock main-road, bridgehead, plaza and shopping-street booths first, then use them to sweep building backs, underground entrances and elevated layers.</p>
-  <h2>Vehicles Solve Distance, Not Height</h2>
-  <p>Vehicles are excellent for long roads, chase tasks and cross-district travel. When an objective appears close but cannot be reached, stop driving and inspect the building. Rooftops, stairs, underpasses and alleys often matter more than speed.</p>
-  <h2>Clear by Vertical Layer</h2>
-  <ol>
-    <li>Walk the ground layer: roads, shop fronts, plazas and alley mouths.</li>
-    <li>Check the upper layer: stairs, rooftops, skybridges and wall platforms.</li>
-    <li>Check the lower layer: underpasses, bridge shadows, ramps and parking areas.</li>
-    <li>Return after tasks: anomaly exits and puzzle rooms may expose new interactions.</li>
-  </ol>
-  <h2>Anomaly Commissions</h2>
-  <p>Anomalies are part of the city rhythm, but not every anomaly needs to interrupt the route. Handle nearby and readable ones immediately, record unclear time or weather conditions, and revisit hard combat anomalies after the team is stronger.</p>
-  <h2>Experience Checklist</h2>
+  <p>This is not a route guide. It is a subjective gameplay evaluation based on public reviews, launch coverage and gameplay summaries. NTE's city play has a strong first impression: urban streets, supernatural incidents, vehicles, mini-games, business management and character life features make it feel more distinctive than a standard wilderness checklist.</p>
+  <h2>Overall Feel</h2>
+  <p>The city is the game's strongest hook. Public coverage often frames NTE around urban exploration, driving, side activities and social systems. The best moments come from wandering with a small goal, then being pulled into a strange encounter, mini-boss or character scene.</p>
+  <h2>Open-World Exploration</h2>
+  <p>The exploration works best when the city creates surprise. PC Gamer's impressions highlight odd street encounters and city mini-bosses, which is exactly where NTE feels different from ordinary camp-clearing open worlds. The weakness is repetition: once the surprise wears off, repeated route structures can feel like another daily checklist.</p>
+  <h2>Vehicles</h2>
+  <p>Vehicles are a strong identity feature. They make travel feel like city commuting rather than fantasy sprinting, and they help the game sell its modern setting. They are less convincing as a deep driving game: cars solve distance, but rooftops, interiors, underground paths and anomaly spaces still push players back to on-foot exploration.</p>
+  <h2>Anomalies and Street Bosses</h2>
+  <p>Anomaly events and small bosses are at their best when they feel like urban myths interrupting normal life. They give combat more personality than a generic enemy camp. Their long-term value depends on variety; if later anomalies reuse the same structure too often, the surprise becomes routine.</p>
+  <h2>Business, Mini-Games and Life Content</h2>
+  <p>Cafe management, heist-style activities, fishing, mahjong, delivery tasks and bond interactions are good as side flavor. They make the city feel lived in. The problem appears when these activities become required progression for EXP or city systems. At that point, a fun diversion can become a chore.</p>
+  <h2>Subjective Scores</h2>
   <ul>
-    <li>Is the phone-booth network dense enough for the current district?</li>
-    <li>Did you choose one small area instead of chasing scattered icons?</li>
-    <li>Did you separate ground, rooftop, underground and bridge layers?</li>
-    <li>Did you inspect anomaly locations after containment?</li>
+    <li>City atmosphere: excellent.</li>
+    <li>Random encounters and mini-bosses: excellent early, dependent on variety later.</li>
+    <li>Vehicles: good, more identity and travel flavor than simulation depth.</li>
+    <li>Business and mini-games: good as optional breaks, weaker when tied too heavily to progression.</li>
+    <li>Life and bond systems: promising, but limited at launch.</li>
+    <li>Long-term repetition control: average, and the main risk for retention.</li>
   </ul>
+  <h2>Who Will Enjoy It</h2>
+  <p>NTE's city play is best for players who like urban anime worlds, weird incidents, vehicles and side activities. It is less ideal for players who want a pure sandbox, dislike gacha progression or are sensitive to repeated daily tasks.</p>
+  <h2>Sources Used</h2>
+  <p>Sources reviewed include PC Gamer's gameplay impressions, GamesRadar's launch-feedback coverage, TechRadar's feature overview and public gameplay summaries such as Wikipedia.</p>
 `;
 
 export const combatGrowthExperienceEnglish = `
-  <p>Combat starts to feel smooth when growth solves the real problem in the team. Higher rarity and bigger numbers help, but role clarity, rotation timing, survival comfort and correct Arc or module investment matter more in repeated play.</p>
-  <h2>Identify the Pain Point</h2>
-  <p>Before spending resources, decide what feels wrong: low damage, awkward rotation, unstable survival or scattered targeting. Each problem asks for a different solution, so do not answer every issue by farming random sub-stats.</p>
-  <h2>Define Team Jobs</h2>
-  <p>A comfortable team has a main damage slot, a quick contribution or sub-DPS slot, a survival slot and a utility slot for grouping, buffs, toughness pressure or mechanics. When each character has a job, swaps feel intentional instead of random.</p>
-  <h2>Build a Repeatable Rotation</h2>
-  <ol>
-    <li>Use supports or sub-DPS characters to prepare buffs, grouping, marks or debuffs.</li>
-    <li>Set survival tools before the dangerous window begins.</li>
-    <li>Bring in the main carry when enemies are controlled, broken or fully prepared.</li>
-    <li>Leave the field after the damage window and rebuild the next cycle.</li>
-  </ol>
-  <h2>Use Bosses as Tests</h2>
-  <p>Bosses and high-pressure anomaly commissions reveal problems that easy fights hide. Watch whether your burst is ready during openings, whether the carry is interrupted, whether protection expires too early and whether your skills miss moving targets.</p>
-  <h2>Invest Arcs and Modules Around the Job</h2>
-  <p>Main carries usually want correct main stats, matching damage type and stable damage bonuses. Survival and utility characters may value uptime, protection, control or easier triggers more than personal damage. A good piece is one that improves the character's job.</p>
-  <h2>Stop Line</h2>
-  <p>Stop deep farming when the main carry clears current content reliably, survival prevents repeated failures, key support skills are online and module main stats are correct. At that point, building the next important character often improves the account more than chasing one more perfect roll.</p>
-  <h2>Review Checklist</h2>
+  <p>This article evaluates NTE's combat, growth and gacha feel from public reviews and gameplay data. The short version: the combat foundation is enjoyable, but the long-term experience depends on how much tolerance you have for growth systems, banner planning, daily loops and random stat farming.</p>
+  <h2>Overall Feel</h2>
+  <p>NTE has enough action-game structure to feel active: four-character teams, swapping, dodges, perfect dodges, parries, skill synergy and boss windows. Early combat is lively because the city wraps fights in strange anomaly scenarios. Over time, the pressure shifts from execution to resource management.</p>
+  <h2>Action Combat</h2>
+  <p>The combat is readable rather than brutally technical. Its fun comes from preparing a window with supports, bringing in the main damage dealer, then using dodges or survival tools to keep the rotation intact. The downside is familiar for gacha action RPGs: once character and Arc investment scales up, numbers can overshadow execution.</p>
+  <h2>Bosses and Anomaly Fights</h2>
+  <p>Boss and anomaly fights are strongest when the concept is weird. PC Gamer's impressions praise memorable city encounters and mini-bosses. In my reading, the personality of these fights matters more than raw moveset complexity. If future bosses become health sponges or repeat templates, the appeal will drop quickly.</p>
+  <h2>Characters and Team Building</h2>
+  <p>Character value is not just rarity. Public tier discussions emphasize effectiveness, ease of use and synergy. That matches the actual feel of the game: a team with damage, survival and utility roles usually plays better than a team made only of high-rarity favorites.</p>
+  <h2>Arcs, Modules and Sub-Stats</h2>
+  <p>Arcs and modules give long-term depth, but also create fatigue. Correct main stats and role-matched equipment make combat feel better; deep random sub-stat farming can become a treadmill. The best growth decision is the one that makes a specific fight, route or daily task smoother.</p>
+  <h2>Gacha Feel</h2>
+  <p>The lack of a traditional 50/50 on limited character banners is a real comfort point. However, PC Gamer's banner coverage notes that board-game-style pulls, many currencies and cosmetic milestones can encourage extra spending. The system feels more playful than a plain banner, but also more psychologically sticky.</p>
+  <h2>Subjective Scores</h2>
   <ul>
-    <li>Does the team have clear damage, survival and utility roles?</li>
-    <li>Does the main carry enter after buffs, grouping or toughness windows are ready?</li>
-    <li>Did the latest upgrade make a specific fight easier?</li>
-    <li>Is the next resource spend solving a real combat problem?</li>
+    <li>Basic action combat: good.</li>
+    <li>Anomaly boss encounters: good to excellent when the theme is fresh.</li>
+    <li>Team building: good, with meaningful role and synergy decisions.</li>
+    <li>Arc and module growth: decent depth, but prone to farming fatigue.</li>
+    <li>Gacha feel: mixed-positive; no 50/50 helps, milestone pressure hurts.</li>
+    <li>Long-term daily pressure: average, and likely the deciding factor.</li>
   </ul>
+  <h2>Who Will Enjoy It</h2>
+  <p>This side of NTE works best for players who enjoy action RPG combat inside a broader live-service routine. It is weaker for players who want a clean premium action game without banners, daily chores, random stats or currency planning.</p>
+  <h2>Sources Used</h2>
+  <p>Sources reviewed include PC Gamer's impressions, PC Gamer's banner and tier-list guides, GamesRadar's launch-feedback report and public gameplay summaries such as Wikipedia.</p>
 `;
 
 export const guideEnglish = {
@@ -448,10 +450,10 @@ export const guideEnglish = {
   },
   "combat-growth-play-experience": {
     category: "Character Growth",
-    tag: "Feel",
+    tag: "Review",
     time: "8 min",
-    title: "Combat and Growth Play Experience",
-    description: "Use role clarity, rotations, survival comfort, boss pressure and Arc or module investment to judge whether upgrades really improve combat feel.",
+    title: "Combat, Growth and Gacha Experience Review",
+    description: "A subjective review of NTE combat, team building, Arcs, modules, boss fights, banners and long-term daily pressure based on public coverage.",
     body: combatGrowthExperienceEnglish
   },
   "arc-module-substats": {
@@ -527,10 +529,10 @@ export const guideEnglish = {
   },
   "city-exploration-play-experience": {
     category: "Exploration Combat",
-    tag: "Feel",
+    tag: "Review",
     time: "8 min",
-    title: "City Exploration Play Experience",
-    description: "Plan phone booths, vehicles, vertical routes, anomaly commissions and short sessions so city exploration feels structured instead of scattered.",
+    title: "City and Life Gameplay Experience Review",
+    description: "A subjective review of NTE city exploration, vehicles, anomalies, business management, mini-games and repeated daily play based on public coverage.",
     body: cityExplorationExperienceEnglish
   },
   "exploration-checklist": {
