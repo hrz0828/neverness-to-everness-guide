@@ -2,6 +2,93 @@ const commonAuthor = "异环攻略站编辑部";
 
 export const latestGuides = [
   {
+    id: "21",
+    title: "2026年6月最新兑换码与资源领取路线：先领免费Annulith，再决定抽卡预算",
+    date: "2026-06-15",
+    author: commonAuthor,
+    image: "/images/guides/nte-poster-3.avif",
+    category: "最新攻略",
+    readTime: "7 分钟",
+    gallery: [
+      {
+        src: "/images/guides/nte-poster-3.avif",
+        alt: "异环 2026 年 6 月兑换码与资源领取参考画面",
+        caption: "兑换码、邮箱和活动奖励要先处理，再计算本周抽卡预算。"
+      },
+      {
+        src: "/images/guides/nte-poster-2.avif",
+        alt: "异环当前版本卡池与资源规划参考画面",
+        caption: "免费资源会直接影响 Lacrimosa、Chaos 与后续版本的停手线。"
+      }
+    ],
+    excerpt:
+      "根据 2026 年 6 月中旬最新兑换码整理领取顺序、兑换入口和抽卡预算复盘，避免先抽卡后发现免费资源还没领。",
+    guide: {
+      overview:
+        "截至 2026 年 6 月 15 日，6 月可用兑换码仍是当前版本最容易补进预算的免费资源来源。建议先完成序章解锁手机菜单和邮箱，再兑换 LACRIMOSA0603、DREAMWALK0603、TOMATO100、RACENOLIMIT、NTEWINFONS、NTEFUNGAME、NTENENE、NTEFREE、NTEGIFT 等公开码，最后把 Annulith、方斯、Beetle Coins、猎人指南和染料重新计入本周抽卡与养成预算。",
+      requirements: [
+        { label: "更新时间", value: "2026-06-15，参考 6 月 12 日最新兑换码核对结果" },
+        { label: "前置条件", value: "完成序章，解锁游戏内手机菜单、兑换入口和邮箱" },
+        { label: "资源重点", value: "Annulith、方斯、Beetle Coins、猎人指南、染料与邮件奖励" }
+      ],
+      stepsTitle: "最新兑换与预算路线",
+      stepsNote: "先领取，再抽卡",
+      steps: [
+        {
+          title: "先完成兑换前置",
+          action: "推进序章到手机菜单和邮箱解锁",
+          detail:
+            "兑换码不是登录后立刻可用。先把序章推进到能打开手机菜单、兑换入口和邮箱，再开始输入代码，避免奖励进邮箱后无法及时领取。"
+        },
+        {
+          title: "优先兑换含 Annulith 的代码",
+          action: "先处理 LACRIMOSA0603、DREAMWALK0603、TOMATO100、RACENOLIMIT、NTEGIFT",
+          detail:
+            "这些代码会直接影响抽卡预算，优先级高于纯方斯代码。兑换后立刻进邮箱领取，再把获得的 Annulith 重新加入 Lacrimosa、Chaos 或后续版本预算。"
+        },
+        {
+          title: "再清理经济与养成代码",
+          action: "继续兑换 NTEWINFONS、NTEFUNGAME、NTENENE、NTEFREE",
+          detail:
+            "方斯、Beetle Coins、猎人指南、染料和消耗品不能直接抽卡，但会减少角色升级、车辆和活动准备的经济压力。新手尤其不要忽略这些资源。"
+        },
+        {
+          title: "兑换后马上复盘预算",
+          action: "把抽卡资源、养成资源和车辆预算分开记录",
+          detail:
+            "不要只看 Annulith 数量。养成材料和方斯如果补足，可能让你少刷一轮资源本，把体力转去活动或角色突破。分账后再决定当前池投入深度。"
+        },
+        {
+          title: "过期码只做排错参考",
+          action: "输入失败时先确认大小写、空格和是否已过期",
+          detail:
+            "兑换码区分输入准确性，也可能随版本过期。如果代码提示无效，先检查复制空格和大小写，再判断是否已经从可用列表移除。"
+        }
+      ],
+      challengeLabel: "领取误区",
+      boss: {
+        name: "先抽卡，后发现免费资源还没领",
+        summary:
+          "6 月兑换码能补进 Annulith、方斯和养成材料。最常见的损失不是代码难找，而是玩家先按旧预算抽卡，之后才发现邮箱、兑换码和活动奖励还没有计入。",
+        tips: [
+          "抽卡前先完成兑换码、邮箱和活动页领取。",
+          "含 Annulith 的代码优先兑换，纯经济代码随后处理。",
+          "兑换后重新计算保底进度，不要用兑换前的预算做最终决定。"
+        ]
+      },
+      rewards: ["Annulith", "方斯", "Beetle Coins", "猎人指南", "染料", "抽卡预算复盘"],
+      closing:
+        "2026 年 6 月最实用的资源路线很简单：先解锁入口，再兑换所有可用码，领取邮箱奖励后重新计算预算。完成这一步，再决定当前卡池要不要继续投入。"
+    },
+    paragraphs: [
+      "6 月中旬的最新攻略重点不在复杂机制，而在免费资源的领取顺序。兑换码给到的 Annulith、方斯和养成材料，会直接改变你这周的抽卡与养成节奏。",
+      "建议把兑换码分成两组处理：第一组是含 Annulith 的代码，优先影响抽卡；第二组是方斯、Beetle Coins、猎人指南、染料和消耗品，主要降低养成压力。",
+      "兑换入口需要先完成序章并解锁手机菜单。进入兑换界面后逐个输入代码，成功后不要忘记去邮箱领取，否则预算表里仍然不会出现这些资源。",
+      "资源到手后，重新拆分三类预算：角色抽卡、角色养成、车辆与活动。这样你能更清楚地判断，是继续追当前池，还是把资源留给 Chaos 和后续版本。",
+      "如果某个代码显示无效，先检查复制时是否带了空格、大小写是否正确、账号是否已经领取过，再判断它是否已经过期。"
+    ]
+  },
+  {
     id: "20",
     title: "1.1版本热点快报：当前卡池、强度快照和资源优先级",
     date: "2026-06-11",

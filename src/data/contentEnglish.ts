@@ -696,6 +696,50 @@ export const mapEnglish = {
 };
 
 export const newsEnglish = {
+  "21": {
+    category: "Latest Guide",
+    title: "June 2026 Code and Resource Route: Claim Free Annulith Before Setting Your Pull Budget",
+    excerpt:
+      "A mid-June 2026 route for redeeming the latest codes, claiming mail rewards and recalculating your pull budget before spending.",
+    readTime: "7 min",
+    overview:
+      "As of June 15, 2026, June redeem codes remain one of the easiest free resource sources for the current version. Finish the prologue first so the phone menu, redeem entry and mailbox are unlocked, then redeem public codes such as LACRIMOSA0603, DREAMWALK0603, TOMATO100, RACENOLIMIT, NTEWINFONS, NTEFUNGAME, NTENENE, NTEFREE and NTEGIFT. After claiming the mail rewards, fold Annulith, Fons, Beetle Coins, Hunter Guides and dyes back into your weekly pull and growth budget.",
+    requirements: [
+      ["Updated", "June 15, 2026, based on the latest June 12 code check"],
+      ["Prerequisite", "Complete the prologue and unlock the in-game phone menu, redeem entry and mailbox"],
+      ["Resource focus", "Annulith, Fons, Beetle Coins, Hunter Guides, dyes and mail rewards"]
+    ],
+    stepsTitle: "Latest Redeem and Budget Route",
+    stepsNote: "Claim first, pull later",
+    steps: [
+      ["Finish the redeem prerequisite", "Progress the prologue until the phone menu and mailbox are available.", "Codes are not useful if you cannot reach the redeem menu or claim mail. Unlock both entries first, then start entering codes."],
+      ["Redeem Annulith codes first", "Start with LACRIMOSA0603, DREAMWALK0603, TOMATO100, RACENOLIMIT and NTEGIFT.", "These directly affect your pull budget, so they matter more than pure Fons codes. Claim the mail rewards immediately and add the Annulith to your Lacrimosa, Chaos or future-version budget."],
+      ["Clear economy and growth codes next", "Redeem NTEWINFONS, NTEFUNGAME, NTENENE and NTEFREE after the pull-impact codes.", "Fons, Beetle Coins, Hunter Guides, dyes and consumables do not create pulls directly, but they lower growth, vehicle and event pressure. New accounts should not ignore them."],
+      ["Review the budget after redeeming", "Track pull resources, growth resources and vehicle spending separately.", "Do not look only at Annulith. If Fons and growth materials are covered, you may save stamina for events or breakthroughs instead of farming basic resources."],
+      ["Use expired codes only for troubleshooting", "If a code fails, check spaces, casing and expiry before assuming the page is wrong.", "Redeem codes can expire or reject copied whitespace. Clean the input first, then decide whether the code has left the active list."]
+    ],
+    challengeLabel: "Claiming Mistake",
+    boss: {
+      name: "Pulling first, then realizing free resources were unclaimed",
+      summary:
+        "June codes can add Annulith, Fons and growth materials. The common loss is not that codes are hard to find, but that players pull from an old budget before counting mail, codes and event rewards.",
+      tips: [
+        "Claim codes, mail and event page rewards before pulling.",
+        "Prioritize codes with Annulith, then handle pure economy codes.",
+        "Recalculate pity and stop-loss lines after claiming rewards."
+      ]
+    },
+    rewards: ["Annulith", "Fons", "Beetle Coins", "Hunter Guides", "Dyes", "Pull budget review"],
+    closing:
+      "The practical June 2026 route is simple: unlock the menu, redeem every active code, claim the mailbox rewards and recalculate your budget. Only then decide whether the current banner deserves more pulls.",
+    paragraphs: [
+      "The mid-June priority is not a complicated combat mechanic. It is the order in which you claim free resources before making pull decisions.",
+      "Split codes into two groups: Annulith codes that affect pulls immediately, and economy or growth codes that reduce upgrade pressure.",
+      "The redeem entry requires prologue progress and the phone menu. After entering a code, claim the reward from mail or it will not appear in your budget.",
+      "Once the resources are in hand, separate your budget into character pulls, character growth, and vehicle or event spending.",
+      "If a code fails, check copied spaces, casing and whether the account has already claimed it before treating it as expired."
+    ]
+  },
   "20": {
     category: "Version Hotspot",
     title: "Version 1.1 Hotspot Briefing: Current Banner, Strength Snapshot and Resource Priority",
